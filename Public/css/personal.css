@@ -1,0 +1,67 @@
+/* CSS Document */
+
+.reg_list li{clear:both;padding:20px 0;}
+.reg_list li .more_info{width:270px;line-height:22px;color:#999;font-size:14px;}
+
+/*照片*/
+.reg_list .photo{width:130px;height:130px;background:url(../images/inside_sprite.gif) no-repeat;}
+
+/*职位*/
+.position_wrap{width:940px;}
+	/*left*/
+	.position_wrap .l{width:300px;}
+		.position_wrap .l .l_t_b{height:9px;background:url(../images/position_bg1.png) no-repeat;}
+		.position_wrap .l .l_m_b{background:#4CABFC;height:350px;}/*内容高度*/
+		.position_wrap .l .l_b_b{height:9px;background:url(../images/position_bg2.png) no-repeat;}
+		
+		/*左侧职位导航*/
+		.l_nav{padding:10px 0 10px 5px;}
+		.l_nav li{padding-left:10px;height:40px;line-height:40px;border-bottom:1px solid #3D94DD;font-size:14px;color:#FFFFFF;background:url(../images/icon1.gif) no-repeat 280px;}
+		.l_nav li a{color:#FFFFFF}
+		.l_nav li.on{background:#EDEEF2;color:#333333;}
+		.l_nav li.on a{color:#333333}
+	
+	/*right*/
+	.position_wrap .r{width:640px;}
+		.position_wrap .r .r_t_b{height:9px;background:url(../images/position_bg3.png) no-repeat;}
+		.position_wrap .r .r_m_b{background:#EDEEF2;height:350px;}/*内容高度*/
+		.position_wrap .r .r_b_b{height:9px;background:url(../images/position_bg4.png) no-repeat;}
+		
+		/*右侧详细列表*/
+		.detail_list_left{height:40px;line-height:40px;}
+		.detail_list_left a{color:#57AFFB}
+		
+		.detail_list_right{line-height:40px;width:540px;}
+		.detail_list_right ul li{float:left;display:inline;margin-right:30px;}
+		
+		/*职位详细页*/
+		.detail_tit{color:#57AFFB}
+		.detail_tabs li {float:left;display:inline;width:120px;text-align:center;margin-right:10px;}
+		.detail_tabs li a{display:block;height:35px;line-height:35px;background:#C3C3C3;color:#ffffff;font-size:14px;font-weight:bold;}
+		.detail_tabs li a:hover{background:#EDEEF2;color:#57AFFB}
+		.detail_tabs li a.on{display:block;height:35px;line-height:35px;background:#EDEEF2;color:#57AFFB}
+		.detail_wrap{background:#EDEEF2}
+		
+.m_colr1{color:#FC8A4C}
+
+/*职位列表*/
+.my_list_tab{height:40px;line-height:40px;background:#C3c3c3;}
+	.My_w1{width:370px;}
+	.My_w2{width:420px;}
+	.My_w3{width:140px;}
+.my_list li{height:35px;line-height:35px;border-bottom:1px solid #eeeeee;}
+	.my_list li .tit{color:#57AFFB}	
+	.my_list li .yes{color:#2DBE34}	
+	.my_list li .no{color:#ff0000}	
+
+/*帐号内 -> line*/
+.wrap_line{border-bottom:1px solid #dddddd}
+
+
+/*充值*/
+.pay_wrap{width:290px;margin-left:10px;padding-right:10px;background:url(../images/btn_sprite.gif) no-repeat right -100px;height:45px;}
+	.pay_alipay{display:inline-block;left:0;top:8px;width:83px;height:31px;background:url(../images/inside_sprite.gif) no-repeat -147px -67px;}
+	.prompt_ok{display:inline-block;right:15px;top:6px;width:33px;height:33px;background:url(../images/inside_sprite.gif) no-repeat -252px -65px;}
+
+/*忘记密码*/
+.forgot_pwd{right:30px;top:35px;}	

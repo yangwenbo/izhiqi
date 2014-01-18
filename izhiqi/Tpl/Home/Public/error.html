@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>跳转提示</title>
+<link href="__CSSURL__/base.css" rel="stylesheet" type="text/css" />
+<link href="__CSSURL__/common.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<php> if(Loginhelp::isUserLogin()){</php>
+    <include file="Public:userheader" />
+<php> }else{ </php>
+    <include file="Public:enterpriseheader" />
+<php> } </php>
+<!-- wrapper { -->
+<div class="frame_b">
+	<div class="bg_top"></div>
+    
+    <!-- 内容 { -->
+    <div class="wrap pt50 pb50">
+    
+    	<div class="bc w500 pt50 pb50">
+            <present name="message">
+                <p class="f30 fb lh200 c3">:)</p>
+                <p class="f20 lh200 c6"><?php echo($message); ?></p>
+            <else/>
+                <p class="f30 fb lh200 c3">:(</p>
+                <p class="f20 lh200 c6"><?php echo($error); ?></p>
+            </present>
+            <p class="f14 lh200 c8 mt20">页面自动 
+                <a id="href" href="<?php echo($jumpUrl); ?>" class="unl c8"> 跳转</a> 
+                等待时间：<em class="fb" id="wait"><?php echo($waitSecond); ?></em></p>
+        </div>
+    
+    </div>
+    <!-- } 内容 -->
+    
+    <div class="bg_bottom"></div>
+</div>
+<!-- } wrapper -->
+<!-- 公用 footer { -->
+<div class="cl footer">
+	<div class="f_cont clearfix">
+        <div class="fr f_nav tr pt40">
+            <a href="javascript:;" class="f14 c8 pl20 pr20">用户协议</a>
+            <a href="javascript:;" class="f14 c8 pl20 pr20">加入我们</a>
+        </div>
+    </div>
+</div>
+<!-- } 公用 footer -->
+<script type="text/javascript">
+(function(){
+var wait = document.getElementById('wait'),href = document.getElementById('href').href;
+var interval = setInterval(function(){
+    var time = --wait.innerHTML;
+    if(time <= 0) {
+        location.href = href;
+        clearInterval(interval);
+    };
+}, 1000);
+})();
+</script>
+</body>
+
+</html>

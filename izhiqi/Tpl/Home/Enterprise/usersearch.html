@@ -1,0 +1,148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>搜索</title>
+<link href="__CSSURL__/base.css" rel="stylesheet" type="text/css" />
+<link href="__CSSURL__/common.css" rel="stylesheet" type="text/css" />
+<link href="__CSSURL__/company.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    
+<include file="Public:enterpriseheader"/>
+
+
+<!--  wrapper {  -->
+<div class="frame_s">
+	<div class="bg_top"></div>
+    <!--  title {  -->
+    <div class="title">
+    	<em class="c8 f14 ml30">搜索</em>
+    </div>
+    <!--  } title  -->
+    <form id="searchform" action="{:U('Enterprise/userSearchList')}" method="get">
+    <!--  内容 {  -->
+    <div class="wrap p30">
+    	
+        <ul class="reg_list">
+
+            <li class="clearfix">
+                <div class="fl input_bg1">
+                    <input type="text" class="text_bg1 cc" value="关键字" name="keyword" id="keyword" onblur="if (this.value==''){ this.value='关键字';this.style.color='#999';}else{this.style.color='';}" onfocus="if (this.value=='关键字') {this.value='';this.style.color='';}" title="关键字"/>
+                </div>
+            </li>
+
+<!--             <li class="clearfix">
+                <div class="fl input_bg1">
+                    <input type="text" class="text_bg1 cc" value="公司名称" />
+                </div>
+                <p class="fr more_info pt10">曾经服务的公司</p>
+            </li> -->
+            
+            <li class="clearfix">
+                <div class="fl input_bg1">
+                    <p class="f14">
+                        <div class="text_bg1">
+                            <em class="lh200 c9">学历</em>
+                            <!-- <input type="text" class="ml5 input_bg_bc" /> -->
+                            <select name="education" id="education" class="ml10 p5">
+                                <option value=0 >请选择</option>
+                                <foreach name="arrEducation" item="v" key="k">
+                                <option value="{$k}">{$v}</option>
+                                </foreach>
+                            </select>
+                            <!--<a href="javascript:;" class="ml20 pull_down">下拉</a>-->
+                        </div>
+                    </p>
+                </div>
+                <p class="fr more_info pt10"></p>
+            </li>
+            
+            <li class="clearfix">
+                <div class="fl input_bg2">
+                    <span class="text_bg2 c9">性别</span>
+                </div>
+                <div class="fl ml20 input_bg2">
+                    <div class="text_bg2 tc">
+                        <input type="radio"  name ="sex" value="1" /> 男
+                        <input type="radio"  name ="sex" value="2" /> 女
+                    </div>
+                </div>
+            </li>
+            
+            <li class="clearfix">
+                <div class="fl input_bg1">
+                    <input type="text" class="text_bg1 cc" value="年龄" name="age" id="age" onblur="if (this.value==''){ this.value='年龄';this.style.color='#999';}else{this.style.color='';}" onfocus="if (this.value=='年龄') {this.value='';this.style.color='';}" title="年龄"/>
+                </div>
+                <p class="fr more_info pt10"></p>
+            </li>
+            
+            <li class="clearfix">
+                <div class="fl input_bg1">
+                    <input type="text" class="text_bg1 cc" value="身高" name="height" id="height" onblur="if (this.value==''){ this.value='身高';this.style.color='#999';}else{this.style.color='';}" onfocus="if (this.value=='身高') {this.value='';this.style.color='';}" title="身高"/>
+                </div>
+                <p class="fr more_info pt10"></p>
+            </li>
+            
+<!--             <li class="clearfix">
+                <div class="input_bg2">
+                    <input type="text" class="text_bg2 cc" value="语言能力" />
+                </div>
+                
+                 一行 { 
+                <div class="cl fl mt10 input_bg2">
+                    <div class="text_bg2 tc">
+                    	<input type="checkbox" /> 英语
+                    </div>
+                </div>
+                <div class="fl mt10 ml20 input_bg2">
+                    <div class="text_bg2 tc">
+                    	<input type="checkbox" /> 德语
+                    </div>
+                </div>
+                <div class="fl mt10 ml20 input_bg2">
+                    <div class="text_bg2 tc">
+                    	<input type="checkbox" /> 法语
+                    </div>
+                </div>
+                 } 一行 
+                
+                 一行 { 
+                <div class="cl fl mt10 input_bg2">
+                    <div class="text_bg2 tc">
+                    	<input type="checkbox" /> 日语
+                    </div>
+                </div>
+                <div class="fl mt10 ml20 input_bg2">
+                    <div class="text_bg2 tc">
+                    	<input type="checkbox" /> 韩语
+                    </div>
+                </div>
+                <div class="fl mt10 ml20 input_bg2">
+                    <div class="text_bg2 tc">
+                    	<input type="checkbox" /> 其它
+                    </div>
+                </div>
+                 } 一行 
+                
+            </li> -->
+            
+        </ul>
+        
+    </div>
+    <!--  } 内容  -->
+    
+    <div class="bg_f pt20 pb10">
+    	<div class="bc btn4">
+        	<a href="javascript:$('#searchform').submit();" class="text_bg tc cf">搜索</a>
+        </div>
+    </div>    
+    <div class="bg_bottom"></div>
+</div>
+<!--  } wrapper  -->
+<form>
+
+<include file="Public:footer"/>
+
+</body>
+</html>

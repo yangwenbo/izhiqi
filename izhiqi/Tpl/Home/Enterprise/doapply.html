@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>主页</title>
+<link href="__CSSURL__/base.css" rel="stylesheet" type="text/css" />
+<link href="__CSSURL__/common.css" rel="stylesheet" type="text/css" />
+<link href="__CSSURL__/company.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<include file="Public:enterpriseheader"/>
+
+<form id="invite" method="post">
+<!-- wrapper { -->
+<div class="frame_s">
+	<div class="bg_top"></div>
+    <!-- title { -->
+    <div class="title">
+    	<em class="c8 f14 ml30">发出面试通知</em>
+    </div>
+    <!-- } title -->
+    
+    <!-- 内容 { -->
+    <div class="wrap p30">
+    	
+        <ul class="reg_list">
+        
+            <li class="clearfix">
+                <div class="fl input_bg1">
+                    <input type="text" class="text_bg1 cc" value="{$jobrelation.jname}" name="jname" id="jname" readonly title="此处不可修改"/>
+                    
+                </div>
+            </li>
+            
+            <li class="clearfix">
+                <div class="fl input_bg1">
+            <input type="text" class="text_bg1 cc" value="面试时间" name="interview_time" id="interview_time"  onblur="if (this.value==''){ this.value='面试时间';this.style.color='#999';}else{this.style.color='';}" onfocus="if (this.value=='面试时间') {this.value='';this.style.color='';}" title="面试时间" onClick="WdatePicker({startDate:'%y-%M-01 00:00:00',dateFmt:'yyyy-MM-dd HH:mm:ss',alwaysUseStartDate:true})"/>
+                </div>
+            </li>
+            
+            <li class="clearfix">
+                <div class="fl input_bg1">
+                <input type="text" class="text_bg1 cc" value="面试地址" name="interview_address" id="interview_address" onblur="if (this.value==''){ this.value='面试地址';this.style.color='#999';}else{this.style.color='';}" onfocus="if (this.value=='面试地址') {this.value='';this.style.color='';}" title="面试地址"/>
+                </div>
+            </li>
+            
+        </ul>
+        
+    </div>
+    <!-- } 内容 -->
+    
+    <div class="bg_f pt20 pb10">
+    	<div class="bc btn4">
+            <input type="hidden" name="id" id="id" value="{$jobrelation.id}"/>
+        	<a href="javascript:$('#invite').submit()" class="text_bg tc cf">发送</a>
+        </div>
+    </div>    
+    <div class="bg_bottom"></div>
+</div>
+<!-- } wrapper -->
+</form>
+
+<include file="Public:footer"/>
+<script src="__JSURL__/My97DatePicker/WdatePicker.js"></script>
+</body>
+</html>

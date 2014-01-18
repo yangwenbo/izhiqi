@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>爱职网</title>
+<link href="__CSSURL__/base.css" rel="stylesheet" type="text/css" />
+<link href="__CSSURL__/common.css" rel="stylesheet" type="text/css" />
+<link href="__CSSURL__/home.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="__JSURL__/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="__JSURL__/application.js"></script>
+<script type="text/javascript" src="__JSURL__/jquery.backgroundSize.js"></script>
+</head>
+<body>
+<!--  header {  -->
+<div class="header">
+	<div class="header_wrap clearfix pr">
+    	<h1 class="fl logo mt30">
+        	<a href="javascript:;">LOGO</a>
+        </h1>
+        
+        <ul class="fr nav mt30 f14 fb tc">
+        	<li><a href="javascript:;">企业介绍</a></li>
+            <li><a href="javascript:;">联系我们</a></li>
+            <li><a href="javascript:;" onclick="$('.topLogin').toggle();">登录</a></li>
+        </ul>
+
+        <ul class="cl pa topLogin" style="display:none">
+            <li><a href="{:U('Login/userLogin')}">用户登录</a></li>
+            <li><a href="{:U('Login/enterpriseLogin')}">企业登录</a></li>
+        </ul>
+    </div>
+</div>
+<!--  } header  -->
+
+
+<!--  banner {  -->
+<div class="slide" id="hero">
+    <!--  btn control {  -->
+    <div class="prev">
+        <div>
+        <a class="slide-prev" href="javascript:;"><i></i></a>
+        </div>
+        </div>
+        <div class="next">
+        <div>
+        <a class="slide-next" href="javascript:;"><i></i></a>
+        </div>
+    </div>
+    <!--  } btn control  -->
+    
+    <!--  slide {  -->
+    <div class="slide-pager">
+        <ul class="mt10">
+            <li class="sl-page"><a href="javascript:;"><i></i></a></li>
+            <li class="sl-page current"><a href="javascript:;"><i></i></a></li>
+            <li class="sl-page"><a href="javascript:;"><i></i></a></li>
+        </ul>
+    </div>
+    <!-- } slide -->
+    
+    <div class="slide-content" timer="7000">
+        <!-- item { -->
+        <div class="slide-item">
+            <div class="slide-image">
+                <b style="background-image: url(__IMGURL__/hero-1.jpg); background-size: cover;" class="sl-img current first"></b>
+            </div>
+            <div class="slide-info">
+                <div class="sl-info current first">
+                    <h2>今天想去「爱职」?</h2>
+                    <p>高质量的非社交类 IT 圈招聘平台<br>专注服务于科技互联网界的人才与企业</p>
+                </div>
+            </div>
+        </div>
+        <!-- } item -->
+        <!-- item { -->
+        <div class="slide-item visible">
+            <div class="slide-image">
+                <b style="background-image: url(__IMGURL__/hero-2.jpg); background-size: cover;" class="sl-img current first"></b>
+            </div>
+            <div class="slide-info">
+                <div class="sl-info current first">
+                    <h2>给自己一个惊喜，给企业一个惊喜</h2>
+                    <p>精准的人工智能算法将求职者与招聘企业进行自动引荐匹配<br>以高效率和最节省成本的方式使得 IT 工作供需得到迅速而最佳的解决</p>
+                </div>
+            </div>
+        </div>
+        <!-- } item -->
+        <!-- item { -->
+        <div class="slide-item">
+            <div class="slide-image">
+            	<b style="background-image: url(__IMGURL__/hero-3.jpg); background-size: cover;" class="sl-img current first"></b>
+            </div>
+            <div class="slide-info">
+                <div class="sl-info current first">
+                    <h2>简洁并不简单</h2>
+                    <p>仅需轻松几步注册，便可获得最佳的使用体验。严格的人工智能算法将<br>为你省去后顾之忧，让现任公司同事与老板不会发现你正在寻找新工作</p>
+                </div>
+            </div>
+        </div>
+        <!-- } item -->
+    </div>
+</div>
+<!-- } banner -->
+
+
+<!-- wrapper { -->
+    <div class="wrapper clearfix">
+        <!-- 找工作 { -->
+        <div class="wrapper_left">
+            <b class="w_bg1"></b>
+            <div class="w_b tc pt20">
+                <b class="icon1"></b>
+                <h2 class="p10 f25 fb c8">找工作</h2>
+                <p class="f14 c8 lh200">仅需轻松几步注册</p>
+                <p class="f14 c8 lh200">自动生成卓越简历</p>
+                <p class="f14 c8 lh200">找到最适合你的工作</p>
+                <a href="{:U('Login/userRegister')}" class="mt10 pb20 wrap_btn1 f18 cf">立即注册</a>
+            </div>
+            <b class="w_bg2"></b>
+        </div>
+        <!-- } 找工作 -->
+        
+        <!-- 找人才 { -->
+        <div class="wrapper_right">
+            <b class="w_bg1"></b>
+            <div class="w_b tc pt20">
+                <b class="icon2"></b>
+                <h2 class="p10 f25 fb c8">找人才</h2>
+                <p class="f14 c8 lh200">岗位需求简单发布</p>
+                <p class="f14 c8 lh200">人工智能精准匹配</p>
+                <p class="f14 c8 lh200">快速推荐优秀IT人才</p>
+                <a href="{:U('Login/enterpriseRegister')}" class="mt10 pb20 wrap_btn2 f18 cf">立即注册</a>
+            </div>
+            <b class="w_bg2"></b>
+        </div>
+        <!-- } 找人才 -->
+    </div>
+    
+    <!-- 招聘信息 { -->
+    <div class="partner_cont mt50">
+        <h2 class="tit tc f20 pt25 c8">更真实，更丰富的<em class="mc">招聘信息</em></h2>
+        <p class="cont pt20 pb20"></p>
+    </div>
+    <!-- } 招聘信息 -->
+    
+    <!-- 人才信息 { -->
+    <div class="talents_cont clearfix">
+        <h2 class="tit tc f20 pt25 c8">更真实，更有效的<em class="mc">人才信息</em></h2>
+        <p class="cont pt20 pb20 tc clearfix">
+            <a href="javascript:;" class="f20 c8 ml20 mr20">上海大学-土木工程科，03届毕业生</a>
+            <a href="javascript:;" class="f20 c8 ml20 mr20">上大，03届毕业生</a>
+            <a href="javascript:;" class="f20 c8 ml20 mr20">华东师范大学-土木工程科，03届毕业生</a>
+            <a href="javascript:;" class="f20 c8 ml20 mr20">上海大学-土木工程科，03届毕业生</a>
+            <a href="javascript:;" class="f20 c8 ml20 mr20">上海大学-土木工程科，03届毕业生</a>
+        </p>
+    </div>
+    <!-- } 人才信息 -->
+
+<!-- } wrapper -->
+
+
+<!-- footer { -->
+<div class="cl footer">
+	<div class="f_cont clearfix">
+        <div class="fr f_nav tr pt40">
+            <a href="javascript:;" class="f14 c8 pl20 pr20">用户协议</a>
+            <a href="javascript:;" class="f14 c8 pl20 pr20">加入我们</a>
+        </div>
+    </div>
+</div>
+<!-- } footer -->
+</body>
+</html>

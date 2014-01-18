@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>我收到的简历</title>
+<link href="__CSSURL__/base.css" rel="stylesheet" type="text/css" />
+<link href="__CSSURL__/common.css" rel="stylesheet" type="text/css" />
+<link href="__CSSURL__/company.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+<include file="Public:enterpriseheader"/>
+
+
+<!-- wrapper { -->
+<div class="frame_b">
+	<div class="bg_top"></div>
+    
+    <!-- 内容 { -->
+    <div class="wrap p30">
+
+
+		
+        <h2 class="f16 c6 lh200">搜索结果</h2>
+        
+		
+        <div class="my_list_tab clearfix cf f14">
+        	<p class="fl My_w1 pl10">姓名</p>
+            <p class="fl My_w2">学历</p>
+            <p class="fl My_w3">年龄</p>
+        </div>
+        
+        <ul class="my_list">
+            <volist name="result.list" id="vo" empty="暂无搜索到您需要的数据，请重新搜索条件。">
+           <li class="clearfix">
+            	<p class="fl My_w1 pl10"><a href="{:U('Enterprise/userInfo')}?uid={$vo.uid}" class="tit" target="_blank">{$vo.realname}</a></p>
+                <p class="fl My_w2">{$vo.education}</p>
+                <p class="fl My_w3">{$vo.age}</p>
+            </li>
+                </volist>
+        </ul>
+        
+
+
+
+		
+        
+ <!-- 分页 -->
+        <div class="cl list_page f14 mt30">
+            {$page}
+        </div>
+ <!-- 分页 -->
+ 
+    </div>
+    <!-- } 内容 -->
+    
+    <div class="bg_bottom"></div>
+</div>
+<!-- } wrapper -->
+
+<include file="Public:footer"/>
+</body>
+</html>

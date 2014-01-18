@@ -1,0 +1,16 @@
+<!-- 公用 personal header { -->
+<div class="header">
+    <div class="header_wrap clearfix">
+        <h1 class="fl logo mt30">
+            <a href="../index.html">LOGO</a>
+        </h1>
+        
+        <ul class="fr nav mt30 f14 fb tc">
+            <li><a href="{:U('Enterprise/userSearch')}" <if condition="$tab eq 'search'">class="on"</if> >简历</a></li>
+            <li><a href="{:U('Enterprise/enterpriseinfo')}" <if condition="$tab eq 'info'">class="on"</if>>主页</a></li>
+            <li><a href="###" <if condition="$tab eq 'usercenter'">class="on"</if>>帐号</a></li>
+            <li><a href="{:U('Enterprise/setting')}" <if condition="$tab eq 'setting'">class="on"</if>>个人设置</a></li>
+        </ul>
+    </div>
+</div>
+<!-- } 公用 personal header -->

@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>主页</title>
+<link href="__CSSURL__/base.css" rel="stylesheet" type="text/css" />
+<link href="__CSSURL__/common.css" rel="stylesheet" type="text/css" />
+<link href="__CSSURL__/company.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    
+<include file="Public:enterpriseheader"/>
+
+<form id="invite" method="post">
+<!-- wrapper { -->
+<div class="frame_s">
+	<div class="bg_top"></div>
+    <!-- title { -->
+    <div class="title">
+    	<em class="c8 f14 ml30">发出邀请</em>
+    </div>
+    <!-- } title -->
+    
+    <!-- 内容 { -->
+    <div class="wrap p30">
+    	
+        <ul class="reg_list">
+        
+            <li class="clearfix">
+                <div class="fl input_bg1">
+                    <div class="text_bg1">
+                        <!-- <input type="text" class="text_bg1 cc" value="职位介绍" name="jobname" id="jobname" /> -->
+                        <select name="jobid" id="jobid" class="mt10 p5" datatype="/[1-9]+/" errormsg="请选择职位">
+                        <if condition="$arrjob eq null">
+                           <option value="0">暂无可邀请的职位</option>
+                        <else/>
+                           <option value="0">请选择职位</option>
+                           <volist name="arrjob" id="vo">
+                            <option value="{$vo.id}">{$vo.jname}</option>
+                           </volist>
+                        </if>
+                        </select>
+                    </div>    
+                </div>
+                <p class="fr more_info pt10"><a href="{:U('Enterprise/enterpriseinfo')}#addjob" class="c8" target="_blank">添加职位</a></p>
+            </li>
+            
+            <li class="clearfix">
+                <div class="fl input_bg1">
+            <input type="text" class="text_bg1 cc" value="面试时间" name="interview_time"   onfocus="if (this.value=='面试时间') {this.value='';this.style.color='';}" onClick="WdatePicker({startDate:'%y-%M-01 00:00:00',dateFmt:'yyyy-MM-dd HH:mm:ss',alwaysUseStartDate:true})"  />
+                </div>
+            </li>
+            
+            <li class="clearfix">
+                <div class="fl input_bg1">
+                <input type="text" class="text_bg1 cc" value="面试地址" name="interview_address"  onfocus="if (this.value=='面试地址') {this.value='';this.style.color='';}" datatype="s1-100" nullmsg="请输入面试地址" errormsg="输入面试地址的长度必须在1-100之间"/>
+                </div>
+            </li>
+            
+        </ul>
+        
+    </div>
+    <!-- } 内容 -->
+    
+    <div class="bg_f pt20 pb10">
+    	<div class="bc btn4">
+            <input type="hidden" name="uid" id="uid" value="{$uid}"/>
+        	<a href="javascript:" id="btnInvite" class="text_bg tc cf">发送</a>
+        </div>
+    </div>    
+    <div class="bg_bottom"></div>
+</div>
+<!-- } wrapper -->
+</form>
+
+<include file="Public:footer"/>
+<script src="__JSURL__/My97DatePicker/WdatePicker.js"></script>
+<script src="__JSURL__/Validform_v5.3.2.js" type="text/javascript" charset="UTF-8"></script>
+<script>
+$(function(){
+   var vf=$("#invite").Validform({
+        btnSubmit:"#btnInvite", 
+        tiptype:3, 
+        label:".label",
+        showAllError:true,
+        datatype:{
+            "zh1-6":/^[\u4E00-\u9FA5\uf900-\ufa2d]{1,6}$/
+        }
+    }); 
+});
+</script>
+</body>
+</html>
