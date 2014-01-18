@@ -962,3 +962,98 @@ INFO: [ route_check ] --START--
 INFO: CheckRoute Behavior ::run [ RunTime:0.000498s ]
 INFO: [ route_check ] --END-- [ RunTime:0.000581s ]
 
+[ 2014-01-18T13:22:46+08:00 ] 127.0.0.1 /izhiqi/index.php/login/adduserinfo.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000539s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000630s ]
+
+[ 2014-01-18T13:22:46+08:00 ] 127.0.0.1 /izhiqi/index.php/login/userLogin.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000486s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000567s ]
+
+[ 2014-01-18T13:25:29+08:00 ] 127.0.0.1 /izhiqi/index.php/login/userLogin.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000624s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000742s ]
+
+[ 2014-01-18T13:25:29+08:00 ] 127.0.0.1 /izhiqi/index.php/search/job.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000552s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000639s ]
+
+[ 2014-01-18T13:25:31+08:00 ] 127.0.0.1 /izhiqi/index.php/search/job.html?id=5
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000556s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000654s ]
+
+[ 2014-01-18T13:25:33+08:00 ] 127.0.0.1 /izhiqi/index.php/search/job.html?id=8
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000512s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000599s ]
+
+[ 2014-01-18T13:25:34+08:00 ] 127.0.0.1 /izhiqi/index.php/search/job.html?id=20
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000513s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000603s ]
+
+[ 2014-01-18T13:25:35+08:00 ] 127.0.0.1 /izhiqi/index.php/search/job.html?id=8
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000515s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000605s ]
+
+[ 2014-01-18T13:25:37+08:00 ] 127.0.0.1 /izhiqi/index.php/search/job.html?id=5
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000633s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000738s ]
+
+[ 2014-01-18T13:25:38+08:00 ] 127.0.0.1 /izhiqi/index.php/search/job.html?id=1
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000538s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000631s ]
+
+[ 2014-01-18T13:34:22+08:00 ] 127.0.0.1 /izhiqi/index.php/user/invitedList.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000673s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000803s ]
+
+[ 2014-01-18T13:34:24+08:00 ] 127.0.0.1 /izhiqi/index.php/user/setting.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000509s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000599s ]
+
+[ 2014-01-18T13:34:33+08:00 ] 127.0.0.1 /izhiqi/index.php/user/setting.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000531s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000629s ]
+
+[ 2014-01-18T13:34:39+08:00 ] 127.0.0.1 /izhiqi/index.php/user/userinfo.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000519s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000617s ]
+
+[ 2014-01-18T13:34:42+08:00 ] 127.0.0.1 /izhiqi/index.php/search/job.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000564s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000668s ]
+
+[ 2014-01-18T13:34:47+08:00 ] 127.0.0.1 /izhiqi/index.php/user/setting.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000517s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000607s ]
+
+[ 2014-01-18T13:52:27+08:00 ] 127.0.0.1 /izhiqi/index.php/search/job.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000589s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000828s ]
+
+[ 2014-01-18T13:52:32+08:00 ] 127.0.0.1 /izhiqi/index.php/search/job.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000730s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000824s ]
+
+[ 2014-01-18T13:52:35+08:00 ] 127.0.0.1 /izhiqi/index.php/
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000607s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000711s ]
+
