@@ -12,7 +12,7 @@
 <include file="Public:userheader" />
 <!-- } 公用 personal header -->
 
-<form id='loginform' method="POST">
+<form method="POST">
 <!-- wrapper { -->
 <div class="frame_s">
 	<div class="bg_top"></div>
@@ -30,7 +30,7 @@
             <li class="clearfix">
                 <p class="ml40 fl w100 pt10 f14 c8">邮箱地址</p>
                 <div class="fl input_bg1">
-                    <input type="text" class="text_bg1" value="" name="email" id="email" />
+                    <input type="text" class="text_bg1" value=$_POST['email'] name="email" id="email" />
                 </div>
             </li>
             
