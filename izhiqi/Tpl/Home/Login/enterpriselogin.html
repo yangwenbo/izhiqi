@@ -41,14 +41,14 @@
             <li class="clearfix">
                 <p class="ml40 fl w100 pt10 f14 c8">邮箱地址</p>
                 <div class="fl input_bg1">
-                    <input type="text" class="text_bg1" value="" name="email" id="email"/>
+                    <input type="text" class="text_bg1" value="" name="email" id="email" datatype="e" nullmsg="邮箱不能为空" errormsg="邮箱格式不正确"/>
                 </div>
             </li>
             
             <li class="clearfix">
                 <p class="ml40 fl w100 pt10 f14 c8">密码</p>
                 <div class="fl input_bg1">
-                    <input type="password" class="text_bg1" value="" name="password" id="password"/>
+                    <input type="password" class="text_bg1" value="" name="password" id="password" datatype="*" nullmsg="密码不能为空"/>
                 </div>
             </li>
             
@@ -59,7 +59,7 @@
     </form>
     <div class="bg_f pt20 pb10 pr">
     	<div class="bc btn4">
-        	<a href="javascript:$('#loginform').submit()" class="text_bg tc cf">登录</a>
+        	<input type="submit" value="登录" id = "btnLogin" class="text_bg tc cf"/>
         </div>
         
         <!--<a href="javascript:;" class="f12 c8 unl pa forgot_pwd">忘记密码</a>-->
@@ -70,5 +70,14 @@
 
 
 <include file="Public:footer"/>
+<script src="__JSURL__/Validform_v5.3.2.js" type="text/javascript" charset="UTF-8"></script>
+<script type="text/javascript">
+$(function(){
+    var vf=$("#loginform").Validform({
+        tiptype:3, 
+        showAllError:true,
+    });
+});
+</script>
 </body>
 </html>

@@ -12,7 +12,7 @@
 <include file="Public:userheader" />
 <!-- } 公用 personal header -->
 
-<form method="POST">
+<form id='login' method="post">
 <!-- wrapper { -->
 <div class="frame_s">
 	<div class="bg_top"></div>
@@ -22,54 +22,45 @@
     </div>
     <!-- } title -->
     
-    <!-- 内容 { -->
-    <div class="wrap p30">
-    	
+	<!-- 内容 { -->
+	<div class="wrap p30">
         <ul class="reg_list">
-        
             <li class="clearfix">
                 <p class="ml40 fl w100 pt10 f14 c8">邮箱地址</p>
                 <div class="fl input_bg1">
-                    <input type="text" class="text_bg1" value="" name="email" id="email" />
+                    <input tip="邮箱" type="text" class="text_bg1" value="" name="email" id="email" datatype="e" nullmsg="邮箱不能为空" errormsg="邮箱格式不正确"/>
                 </div>
             </li>
-            
             <li class="clearfix">
                 <p class="ml40 fl w100 pt10 f14 c8">密码</p>
                 <div class="fl input_bg1">
-                    <input type="password" class="text_bg1" value="" name="password" id="password"/>
+                    <input type="password" class="text_bg1" value="" name="password" id="password" datatype="*" nullmsg="密码不能为空"/>
                 </div>
             </li>
-            
         </ul>
-        
     </div>
     <!-- } 内容 -->
-    
     <div class="bg_f pt20 pb10 pr">
     	<div class="bc btn2">
-        	<!--<a href="javascript:jQuery('#loginform').submit()" class="text_bg tc cf">登录</a>-->
-                <input type="submit" value="登录"  class="text_bg tc cf"/>
+		<input type="submit" value="登录" id = "btnLogin" class="text_bg tc cf"/>
         </div>
-        
-        <!--<a href="javascript:;" class="f12 c8 unl pa forgot_pwd">忘记密码</a>-->
     </div>  
-    
     <div class="bg_bottom"></div>
 </div>
 <!-- } wrapper -->
 </form>
 
-<!-- 公用 footer { -->
-<div class="cl footer">
-	<div class="f_cont clearfix">
-        <div class="fr f_nav tr pt40">
-            <a href="javascript:;" class="f14 c8 pl20 pr20">用户协议</a>
-            <a href="javascript:;" class="f14 c8 pl20 pr20">加入我们</a>
-        </div>
-    </div>
-</div>
-<!-- } 公用 footer -->
-<script src="__JSURL__/jquery-1.8.2.min.js"></script>
+<include file="Public:footer" />
+<script src="__JSURL__/Validform_v5.3.2.js" type="text/javascript" charset="UTF-8"></script>
+
+<script type="text/javascript">
+$(function(){
+    var vf=$("#login").Validform({
+        tiptype:3, 
+        showAllError:true,
+    });
+});
+</script>
+
 </body>
 </html>

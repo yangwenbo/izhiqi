@@ -81,22 +81,18 @@
 </div>
 <!-- } wrapper -->
 
-
 <!-- 公用 footer { -->
 <include file="Public:footer"/>
 <!-- } 公用 footer -->
 <script src="__JSURL__/Validform_v5.3.2.js" type="text/javascript" charset="UTF-8"></script>
-
-
 <script>
 var sendVerifycodeUrl="{:U('Verifyemail/sendEmail')}";
 $(function(){
     var vf=$("#register").Validform({
-		btnSubmit:"#btnRegister", 
+	btnSubmit:"#btnRegister", 
         tiptype:3, 
-        label:".label",
         showAllError:true,
-        datatype:{
+	datatype:{
             "zh1-6":/^[\u4E00-\u9FA5\uf900-\ufa2d]{1,6}$/
         }
     });

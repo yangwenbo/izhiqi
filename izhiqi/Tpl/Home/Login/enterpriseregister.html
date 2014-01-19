@@ -29,14 +29,14 @@
         
             <li class="clearfix">
                 <div class="fl input_bg1">
-                    <input tip='联系人姓名' type="text" class="text_bg1 cc" value="联系人姓名" name='linkman'   datatype="s2-20" nullmsg="请输入联系人" errormsg="请输入2-20字的联系人姓名"/>
+                    <input tip='联系人姓名' type="text" class="text_bg1 cc" value="联系人姓名" name='linkman'   datatype="zh2-4" nullmsg="请输入联系人" errormsg="请输入2-4字的联系人姓名"/>
                 </div>
                 <p class="fr more_info">必填联系人是你的公司负责在「职启」招聘的人</p>
             </li>
             
             <li class="clearfix">
                 <div class="fl input_bg1">
-                    <input tip='公司名称' type="text" class="text_bg1 cc" value="公司名称" name='companyname' datatype="s2-20" nullmsg="请输入公司名称" errormsg="请输入2-50字的公司名称"/>
+                    <input tip='公司名称' type="text" class="text_bg1 cc" value="公司名称" name='companyname' datatype="zh2-20" nullmsg="请输入公司名称" errormsg="请输入2-20字的公司名称"/>
                 </div>
                 <p class="fr more_info">必填公司简称</p>
             </li>
@@ -89,17 +89,14 @@
 <!-- } 公用 footer -->
 <script src="__JSURL__/Validform_v5.3.2.js" type="text/javascript" charset="UTF-8"></script>
 
-
 <script>
-var sendVerifycodeUrl="{:U('Verifyemail/sendEmail')}";
 $(function(){
     var vf=$("#register").Validform({
         btnSubmit:"#btnRegister", 
         tiptype:3, 
-        label:".label",
         showAllError:true,
-        datatype:{
-            "zh1-6":/^[\u4E00-\u9FA5\uf900-\ufa2d]{1,6}$/
+		datatype:{
+            "zh1-24":/^[\u4E00-\u9FA5\uf900-\ufa2d]{1,24}$/
         }
     });
 });
