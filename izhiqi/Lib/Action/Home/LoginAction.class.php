@@ -196,7 +196,7 @@ class LoginAction extends Action {
      */
     public function userLogout() {
         Loginhelp::userLogout();
-        if (Loginhelp::isUserLogin()) {
+        if (!Loginhelp::isUserLogin()) {
             $this->redirect('/');
         }
         $this->error('登出异常');
