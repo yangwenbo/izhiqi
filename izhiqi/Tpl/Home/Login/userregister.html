@@ -37,7 +37,7 @@
             
             <li class="clearfix">
                 <div class="fl input_bg1">
-					<input type="text" class="text_bg1 c6" tip="电子邮箱" value="电子邮箱" name="email" id="email" datatype="e" nullmsg="请输入您的邮箱" errormsg="您输入的邮箱格式不正确，请重新输入" ajaxurl="{:U('Check/email')}"/>
+					<input type="text" class="text_bg1 c6" tip="电子邮箱" value="电子邮箱" name="email" id="email" datatype="e" nullmsg="请输入您的邮箱" errormsg="您输入的邮箱格式不正确，请重新输入" ajaxurl="{:U('Check/userEmail')}"/>
                 </div>
                 <p class="fr more_info">请正确填写邮箱，用于密码找回！</p>
             </li>
@@ -92,7 +92,7 @@
 var sendVerifycodeUrl="{:U('Verifyemail/sendEmail')}";
 $(function(){
     var vf=$("#register").Validform({
-        btnSubmit:"#btnRegister", 
+		btnSubmit:"#btnRegister", 
         tiptype:3, 
         label:".label",
         showAllError:true,

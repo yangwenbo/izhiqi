@@ -188,7 +188,7 @@
 		tipSweep:false,
 		showAllError:false,
 		postonce:false,
-		ajaxPost:false
+		ajaxPost:false,
 	}
 	
 	Validform.util={
