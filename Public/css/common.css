@@ -35,7 +35,7 @@ body{background:url(../images/bg.jpg) repeat-y center top #BAE4FF;font-family:ya
 	.frame_s .title .mc{color:#86CEFF}
 	.frame_s .title .mc_c{color:#FC8A4C}
 	/*wrap*/
-	.frame_s .wrap{background:#EDEEF2;}
+	.frame_s .wrap{min-height:300px; background:#EDEEF2;}
 /*frame_b*/
 .frame_b{margin:50px auto;width:1000px;}
 	/*bg*/
@@ -122,3 +122,6 @@ body{background:url(../images/bg.jpg) repeat-y center top #BAE4FF;font-family:ya
 .Validform_checktip{padding-left:10px;font-size:12px;line-height:30px;}
 .Validform_wrong{color:#FF0000}
 .Validform_right{color:#6FB737;}
+
+/*a hover*/
+.a_hover:hover{color: #86ceff;}

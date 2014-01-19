@@ -8,4 +8,8 @@ class IndexAction extends Action {
     public function useragreement(){
         $this->display();
     }
+
+    public function joinus(){
+        $this->display();
+    }
 }
