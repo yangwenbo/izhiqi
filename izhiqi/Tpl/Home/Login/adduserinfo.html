@@ -30,16 +30,16 @@
         
             <li class="clearfix">
             	<div class="fl photo p5">
-                	<img src="__IMGURL__/empty_avatar.png" width="120" height="120" border="0" />
+                	<img src="__IMGURL__/empty_avatar.png" width="120" height="120" border="0" id="pre_user_avatar"/>
                 </div>
                 <div class="fl ml30">
                 	<p class="f14 c8 pt40 pb20">照片</p>
                     <div class="btn1 pr">
                         <a href="javascript:;" class="text_bg tc cf">上传照片</a>
-                	    <input type="file" name="avartar" alt="上传照片" class="pa" style="top:0;left:0;width:130px;height:45px;filter:alpha(opacity:0);opacity:0;cursor:pointer" onchange="$(this).parent().parent().parent().find('.more_info').html($(this).val());" />
+                        <input id='upload_avatar_btn' type="file" name="avartar" alt="上传照片" class="pa" style="top:0;left:0;width:130px;height:45px;filter:alpha(opacity:0);opacity:0;cursor:pointer" onchange="preImg(this.id, 'pre_user_avatar');" />
                     </div>
                 </div>
-                <p class="fr more_info pt90">提示：上传文件</p>
+                <!--p class="fr more_info pt90">提示：上传文件</p-->
             </li>
             
             <li class="clearfix">
@@ -123,5 +123,21 @@ $(function(){
         }
     });
 });
+
+function preImg(sourceId, targetId) {
+    var url;
+    if (navigator.userAgent.indexOf("MSIE")>=1) { // IE
+        url = document.getElementById(sourceId).value;
+    }
+    else if(navigator.userAgent.indexOf("Firefox")>0) { // Firefox
+        url = window.URL.createObjectURL(document.getElementById(sourceId).files.item(0));
+    }
+    else if(navigator.userAgent.indexOf("Chrome")>0) { // Chrome
+        url = window.URL.createObjectURL(document.getElementById(sourceId).files.item(0));
+    }
+    //alert(url);
+    var imgPre = document.getElementById(targetId);
+    imgPre.src = url;
+}
 </script>
 </html>

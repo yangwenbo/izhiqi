@@ -31,7 +31,8 @@ return array(
     'TMPL_ACTION_ERROR' => './izhiqi/Tpl/Home/Public/error.html',
     'IP_DATAS_PATH' => WEBSITE.'Pulbic/tinyipdata.dat',
     'UPLOAD' => 'Upload/',
-    'UPLOAD_AVARTAR' => 'Upload/avartar',
+    'UPLOAD_AVARTAR' => 'Upload/avatar',
+    'AVATAR_THUMB_PREFIX' => 'm_',
     'UPLOAD_LOGO' => 'Upload/logo',
     'UPLOAD_CERTIFICATE' => 'Upload/certificate',
     'TMPL_PARSE_STRING' => array(

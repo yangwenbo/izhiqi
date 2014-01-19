@@ -120,7 +120,7 @@ class LoginAction extends Action {
             if ($_FILES['avartar']['error'] == 0) {
                 $arrAvartar = Uploadhelp::uploadAvartar($_FILES['avartar']);
                 if ($arrAvartar['code'] == 100) {
-                    $avartar = $arrAvartar['info']['savepath']  . $arrAvartar['info']['savename'];
+                    $avartar = $arrAvartar['info']['savepath']  . C('AVATAR_THUMB_PREFIX') . $arrAvartar['info']['savename'];
                 } else {
                     $this->error($arrAvartar['info']);
                 }

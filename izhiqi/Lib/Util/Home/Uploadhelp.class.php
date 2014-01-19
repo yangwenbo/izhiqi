@@ -15,13 +15,25 @@ class Uploadhelp
         import('ORG.Net.UploadFile');
    
         $upload = new UploadFile(); // 实例化上传类
-        
+
+         //设置上传文件类型
+        $upload->allowExts = explode(',', 'jpg,gif,png,jpeg');
+         //设置附件上传目录
+         //设置需要生成缩略图，仅对图像文件有效
+        $upload->thumb = true;
+         // 设置引用图片类库包路径
+        //$upload->imageClassPath = '@.ORG.Image';
+        $upload->thumbPrefix = C('AVATAR_THUMB_PREFIX');
+         //设置缩略图最大宽度
+        $upload->thumbMaxWidth = '130';
+         //设置缩略图最大高度
+        $upload->thumbMaxHeight = '130';
+         //设置上传文件规则
+        $upload->saveRule = 'uniqid';
+         //删除原图
+        $upload->thumbRemoveOrigin = true;
+
         $upload->maxSize = $maxSize; // 设置附件上传大小
-        
-        $upload->allowExts = array(
-                'jpg',
-                'jpeg'
-        ); // 设置附件上传类型
         
         $dirname = (string) date('Y-m-d') . '/';
         
@@ -59,7 +71,7 @@ class Uploadhelp
     {
         
         $savepath=C('UPLOAD_AVARTAR');
-        $maxSize=46080;
+        $maxSize=2246080;
         return Uploadhelp::upload($files, $savepath,$maxSize);
     
     }
