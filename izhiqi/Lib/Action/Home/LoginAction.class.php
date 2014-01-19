@@ -13,6 +13,7 @@ class LoginAction extends Action {
             $password = $this->_param('password');
             $repassword = $this->_param('repassword');
             $referer_uid = $this->_param('referer_uid') ? $this->_param('referer_uid') : 0;
+            /*
             if (empty($realname) || $realname == '真实姓名') {
                 $this->error('请输入真实姓名！');
             }
@@ -37,6 +38,7 @@ class LoginAction extends Action {
             if (Userhelp::getUserloginByEmail($email)) {
                 $this->error('该邮箱已存在，请选择其他邮箱');
             }
+             */
             $time = date('Y-m-d H:i:s');
             $data = array(
                 'email' => $email,
