@@ -10,7 +10,7 @@ class Uploadhelp
      * @param unknown $savepah
      * @return unknown
      */
-    static function upload ($files, $savepah,$maxSize)
+    static function upload ($files, $savepah, $maxSize, $bRemoveOrigin)
     {
         import('ORG.Net.UploadFile');
    
@@ -31,7 +31,7 @@ class Uploadhelp
          //设置上传文件规则
         $upload->saveRule = 'uniqid';
          //删除原图
-        $upload->thumbRemoveOrigin = true;
+        $upload->thumbRemoveOrigin = $bRemoveOrigin;
 
         $upload->maxSize = $maxSize; // 设置附件上传大小
         
@@ -72,7 +72,7 @@ class Uploadhelp
         
         $savepath=C('UPLOAD_AVARTAR');
         $maxSize=4000000;
-        return Uploadhelp::upload($files, $savepath,$maxSize);
+        return Uploadhelp::upload($files, $savepath, $maxSize, true);
     
     }
     /**
@@ -84,7 +84,7 @@ class Uploadhelp
 
         $savepath=C('UPLOAD_CERTIFICATE');
         $maxSize=4000000;
-        return Uploadhelp::upload($files, $savepath,$maxSize);
+        return Uploadhelp::upload($files, $savepath,$maxSize, false);
     
     }
     /**
@@ -96,7 +96,7 @@ class Uploadhelp
 
         $savepath=C('UPLOAD_LOGO');
         $maxSize=4000000;
-        return Uploadhelp::upload($files, $savepath,$maxSize);
+        return Uploadhelp::upload($files, $savepath,$maxSize, false);
     
     }
 }
