@@ -71,7 +71,7 @@ class Uploadhelp
     {
         
         $savepath=C('UPLOAD_AVARTAR');
-        $maxSize=2246080;
+        $maxSize=4000000;
         return Uploadhelp::upload($files, $savepath,$maxSize);
     
     }
@@ -83,7 +83,7 @@ class Uploadhelp
     {
 
         $savepath=C('UPLOAD_CERTIFICATE');
-        $maxSize=300000;
+        $maxSize=4000000;
         return Uploadhelp::upload($files, $savepath,$maxSize);
     
     }
@@ -95,7 +95,7 @@ class Uploadhelp
     {
 
         $savepath=C('UPLOAD_LOGO');
-        $maxSize=46080;
+        $maxSize=4000000;
         return Uploadhelp::upload($files, $savepath,$maxSize);
     
     }

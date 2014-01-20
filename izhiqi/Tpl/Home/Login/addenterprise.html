@@ -29,16 +29,16 @@
         
             <li class="clearfix">
             	<div class="fl photo p5">
-                	<img src="../images/hero-2.jpg" width="120" height="120" border="0" />
+                	<img src="__IMGURL__/empty_avatar.png" width="120" height="120" border="0" class="ava-up-pre"/>
                 </div>
                 <div class="fl ml30">
                 	<p class="f14 c8 pt40 pb20">照片</p>
                     <div class="btn3 pr">
                 	    <a class="text_bg tc cf" href="javascript:;">上传照片</a>
-                        <input type="file" name="logo" alt="上传照片" class="pa" style="top:0;left:0;width:130px;height:45px;filter:alpha(opacity:0);opacity:0;cursor:pointer" onchange="$(this).parent().parent().parent().find('.more_info').html($(this).val());" />
+                        <input type="file" name="logo" alt="上传照片" class="pa" style="top:0;left:0;width:130px;height:45px;filter:alpha(opacity:0);opacity:0;cursor:pointer" onchange="imgPre(this);" />
                 	</div>
                 </div>
-                <p class="fr more_info pt90">提示：上传文件</p>
+                <!--p class="fr more_info pt90">提示：上传文件</p-->
             </li>
             
             <li class="clearfix">
@@ -116,6 +116,7 @@
 </form>
 
 <include file="Public:footer"/>
+
 <script src="__JSURL__/Validform_v5.3.2.js" type="text/javascript" charset="UTF-8"></script>
 <script>
 $(function(){
@@ -129,6 +130,16 @@ $(function(){
         }
     }); 
 });
+
+function imgPre(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            $('.ava-up-pre').attr('src', e.target.result);
+        };
+        reader.readAsDataURL(input.files[0]);
+    }
+}
 </script>
 </body>
 </html>

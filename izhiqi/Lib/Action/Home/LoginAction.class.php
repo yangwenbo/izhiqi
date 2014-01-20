@@ -325,13 +325,13 @@ class LoginAction extends Action {
                     $this->error('企业执照：'.$uploadinfo['info']);
                 }
             }
-            //组织代码
+            //机构代码
             if ($_FILES['img_organization_code']['error'] == 0) {
                 $uploadinfo = Uploadhelp::uploadCertificate($_FILES['img_organization_code']);
                 if ($uploadinfo['code'] == 100) {
                     $img_organization_code = $uploadinfo['info']['savepath'] . $uploadinfo['info']['savename'];
                 } else {
-                    $this->error('组织代码：'.$uploadinfo['info']);
+                    $this->error('机构代码：'.$uploadinfo['info']);
                 }
             }
             //税务登记
