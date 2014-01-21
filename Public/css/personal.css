@@ -1,7 +1,7 @@
 /* CSS Document */
 
 .reg_list li{clear:both;padding:20px 0;}
-.reg_list li .more_info{width:270px;line-height:22px;color:#666;font-size:14px;}
+.reg_list li .more_info{width:230px;line-height:22px;color:#666;font-size:14px;}
 
 /*照片*/
 .reg_list .photo{width:130px;height:130px;background:url(../images/inside_sprite.gif) no-repeat;}

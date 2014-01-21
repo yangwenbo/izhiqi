@@ -28,43 +28,55 @@
         <ul class="reg_list">
         
             <li class="clearfix">
-            	<div class="fl photo p5">
-                	<img src="__IMGURL__/empty_avatar.png" width="120" height="120" border="0" class="ava-up-pre"/>
+            	<div class="ml50 fl photo p5">
+                	<img src="__IMGURL__/empty_avatar.png" width="120" height="120" border="0" id="pre1"/>
                 </div>
                 <div class="fl ml30">
                 	<p class="f14 c8 pt40 pb20">照片</p>
                     <div class="btn3 pr">
                 	    <a class="text_bg tc cf" href="javascript:;">上传照片</a>
-                        <input type="file" name="logo" alt="上传照片" class="pa" style="top:0;left:0;width:130px;height:45px;filter:alpha(opacity:0);opacity:0;cursor:pointer" onchange="imgPre(this);" />
+                        <input type="file" name="logo" alt="上传照片" class="pa" style="top:0;left:0;width:130px;height:45px;filter:alpha(opacity:0);opacity:0;cursor:pointer" onchange="imgPre(this, '#pre1');" />
                 	</div>
                 </div>
-                <!--p class="fr more_info pt90">提示：上传文件</p-->
             </li>
             
             <li class="clearfix">
-                <div class="fl input_bg4">
-                    <textarea  onfocus="if (this.value=='公司简介') {this.value='';this.style.color='';}" title="公司简介" class="text_bg4 c9" name="companydesc" datatype="s1-10000" nullmsg="请输入公司简历">公司简介</textarea>
+            	<div class="ml50 fl photo p5">
+                	<img src="__IMGURL__/empty_avatar.png" width="120" height="120" border="0" id="pre2"/>
                 </div>
-                <p class="fr more_info pt10">必填</p>
-            </li>
-            
-            <li class="clearfix">
-                <div class="fl input_bg1">
-                    <p class="pt7 f14">
-                        <em class="pl10 lh200 c9">公司规模</em>
-                        <!--<input type="text" class="ml5 input_bg_bc" />-->
-                        <select name="scale" id="scale" class="p5">
-                            <foreach name="arrScale" item="v" key="k">
-                                <option value="{$k}">{$v}</option>
-                            </foreach>
-                        </select>
-                        <a href="javascript:;" class="ml20 pull_down">下拉</a>
-                    </p>
+                <div class="fl ml30">
+                	<p class="f14 c8 pt40 pb20">工商执照</p>
+                    <div class="btn3 pr">
+                	    <a class="text_bg tc cf" href="javascript:;">上传执照</a>
+                        <input type="file" name="license" alt="执照" class="pa" style="top:0;left:0;width:130px;height:45px;filter:alpha(opacity:0);opacity:0;cursor:pointer" onchange="imgPre(this, '#pre2');" />
+                	</div>
                 </div>
-                <p class="fr more_info pt10">必填</p>
             </li>
-            
             <li class="clearfix">
+            	<div class="ml50 fl photo p5">
+                	<img src="__IMGURL__/empty_avatar.png" width="120" height="120" border="0" id="pre3"/>
+                </div>
+                <div class="fl ml30">
+                	<p class="f14 c8 pt40 pb20">机构代码</p>
+                    <div class="btn3 pr">
+                	    <a class="text_bg tc cf" href="javascript:;">机构代码</a>
+                        <input type="file" name="assoiation" alt="机构代码" class="pa" style="top:0;left:0;width:130px;height:45px;filter:alpha(opacity:0);opacity:0;cursor:pointer" onchange="imgPre(this, '#pre3');" />
+                	</div>
+                </div>
+            </li>
+            <li class="clearfix">
+            	<div class="ml50 fl photo p5">
+                	<img src="__IMGURL__/empty_avatar.png" width="120" height="120" border="0" id="pre4"/>
+                </div>
+                <div class="fl ml30">
+                	<p class="f14 c8 pt40 pb20">税务登记</p>
+                    <div class="btn3 pr">
+                	    <a class="text_bg tc cf" href="javascript:;">税务登记</a>
+                        <input type="file" name="tax" alt="税务等级" class="pa" style="top:0;left:0;width:130px;height:45px;filter:alpha(opacity:0);opacity:0;cursor:pointer" onchange="imgPre(this, '#pre4');" />
+                	</div>
+                </div>
+            </li>
+            <!--li class="clearfix">
                 <div class="fl input_bg1">
                     <p class="pt7 f14 pr">
                         <em class="pl10 lh200 c9">工商执照</em>
@@ -98,8 +110,30 @@
                     </p>
                 </div>
                 <p class="fr more_info pt10">必填</p>
-            </li>
+            </li-->
             
+            <li class="clearfix">
+                <div class="fl input_bg1">
+                    <p class="pt7 f14">
+                        <em class="pl10 lh200 c9">公司规模</em>
+                        <!--<input type="text" class="ml5 input_bg_bc" />-->
+                        <select name="scale" id="scale" class="p5 w100">
+                            <foreach name="arrScale" item="v" key="k">
+                                <option value="{$k}">{$v}</option>
+                            </foreach>
+                        </select>
+                        <!--a href="javascript:;" class="ml20 pull_down">下拉</a-->
+                    </p>
+                </div>
+                <p class="fr more_info pt10">必填</p>
+            </li>
+
+            <li class="clearfix">
+                <div class="fl input_bg4">
+                    <textarea  onfocus="if (this.value=='公司简介') {this.value='';this.style.color='';}" title="公司简介" class="text_bg4 c9" name="companydesc" datatype="s1-10000" nullmsg="请输入公司简历">公司简介</textarea>
+                </div>
+                <p class="fr more_info pt10">必填</p>
+            </li>
         </ul>
         
     </div>
@@ -131,11 +165,11 @@ $(function(){
     }); 
 });
 
-function imgPre(input) {
+function imgPre(input, id) {
     if (input.files && input.files[0]) {
         var reader = new FileReader();
         reader.onload = function (e) {
-            $('.ava-up-pre').attr('src', e.target.result);
+            $(id).attr('src', e.target.result);
         };
         reader.readAsDataURL(input.files[0]);
     }

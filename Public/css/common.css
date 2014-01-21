@@ -51,22 +51,22 @@ body{background:url(../images/bg.jpg) repeat-y center top #BAE4FF;font-family:ya
 	.frame_b .wrap .red{color:#FF0000;}
 
 	
-/*pub || input_bg1:长背景;  input_bg2:短背景;  input_bg3:灰短背景;   input_bg5:灰长背景;*/
-.input_bg1,.input_bg2,.input_bg3,.input_bg5{background:url(../images/btn_sprite.gif) no-repeat 0 -100px;width:300px;height:45px;}
-.input_bg1 .text_bg1,.input_bg2 .text_bg2,.input_bg3 .text_bg3,.input_bg5 .text_bg5{background:url(../images/btn_sprite.gif) no-repeat right -100px;margin-left:10px;padding-right:10px;border:none;width:290px;height:45px;line-height:45px;font-size:15px; }
+/*pub || input_bg1:长背景;  input_bg2:短背景;  input_bg3:灰短背景;   input_bg5:灰长背景; input_bg6:超长背景...*/
+.input_bg1,.input_bg2,.input_bg3,.input_bg5{border-radius:4px; background-color:white; width:350px;height:45px;}
+.input_bg1 .text_bg1,.input_bg2 .text_bg2,.input_bg3 .text_bg3,.input_bg5 .text_bg5{border-radius:4px; margin-left:7px; padding-right:10px;border:none;width:340px;height:45px;line-height:45px;font-size:15px; }
 
-.input_bg2{background-position:0 -100px;width:140px;}
-.input_bg2 .text_bg2{background-position:right -100px;width:130px;}
+.input_bg2{width:140px;}
+.input_bg2 .text_bg2{background-color:white; width:130px;}
 
-.input_bg3{background-position:0 -250px;width:200px;height:38px;}
-.input_bg3 .text_bg3{background-position:right -250px;width:200px;height:38px;line-height:38px;}
+.input_bg3{background-color: #ccc; width:200px;height:38px;}
+.input_bg3 .text_bg3{background-color: #ccc; width:200px;height:38px;line-height:38px;}
 
-.input_bg5{background-position:0 -250px;width:580px;height:38px;}
-.input_bg5 .text_bg5{background-position:right -250px;width:580px;height:38px;line-height:38px;}
+.input_bg5{background-color: #ccc; width:580px;height:38px;}
+.input_bg5 .text_bg5{background-color: #ccc; width:580px;height:38px;line-height:38px;}
 
 /*input_bg4:公司简介*/
-.input_bg4{background:url(../images/inside_sprite.gif) no-repeat 0 -140px;width:300px;height:126px;}
-.input_bg4 .text_bg4{background:url(../images/inside_sprite.gif) no-repeat 0 -140px;padding:10px;border:none;width:280px;height:106px;line-height:25px;font-size:14px;}
+.input_bg4{border-radius:4px; background-color:white; width:350px;height:226px;}
+.input_bg4 .text_bg4{border-radius:4px; background-color:white; padding:10px;border:none;width:330px;height:200px;line-height:25px;font-size:14px;}
 
 /*input_bg6:个人设置输入区域*/
 .input_bg6{background:url(../images/inside_sprite.gif) no-repeat 0 -280px;width:580px;height:60px;}
@@ -79,17 +79,17 @@ body{background:url(../images/bg.jpg) repeat-y center top #BAE4FF;font-family:ya
 
 
 /*按钮  btn1 & btn2 Personal || btn3 & btn4 Company*/
-.btn1,.btn2,.btn3,.btn4{background:url(../images/btn_sprite.gif) no-repeat 0 0;height:45px; }
-.btn1 .text_bg,.btn2 .text_bg,.btn3 .text_bg,.btn4 .text_bg{background:url(../images/btn_sprite.gif) no-repeat 0 0;margin-left:10px;padding-right:10px;border:none;height:45px;line-height:45px;font-size:15px;display:block;overflow:hidden;cursor:pointer;font-weight:bold;}
-.btn1{width:130px;}
-.btn3{width:130px;background-position:0 -50px}
-.btn2{width:220px;}
-.btn4{width:220px;background-position:0 -50px}
+.btn1,.btn2,.btn3,.btn4{border-radius:4px; height:45px; }
+.btn1 .text_bg,.btn2 .text_bg,.btn3 .text_bg,.btn4 .text_bg{border-radius:4px; margin:0 5px 0 5px; padding-right:10px;border:none;height:45px;line-height:45px;font-size:15px;display:block;overflow:hidden;cursor:pointer;font-weight:bold;}
+.btn1{background-color:#0bf;width:150px;}
+.btn3{background-color:#fc8a4c;width:150px;}
+.btn2{background-color:#0bf;width:220px;}
+.btn4{background-color:#fc8a4c;width:220px;}
 
-.btn1 .text_bg{width:120px;background-position:right 0;}
-.btn2 .text_bg{width:210px;background-position:right 0;}
-.btn3 .text_bg{width:120px;background-position:right -50px;}
-.btn4 .text_bg{width:210px;background-position:right -50px;}
+.btn1 .text_bg{background-color:#0bf;width:140px;}
+.btn2 .text_bg{background-color:#0bf;width:210px;}
+.btn3 .text_bg{background-color:#fc8a4c;width:140px;}
+.btn4 .text_bg{background-color:#fc8a4c;width:210px;}
 
 	
 	.a_btn1,.a_btn2,.a_btn3,.a_btn4,.a_btn5{background:url(../images/btn_sprite.gif) repeat left 0;float:left;display:inline;height:45px;text-decoration: none;}
