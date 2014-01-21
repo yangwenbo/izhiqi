@@ -9,18 +9,7 @@
 </head>
 <body>
 <!-- 公用 personal header { -->
-<div class="header">
-	<div class="header_wrap clearfix">
-    	<h1 class="fl logo mt30">
-        	<a href="../index.html">LOGO</a>
-        </h1>
-        
-        <ul class="fr nav mt30 f14 fb tc">
-            <li><a href="{:U('Login/enterpriseregister')}">注册</a></li>
-            <li><a href="{:U('Login/enterpriseLogin')}" class="on">登录</a></li>
-        </ul>
-    </div>
-</div>
+<include file="Public:indexheader" />
 <!-- } 公用 personal header -->
 
 
@@ -30,6 +19,7 @@
     <!-- title { -->
     <div class="title">
     	<em class="c8 f14 ml30">登录职启公司帐号</em>
+        <em class='fr f14 c6 mr15'>公司还没有帐号？<a href="{:U('Login/enterpriseRegister')}" class="mc_c f16 adashed">立即注册</a> </em>
     </div>
     <!-- } title -->
     <form id='loginform' method="post">
@@ -50,6 +40,7 @@
                 <div class="fl input_bg1">
                     <input type="password" class="text_bg1" value="" name="password" id="password" datatype="*" nullmsg="密码不能为空"/>
                 </div>
+                <a href="" class="fr mr40 pt10 f13 adashed" style="color:#FC8A4C;" >忘记密码?</a>
             </li>
             
         </ul>

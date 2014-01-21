@@ -10,16 +10,17 @@ body{background:url(../images/bg.jpg) repeat-y center top #BAE4FF;font-family:ya
 	.header_wrap .logo a{display:block;overflow:hidden;width:120px;height:30px;text-indent:-999em;}
 
 	/*nav*/
-	.header_wrap .nav li{float:left;display:inline-block;width:100px;line-height:30px; margin-left: 25px; margin-right: 25px;}
+	.header_wrap .nav li{font-size: 15px; float:left;display:inline-block;width:100px;line-height:30px; margin-left: 25px; margin-right: 25px;}
     .header_wrap .nav li:hover{background-color:#ecedf0;border-radius:4px;}
 	.header_wrap .nav li a{display:block; color:#787878;}
 	.header_wrap .nav li a:hover{color:#86CEFF;}
 	.header_wrap .nav li a.on{color:#86CEFF;}
 
 	/*login*/
-	.header_wrap .topLogin{right:22px;top:70px;width:100px;height:60px;background:#D2EDFF}
+	.header_wrap .topLogin{right:22px;top:70px;width:100px;height:60px;background:#D2EDFF; border-radius:4px; font-size:14px;}
 	.header_wrap .topLogin li{line-height:30px;text-align:center;}
-
+	.header_wrap .topLogin li:hover{background-color:#72cdff; border-radius:4px;}
+    .header_wrap .topLogin li a {color:#787878;}
 /*footer*/
 .footer{width:100%;height:100px;background:#FFFFFF;}
 	.footer .f_cont{margin:auto;width:1000px;}
@@ -52,7 +53,7 @@ body{background:url(../images/bg.jpg) repeat-y center top #BAE4FF;font-family:ya
 	
 /*pub || input_bg1:长背景;  input_bg2:短背景;  input_bg3:灰短背景;   input_bg5:灰长背景;*/
 .input_bg1,.input_bg2,.input_bg3,.input_bg5{background:url(../images/btn_sprite.gif) no-repeat 0 -100px;width:300px;height:45px;}
-.input_bg1 .text_bg1,.input_bg2 .text_bg2,.input_bg3 .text_bg3,.input_bg5 .text_bg5{background:url(../images/btn_sprite.gif) no-repeat right -100px;margin-left:10px;padding-right:10px;border:none;width:290px;height:45px;line-height:45px;font-size:14px;}
+.input_bg1 .text_bg1,.input_bg2 .text_bg2,.input_bg3 .text_bg3,.input_bg5 .text_bg5{background:url(../images/btn_sprite.gif) no-repeat right -100px;margin-left:10px;padding-right:10px;border:none;width:290px;height:45px;line-height:45px;font-size:15px; }
 
 .input_bg2{background-position:0 -100px;width:140px;}
 .input_bg2 .text_bg2{background-position:right -100px;width:130px;}
@@ -78,8 +79,8 @@ body{background:url(../images/bg.jpg) repeat-y center top #BAE4FF;font-family:ya
 
 
 /*按钮  btn1 & btn2 Personal || btn3 & btn4 Company*/
-.btn1,.btn2,.btn3,.btn4{background:url(../images/btn_sprite.gif) no-repeat 0 0;height:45px;}
-.btn1 .text_bg,.btn2 .text_bg,.btn3 .text_bg,.btn4 .text_bg{background:url(../images/btn_sprite.gif) no-repeat 0 0;margin-left:10px;padding-right:10px;border:none;height:45px;line-height:45px;font-size:14px;display:block;overflow:hidden;}
+.btn1,.btn2,.btn3,.btn4{background:url(../images/btn_sprite.gif) no-repeat 0 0;height:45px; }
+.btn1 .text_bg,.btn2 .text_bg,.btn3 .text_bg,.btn4 .text_bg{background:url(../images/btn_sprite.gif) no-repeat 0 0;margin-left:10px;padding-right:10px;border:none;height:45px;line-height:45px;font-size:15px;display:block;overflow:hidden;cursor:pointer;font-weight:bold;}
 .btn1{width:130px;}
 .btn3{width:130px;background-position:0 -50px}
 .btn2{width:220px;}
