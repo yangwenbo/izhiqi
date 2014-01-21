@@ -214,6 +214,9 @@ body,button,input,select,textarea{font:12px/1.5 arial,\5b8b\4f53}
 
 
 /*+++++*/
-a{color:#000;text-decoration:none;}
+/*a{color:#000;text-decoration:none;}*/
+a, .adashed{color:#36a9e5;cursor:pointer;text-decoration:none;-webkit-transition:opacity .2s ease,color .2s ease,background .2s ease,box-shadow .2s ease;-moz-transition:opacity .2s ease,color .2s ease,background .2s ease,box-shadow .2s ease;-o-transition:opacity .2s ease,color .2s ease,background .2s ease,box-shadow .2s ease;transition:opacity .2s ease,color .2s ease,background .2s ease,box-shadow .2s ease}
 a:hover{text-decoration:none;}
+.adashed:hover{text-decoration:none; border-bottom:1px dashed #ccc;}
+
 
