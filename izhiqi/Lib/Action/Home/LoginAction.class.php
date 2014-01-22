@@ -182,10 +182,10 @@ class LoginAction extends Action {
             }
             $result = Userhelp::getUserloginByEmail($email);
             if (!$result) {
-                $this->error('该账户不存在');
+                $this->error('用户名或密码错误');
             }
             if (strcasecmp($result['password'], Loginhelp::encrypt($password)) !== 0) {
-                $this->error('密码错误,请重新输入');
+                $this->error('用户名或密码错误');
             }
             Loginhelp::userLogin($result['id']);
             $this->redirect('Search/job');
@@ -383,10 +383,10 @@ class LoginAction extends Action {
             $password = $this->_param('password');
             $result = Enterprisehelp::getEnterpriseloginByEmail($email);
             if (!$result) {
-                $this->error('该账户不存在');
+                $this->error('用户名或密码错误');
             }
             if (strcasecmp($result['password'], Loginhelp::encrypt($password)) !== 0) {
-                $this->error('密码错误,请重新输入');
+                $this->error('用户名或密码错误');
             }
             Loginhelp::enterpriseLogin(($result['id']));
             $this->redirect('Enterprise/userSearch');
