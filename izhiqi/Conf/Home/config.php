@@ -14,8 +14,7 @@ $config = array(
 );
 
 $site_config = require CONF_PATH.'/Dev/siteconfig.php';
-$db_config = require CONF_PATH.'/Dev/db_config.php';
 $map_config = require CONF_PATH.'/Dev/map_config.php';
 
-return array_merge($config, $site_config, $db_config, $map_config);
+return array_merge($config, $site_config, $map_config);
 ?>
