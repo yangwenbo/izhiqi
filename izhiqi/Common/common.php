@@ -767,3 +767,31 @@ function utf8_strlen($string = null) {
     preg_match_all("/./us", $string, $match);
     return count($match[0]);
 }
+
+function addThumbPrefix($img_url)
+{
+    $tmp = strrpos($img_url, '/');
+
+    $new_url = '';
+    if ($tmp)
+    {
+        $new_url = substr($img_url, 0, $tmp+1).'m_'.substr($img_url, $tmp+1,strlen($img_url)-$tmp-1);
+    }
+    return $new_url;
+}
+
+function getImgUrl($img_url, $is_thumb=true)
+{
+    if ($img_url == '')
+    {
+        return WEBSITE . 'Public/images/empty_avatar.png';
+    }
+    else if ($is_thumb)
+    {
+        return WEBSITE . addThumbPrefix($img_url);
+    }
+    else
+    {
+        return WEBSITE . $img_url;
+    }
+}

@@ -24,9 +24,9 @@
     <!-- company{ -->
     <div class="wrap p30">
     	<ul class="company_photo clearfix">
-        <li><img src="/{$info.img_business_license}" width="120" height="120" border="0" /></li>
-        <li><img src="/{$info.img_organization_code}" width="120" height="120" border="0" /></li>
-        <li><img src="/{$info.img_tax_registration_certificate}" width="120" height="120" border="0" /></li>
+        <li><img src="{$info.img_business_license|getImgUrl=true}" width="120" height="120" border="0" /></li>
+        <li><img src="{$info.img_organization_code|getImgUrl=true}" width="120" height="120" border="0" /></li>
+        <li><img src="{$info.img_tax_registration_certificate|getImgUrl=true}" width="120" height="120" border="0" /></li>
         </ul>
         <p class="cl mt10 pl40 f16 fb company_status">通过审核</p>
     </div>

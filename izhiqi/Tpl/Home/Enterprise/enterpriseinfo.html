@@ -20,7 +20,10 @@
     <div class="wrap p30">
 		<!-- 基本信息 { -->
         <div class="pl30 clearfix pb30 wrap_line">
-        	<div class="fl"><img src="/{$info.logo}" width="120" height="120" border="0" /></div>
+        	<div class="fl">
+                <img width="120" height="120" border="0"
+                src={$info.logo|getImgUrl=true} />
+             	</div>
             <div class="fl ml30">
             	<p class="f20 fb c6 lh200">{$info.companyname}</p>
                 <p class="fl pt5 more_info w50 f14 c8">地址</p>
