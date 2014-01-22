@@ -14,7 +14,7 @@ body{background:url(../images/bg.jpg) repeat-y center top #BAE4FF;font-family:ya
     .header_wrap .nav li:hover{background-color:#ecedf0;border-radius:4px;}
 	.header_wrap .nav li a{display:block; color:#787878;}
 	.header_wrap .nav li a:hover{color:#86CEFF;}
-	.header_wrap .nav li a.on{background-color:#ecedf0;border-radius:4px;color:#86CEFF;}
+	.header_wrap .nav li a.on{color:#86CEFF;}
 
 	/*login*/
 	.header_wrap .topLogin{margin-top:1px; right:22px;top:60px;width:100px;height:60px;background:#D2EDFF; border-radius:4px; font-size:14px;}

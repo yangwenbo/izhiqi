@@ -106,12 +106,13 @@ class LoginAction extends Action {
             if (empty($major) || $major == '专业') {
                 $this->error('请输入所学专业');
             }
-            if (empty($schoolstartdate) || $schoolstartdate == '入学日期') {
+/*            if (empty($schoolstartdate) || $schoolstartdate == '入学日期') {
                 $this->error('请选择入学日期');
             }
             if (empty($schooladdress) || $schooladdress == '地址（学校）') {
                 $this->error('请选择学校地址');
             }
+ */
             if (empty($age) || $age == '年龄' || $age < 1) {
                 $this->error('请选择正确的年龄');
             }
