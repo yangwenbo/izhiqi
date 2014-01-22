@@ -7,7 +7,9 @@
 <link href="__CSSURL__/common.css" rel="stylesheet" type="text/css" />
 <link href="__CSSURL__/personal.css" rel="stylesheet" type="text/css" />
 </head>
-<body>
+
+<body onload="function imgPre('upload_avatar_btn', '#pre1')">
+
 <!-- 公用 personal header { -->
 <include file="Public:userheader" />
 <!-- } 公用 personal header -->
@@ -30,13 +32,13 @@
         
             <li class="clearfix">
             	<div class="fl photo p5">
-                	<img src="__IMGURL__/empty_avatar.png" width="120" height="120" border="0" class="ava-up-pre"/>
+                	<img src="__IMGURL__/empty_avatar.png" width="120" height="120" border="0" id="pre1"/>
                 </div>
                 <div class="fl ml30">
                 	<p class="f14 c8 pt40 pb20">照片</p>
                     <div class="btn1 pr">
                         <a href="javascript:;" class="text_bg tc cf">上传照片</a>
-                        <input id='upload_avatar_btn' type="file" name="avartar" alt="上传照片" class="pa" style="top:0;left:0;width:130px;height:45px;filter:alpha(opacity:0);opacity:0;cursor:pointer" onchange="imgPre(this);" />
+                        <input id='upload_avatar_btn' type="file" name="avartar" alt="上传照片" class="pa" style="top:0;left:0;width:130px;height:45px;filter:alpha(opacity:0);opacity:0;cursor:pointer" onchange="imgPre('upload_avatar_btn', '#pre1');" />
                     </div>
                 </div>
                 <!--p class="fr more_info pt90">提示：上传文件</p-->
@@ -125,11 +127,14 @@ $(function(){
     });
 });
 
-function imgPre(input) {
+function imgPre(inputId, targetId) {
+    var input = document.getElementById(inputId);
+
     if (input.files && input.files[0]) {
         var reader = new FileReader();
+        alert(input.files[0]);
         reader.onload = function (e) {
-            $('.ava-up-pre').attr('src', e.target.result);
+            $(targetId).attr('src', e.target.result);
         };
         reader.readAsDataURL(input.files[0]);
     }
