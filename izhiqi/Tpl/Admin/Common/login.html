@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>管理员登录</title>
+<link href="__CSSURL__/base.css" rel="stylesheet" type="text/css" />
+<link href="__CSSURL__/common.css" rel="stylesheet" type="text/css" />
+<link href="__CSSURL__/personal.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+<form id='admin_login' action="./adminLogin" method="post">
+<!-- wrapper { -->
+<div class="frame_s">
+	<div class="bg_top"></div>
+    <!-- title { -->
+    <div class="title">
+    	<em class="c8 f14 ml30">管理员登录</em>
+    </div>
+    <!-- } title -->
+    
+	<!-- 内容 { -->
+	<div class="wrap p30">
+        <ul class="reg_list">
+            <li class="clearfix">
+                <p class="ml40 fl w100 pt10 f14 c8">用户名</p>
+                <div class="fl input_bg1">
+                    <input tip="请输入用户名" type="text" class="text_bg1" value="" name="aname" id="aname" datatype="s3-10" nullmsg="用户不能为空" errormsg="必须大于3个字符"/>
+                </div>
+            </li>
+            <li class="clearfix">
+                <p class="ml40 fl w100 pt10 f14 c8">密码</p>
+                <div class="fl input_bg1">
+                    <input type="password" class="text_bg1" value="" name="password" id="password" datatype="*" nullmsg="密码不能为空"/>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!-- } 内容 -->
+    <div class="bg_f pt20 pb10 pr">
+    	<div class="bc btn2">
+		<input type="submit" value="登录" id = "btnLogin" class="text_bg tc cf"/>
+        </div>
+    </div>  
+    <div class="bg_bottom"></div>
+</div>
+<!-- } wrapper -->
+</form>
+
+<script src="__JSURL__/jquery-1.8.2.min.js"></script>
+<script src="__JSURL__/Validform_v5.3.2.js" type="text/javascript" charset="UTF-8"></script>
+
+<script type="text/javascript">
+$(function(){
+    var vf=$("#admin_login").Validform({
+        tiptype:3, 
+        showAllError:true,
+    });
+});
+</script>
+
+</body>
+</html>
