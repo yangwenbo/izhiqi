@@ -10,17 +10,20 @@ body{background:url(../images/bg.jpg) repeat-y center top #BAE4FF;font-family:ya
 	.header_wrap .logo a{display:block;overflow:hidden;width:120px;height:30px;text-indent:-999em;}
 
 	/*nav*/
-	.header_wrap .nav li{font-size: 15px; float:left;display:inline-block;width:100px;line-height:30px; margin-left: 25px; margin-right: 25px;}
+	.header_wrap .nav li{font-size: 15px; float:left;display:inline-block;width:100px;line-height:30px;  margin-right: 25px;}
     .header_wrap .nav li:hover{background-color:#ecedf0;border-radius:4px;}
 	.header_wrap .nav li a{display:block; color:#787878;}
 	.header_wrap .nav li a:hover{color:#86CEFF;}
 	.header_wrap .nav li a.on{background-color:#ecedf0;border-radius:4px;color:#86CEFF;}
 
 	/*login*/
-	.header_wrap .topLogin{margin-top:1px; right:22px;top:60px;width:100px;height:60px;background:#D2EDFF; border-radius:4px; font-size:14px;}
-	.header_wrap .topLogin li{line-height:30px;text-align:center;}
+	.header_wrap .topLogin{visibility: hidden; margin-top:1px; width:100px;height:60px;background:#D2EDFF; border-radius:4px; font-size:14px;}
+	.header_wrap .nav li:hover .topLogin{visibility: visible; }
+	.header_wrap .topLogin li{line-height:30px;list-style: none;}
 	.header_wrap .topLogin li:hover{background-color:#72cdff; border-radius:4px;}
-   	.header_wrap .topLogin li a {color:#787878;}
+   	.header_wrap .topLogin li a {font-style:normal; color:#787878;}
+	.header_wrap .topLogin li a:hover {font-style:bold; color:white;}
+
 /*footer*/
 .footer{width:100%;height:100px;background:#FFFFFF;}
 	.footer .f_cont{margin:auto;width:1000px;}
