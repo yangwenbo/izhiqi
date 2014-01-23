@@ -219,4 +219,50 @@ a, .adashed{color:#36a9e5;cursor:pointer;text-decoration:none;-webkit-transition
 a:hover{text-decoration:none;}
 .adashed:hover{text-decoration:none; border-bottom:1px dashed #ccc;}
 
+input[type=radio] {
+  -webkit-appearance: none;
+  appearance: none;
+  vertical-align:middle;
+  cursor: pointer;
+  background: #fff;
+  border: 1px solid #dcdcdc;
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  border-radius: 1px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; 
+}
+input[type=radio]:active {
+  border-color: #c6c6c6;
+  background: #ebebeb;
+}
+input[type=radio] {
+  -webkit-border-radius: 1em;
+  -moz-border-radius: 1em;
+  border-radius: 1em;
+  width: 15px;
+  height: 15px;
+}
+input[type=radio]:checked {
+  background: #fff;
+}
+input[type=radio]:checked::after {
+  content: '';
+  display: block;
+  position: relative;
+  top: 3px;
+  left: 3px;
+  width: 7px;
+  height: 7px;
+  background: #666;
+  -webkit-border-radius: 1em;
+  -moz-border-radius: 1em;
+  border-radius: 1em;
+}
 
+select{
+width:270px; font-size:14px;background-color:transparent; 
+border-radius:5px;
+border-color:#aaa;	
+}

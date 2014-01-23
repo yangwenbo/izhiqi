@@ -64,8 +64,9 @@
                 </div>
                 <div class="fl ml20 input_bg2">
                     <div class="text_bg2 tc">
-                        <input type="radio"  name ="sex" value="1" /> 男
-                        <input type="radio"  name ="sex" value="2" /> 女
+                        <span class='ml5 cc fb' style='color: #0bf;'>男</span> <input type="radio"  name ="sex" value="1" /> 
+                        <span class='ml5 c4 fb' style='color: #f88;'>女</span> <input type="radio"  name ="sex" value="2" /> 
+                        <span class='ml5 c4 fb' style='color: #333;'>不限</span> <input type="radio"  name ="sex" value="3" checked="checked"/> 
                     </div>
                 </div>
             </li>
@@ -79,7 +80,7 @@
             
             <li class="clearfix">
                 <div class="fl input_bg1">
-                    <input type="text" class="text_bg1 cc" value="身高" name="height" id="height" onblur="if (this.value==''){ this.value='身高';this.style.color='#999';}else{this.style.color='';}" onfocus="if (this.value=='身高') {this.value='';this.style.color='';}" title="身高"/>
+                    <input type="text" class="text_bg1 cc" value="身高" name="height" id="height" onblur="if (this.value==''){ this.value='身高';this.style.color='#999';}else{this.style.color='';}" onfocus="if (this.value=='身高') {this.value='';this.style.color='';}" onsubmit="if (this.value=='身高') {this.value='';}" title="身高"/>
                 </div>
                 <p class="fr more_info pt10"></p>
             </li>

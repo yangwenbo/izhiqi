@@ -58,8 +58,8 @@ body{background:url(../images/bg.jpg) repeat-y center top #BAE4FF;font-family:ya
 .input_bg1,.input_bg2,.input_bg3,.input_bg5{border-radius:4px; background-color:white; width:350px;height:45px;}
 .input_bg1 .text_bg1,.input_bg2 .text_bg2,.input_bg3 .text_bg3,.input_bg5 .text_bg5{border-radius:4px; margin-left:7px; padding-right:10px;border:none;width:340px;height:45px;line-height:45px;font-size:15px; }
 
-.input_bg2{width:140px;}
-.input_bg2 .text_bg2{background-color:white; width:130px;}
+.input_bg2{width:160px;}
+.input_bg2 .text_bg2{background-color:white; width:160px;}
 
 .input_bg3{background-color: #ddd; width:200px;height:38px;}
 .input_bg3 .text_bg3{background-color: #ddd; width:200px;height:38px;line-height:38px;}
@@ -107,7 +107,7 @@ body{background:url(../images/bg.jpg) repeat-y center top #BAE4FF;font-family:ya
 	.a_btn3{background-color:#0e7;}
 	.a_btn3 em{background-color:transparent;}
 	/*orange*/
-	.a_btn4{background-color:#fc8a4c;}
+	.a_btn4{background-color:#fc8a4c; width:200px;}
 	.a_btn4 em{background-color:transparent;}
 	/*gray*/
 	.a_btn5{background-color:#ccc;}
@@ -130,3 +130,5 @@ body{background:url(../images/bg.jpg) repeat-y center top #BAE4FF;font-family:ya
 
 /*a hover*/
 .a_hover:hover{color: #86ceff;}
+
+
