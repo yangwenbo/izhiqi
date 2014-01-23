@@ -17,12 +17,12 @@ body{background:url(../images/bg.jpg) repeat-y center top #BAE4FF;font-family:ya
 	.header_wrap .nav li a.on{background-color:#ecedf0;border-radius:4px;color:#86CEFF;}
 
 	/*login*/
-	.header_wrap .topLogin{visibility: hidden; margin-top:1px; width:100px;height:60px;background:#D2EDFF; border-radius:4px; font-size:14px;}
-	.header_wrap .nav li:hover .topLogin{visibility: visible; }
-	.header_wrap .topLogin li{line-height:30px;list-style: none;}
-	.header_wrap .topLogin li:hover{background-color:#72cdff; border-radius:4px;}
-   	.header_wrap .topLogin li a {font-style:normal; color:#787878;}
-	.header_wrap .topLogin li a:hover {font-style:bold; color:white;}
+	.header_wrap .dropDown{visibility: hidden; margin-top:1px; width:100px;height:60px;background:#D2EDFF; border-radius:4px; font-size:14px;}
+	.header_wrap li:hover .dropDown{visibility: visible; }
+	.header_wrap .dropDown li{line-height:30px;list-style: none;}
+	.header_wrap .dropDown li:hover{background-color:#72cdff; border-radius:4px;}
+   	.header_wrap .dropDown li a {font-style:normal; color:#787878;}
+	.header_wrap .dropDown li a:hover {font-style:bold; color:white;}
 
 /*footer*/
 .footer{width:100%;height:100px;background:#FFFFFF;}
@@ -56,10 +56,10 @@ body{background:url(../images/bg.jpg) repeat-y center top #BAE4FF;font-family:ya
 	
 /*pub || input_bg1:长背景;  input_bg2:短背景;  input_bg3:灰短背景;   input_bg5:灰长背景; input_bg6:超长背景...*/
 .input_bg1,.input_bg2,.input_bg3,.input_bg5{border-radius:4px; background-color:white; width:350px;height:45px;}
-.input_bg1 .text_bg1,.input_bg2 .text_bg2,.input_bg3 .text_bg3,.input_bg5 .text_bg5{border-radius:4px; margin-left:7px; padding-right:10px;border:none;width:340px;height:45px;line-height:45px;font-size:15px; }
+.input_bg1 .text_bg1,.input_bg2 .text_bg2,.input_bg3 .text_bg3,.input_bg5 .text_bg5{border-radius:4px; padding-left:7px; padding-right:10px;border:none;width:335px;height:45px;line-height:45px;font-size:15px; }
 
-.input_bg2{width:160px;}
-.input_bg2 .text_bg2{background-color:white; width:160px;}
+.input_bg2{width:157px;}
+.input_bg2 .text_bg2{background-color:white; width:156px;}
 
 .input_bg3{background-color: #ddd; width:200px;height:38px;}
 .input_bg3 .text_bg3{background-color: #ddd; width:200px;height:38px;line-height:38px;}

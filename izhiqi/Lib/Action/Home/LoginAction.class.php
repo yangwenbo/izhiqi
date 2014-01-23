@@ -399,7 +399,7 @@ class LoginAction extends Action {
      */
     public function EnterpriseLogout() {
         Loginhelp::EnterpriseLogout();
-        if (Loginhelp::isEnterpriseLogin()) {
+        if (!Loginhelp::isEnterpriseLogin()) {
             $this->redirect('/');
         }
         $this->error('登出异常');
