@@ -325,7 +325,7 @@ class EnterpriseAction extends Action {
         if ($education) {
             $map['education'] = array('eq', $education);
         }
-        if ($sex) {
+        if ($sex && $sex != 3) {
             $map['sex'] = array('eq', $sex);
         }
         if ($age > 0) {
@@ -341,11 +341,12 @@ class EnterpriseAction extends Action {
         if (intval($result['count']) > 0) {
             $order = 'updatetime desc';
             $limit = $start . ',' . $perpage;
-            $result['list'] = Userhelp::getUserinfoList($map, $order, $limit);
-
+            $result['list'] = Userhelp::getUserinfoList($map, $order);
+/*
             import('ORG.Util.Page');
             $objPage=new Page($result['count'],$perpage,$page);
             $this->assign('page',$objPage->show());
+*/
         }
         $this->assign('result', $result);
         $this->assign('tab','search');

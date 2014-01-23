@@ -78,8 +78,8 @@
                 </div>
                 <div class="fl ml20 input_bg2">
                     <div class="text_bg2 tc">
-                    	<input type="radio" name="sex" value='1' datatype="*" sucmsg=""/> 男
-                        <input type="radio" name="sex" value='2' datatype="*" sucmsg=""/> 女
+                    	<span class='ml5 cc fb' style='color: #0bf;'>男</span> <input type="radio" name="sex" value='1' datatype="*" sucmsg=""/>
+                         <span class='ml5 cc fb' style='color: #f88;'>女</span> <input type="radio" name="sex" value='2' datatype="*" sucmsg=""/>
                     </div>
                 </div>
                 <p class="fr more_info pt10">必填(性别)</p>
@@ -132,7 +132,6 @@ function imgPre(inputId, targetId) {
 
     if (input.files && input.files[0]) {
         var reader = new FileReader();
-        alert(input.files[0]);
         reader.onload = function (e) {
             $(targetId).attr('src', e.target.result);
         };

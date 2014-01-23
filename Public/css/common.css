@@ -119,9 +119,10 @@ body{background:url(../images/bg.jpg) repeat-y center top #BAE4FF;font-family:ya
 
 /*分页*/	
 	.list_page{text-align:center;font-family:simsun;}
-	.list_page a{display:inline-block;color:#999999;background:#ffffff;border:1px solid #ddd;padding:0 7px;line-height:20px;border-radius:5px}
+	.list_page .current{margin:0 10px;}
+	.list_page a{display:inline-block;color:#999999;background:#ffffff;border:1px solid #ddd;padding:0 7px 0 7px;line-height:20px;border-radius:3px;}
 	.list_page a.on{color:#fff;background:#999999;font-weight:bold;border-color:#999999;}
-	.list_page a:hover{text-decoration:none;border-color:#999999;}
+	.list_page a:hover{text-decoration:none;border-color:#999999;background-color:#fc8a4c; color:white;}
 
 /*js tips*/
 .Validform_checktip{padding-left:10px;font-size:12px;line-height:30px;}
