@@ -164,6 +164,7 @@ body,button,input,select,textarea{font:12px/1.5 arial,\5b8b\4f53}
 .ml90{margin-left:90px}
 .ml100{margin-left:100px}
 .ml200{margin-left:200px}
+.ml250{margin-left:250px}
 .ml300{margin-left:300px}
 .ml350{margin-left:350px}
 .ml400{margin-left:400px}
@@ -262,7 +263,7 @@ input[type=radio]:checked::after {
 }
 
 select{
-width:270px; font-size:14px;background-color:transparent; 
+font-size:14px;background-color:transparent; 
 border-radius:5px;
 border-color:#aaa;	
 }

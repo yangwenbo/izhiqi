@@ -299,17 +299,13 @@ class EnterpriseAction extends Action {
       用户搜索列表
      */
     public function userSearchList() {
-        $page = intval($this->_param('p')) ? intval($this->_param('p')) : 1;
-        $perpage = 10;
-        $start = ($page - 1) * $perpage;
-
         $keyword = $this->_param('keyword');
 //        $companyname = $this->_param('companyname');
         $education = intval($this->_param('education'))?intval($this->_param('education')):0;
         $sex = intval($this->_param('sex'))?intval($this->_param('sex')):0;
         $age = intval($this->_param('age'))?intval($this->_param('age')):0;
         $height = intval($this->_param('height'))?intval($this->_param('height')):0;
-//        $language = $this->_param('language');
+
         //验证输入的条件
         if($keyword=='关键字')
         {
@@ -319,9 +315,7 @@ class EnterpriseAction extends Action {
         if ($keyword) {
             $map['jobintension'] = array('like', '%' . $keyword . '%');
         }
-//        if ($companyname) {
-//            $map['companyname'] = array('like', '%' . $companyname . '%');
-//        }
+
         if ($education) {
             $map['education'] = array('eq', $education);
         }
@@ -334,20 +328,13 @@ class EnterpriseAction extends Action {
         if ($height > 0) {
             $map['height'] = array('eq', $height);
         }
-//        if ($language) {
-//            $map['language'] = array('eq', $language);
-//        }
-        $result['count'] = Userhelp::getUserinfoCount($map);
-        if (intval($result['count']) > 0) {
+
+        //$result['count'] = Userhelp::getUserinfoCount($map);
+        //if (intval($result['count']) > 0) {
             $order = 'updatetime desc';
-            $limit = $start . ',' . $perpage;
+         //   $limit = $start . ',' . $perpage;
             $result['list'] = Userhelp::getUserinfoList($map, $order);
-/*
-            import('ORG.Util.Page');
-            $objPage=new Page($result['count'],$perpage,$page);
-            $this->assign('page',$objPage->show());
-*/
-        }
+        //}
         $this->assign('result', $result);
         $this->assign('tab','search');
         $this->display();

@@ -95,7 +95,7 @@ body{background:url(../images/bg.jpg) repeat-y center top #BAE4FF;font-family:ya
 .btn4 .text_bg{background-color:#fc8a4c;width:210px;}
 
 	
-	.a_btn1,.a_btn2,.a_btn3,.a_btn4,.a_btn5{border-radius:3px; float:left;display:inline; height:25px;text-decoration: none; text-align:center;padding-top: 6px;}
+	.a_btn1,.a_btn2,.a_btn3,.a_btn4,.a_btn5{border-radius:3px; float:left;display:inline; height:25px;text-decoration: none; text-align:center;padding-top: 6px; font-weight:bold; letter-spacing: 4px;}
 	/*.a_btn1 em,.a_btn2 em,.a_btn3 em,.a_btn4 em,.a_btn5 em{float:left;display:inline;height:17px;margin:5px 10px 5px 10px;}*/
 	/*blue*/
 	.a_btn1{background-color: #0bf;width:200px;}
@@ -104,7 +104,7 @@ body{background:url(../images/bg.jpg) repeat-y center top #BAE4FF;font-family:ya
 	.a_btn2{background-color:#ff0a47;width:60px;}
 	.a_btn2 em{background-color:transparent;}
 	/*green*/
-	.a_btn3{background-color:#0e7;}
+	.a_btn3{background-color:#0e7;width:200px;}
 	.a_btn3 em{background-color:transparent;}
 	/*orange*/
 	.a_btn4{background-color:#fc8a4c; width:200px;}
@@ -132,4 +132,5 @@ body{background:url(../images/bg.jpg) repeat-y center top #BAE4FF;font-family:ya
 /*a hover*/
 .a_hover:hover{color: #86ceff;}
 
+.col_blk{background-color: #86ceff; padding: 3px 10px; border-radius:3px;font-weight:bold; color: white; font-size: 16px;}
 
