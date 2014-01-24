@@ -6,6 +6,7 @@
 <link href="__CSSURL__/base.css" rel="stylesheet" type="text/css" />
 <link href="__CSSURL__/common.css" rel="stylesheet" type="text/css" />
 <link href="__CSSURL__/personal.css" rel="stylesheet" type="text/css" />
+<link href="__CSSURL__/jpages/jPages.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <!-- 公用 personal header { -->
@@ -19,10 +20,8 @@
     
     <!-- 内容 { -->
     <div class="wrap p30">
-
-
 		
-        <h2 class="f16 c6 lh200">我收到的职位</h2>
+        <h2 class="f18 mb20 c6 corange lh200 tc">我收到的职位</h2>
         
 		
         <div class="my_list_tab clearfix cf f14">
@@ -31,7 +30,7 @@
             <p class="fl My_w3">状态</p>
         </div>
         
-        <ul class="my_list">
+        <ul class="my_list f16" id="invited_list" >
             <volist name='result.list' id='vo' empty='暂时没有受邀职位的数据'>
         	<li class="clearfix">
             	<p class="fl My_w1 pl10"><a href="{:U('Search/jobInfo')}" class="tit">{$vo.jname}</a></p>
@@ -49,14 +48,8 @@
         </ul>
 
 
-
-
-		
-        
         <!-- 分页 { -->
-        <div class="cl list_page f14 mt30">
-            {$page}
-        </div>
+        <div class="page_holder"> </div>
         <!-- } 分页 -->
 
 
@@ -70,6 +63,8 @@
 
 
 <include file="Public:footer"/>
+
+<script src="__JSURL__/jpages/jPages.js"></script>
 <script>
     var doInvitedJobUrl="{:U('User/doInvitedJob')}";
     $(function(){
@@ -86,6 +81,14 @@
        }); 
     });
     
+    $(function(){
+        $("div.page_holder").jPages({
+            containerID: 'invited_list',
+            previous: "上一页",
+            next: "下一页"
+        });
+        $("#invited_list").css("min-height", "300px");
+    });
 </script>
 </body>
 </html>

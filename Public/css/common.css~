@@ -41,6 +41,7 @@ body{background:url(../images/bg.jpg) repeat-y center top #BAE4FF;font-family:ya
 	.frame_s .title .mc_c{color:#FC8A4C}
 	/*wrap*/
 	.frame_s .wrap{background:#EDEEF2;}
+	.min_wrap {min-height: 300px;}
 /*frame_b*/
 .frame_b{margin:50px auto;width:1000px;}
 	/*bg*/
@@ -95,7 +96,7 @@ body{background:url(../images/bg.jpg) repeat-y center top #BAE4FF;font-family:ya
 .btn4 .text_bg{background-color:#fc8a4c;width:210px;}
 
 	
-	.a_btn1,.a_btn2,.a_btn3,.a_btn4,.a_btn5{border-radius:3px; float:left;display:inline; height:25px;text-decoration: none; text-align:center;padding-top: 6px; font-weight:bold; letter-spacing: 5px;}
+	.a_btn1,.a_btn2,.a_btn3,.a_btn4,.a_btn5{border-radius:3px; float:left;display:inline; height:25px;text-decoration: none; text-align:center;padding-top: 6px; font-weight:bold; letter-spacing: 4px;}
 	/*.a_btn1 em,.a_btn2 em,.a_btn3 em,.a_btn4 em,.a_btn5 em{float:left;display:inline;height:17px;margin:5px 10px 5px 10px;}*/
 	/*blue*/
 	.a_btn1{background-color: #0bf;width:200px;}
@@ -113,8 +114,8 @@ body{background:url(../images/bg.jpg) repeat-y center top #BAE4FF;font-family:ya
 	.a_btn5{background-color:#ccc;}
 	.a_btn5 em{background-color:transparent;}
 	
-	.a_btn1 em .icon,.a_btn2 em .icon,.a_btn3 em .icon,.a_btn4 em .icon{display:inline-block;width:17px;height:17px;background:url(../images/more_count.png) no-repeat;text-align:center;font-size:12px; font-weight:normal}
-	.a_btn1 em .icon{color:#4CABFC}.a_btn2 em .icon{color:#FB5454}.a_btn3 em .icon{color:#54CB67}.a_btn4 em .icon{color:#FC8A4C}
+	.a_btn1 .icon,.a_btn2 .icon,.a_btn3 .icon,.a_btn4 .icon{display:inline-block;width:17px;height:17px;background:url(../images/more_count.png) no-repeat;text-align:center;font-size:12px; font-weight:normal;letter-spacing: 1px;}
+	.a_btn1 .icon{color:#4CABFC}.a_btn2 .icon{color:#FB5454}.a_btn3 .icon{color:#54CB67}.a_btn4 .icon{color:#FC8A4C}
 	
 
 /*分页*/	

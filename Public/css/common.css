@@ -41,6 +41,7 @@ body{background:url(../images/bg.jpg) repeat-y center top #BAE4FF;font-family:ya
 	.frame_s .title .mc_c{color:#FC8A4C}
 	/*wrap*/
 	.frame_s .wrap{background:#EDEEF2;}
+	.min_wrap {min-height: 300px;}
 /*frame_b*/
 .frame_b{margin:50px auto;width:1000px;}
 	/*bg*/
@@ -113,8 +114,8 @@ body{background:url(../images/bg.jpg) repeat-y center top #BAE4FF;font-family:ya
 	.a_btn5{background-color:#ccc;}
 	.a_btn5 em{background-color:transparent;}
 	
-	.a_btn1 em .icon,.a_btn2 em .icon,.a_btn3 em .icon,.a_btn4 em .icon{display:inline-block;width:17px;height:17px;background:url(../images/more_count.png) no-repeat;text-align:center;font-size:12px; font-weight:normal}
-	.a_btn1 em .icon{color:#4CABFC}.a_btn2 em .icon{color:#FB5454}.a_btn3 em .icon{color:#54CB67}.a_btn4 em .icon{color:#FC8A4C}
+	.a_btn1 .icon,.a_btn2 .icon,.a_btn3 .icon,.a_btn4 .icon{display:inline-block;width:17px;height:17px;background:url(../images/more_count.png) no-repeat;text-align:center;font-size:12px; font-weight:normal;letter-spacing: 1px;}
+	.a_btn1 .icon{color:#4CABFC}.a_btn2 .icon{color:#FB5454}.a_btn3 .icon{color:#54CB67}.a_btn4 .icon{color:#FC8A4C}
 	
 
 /*分页*/	
@@ -134,3 +135,32 @@ body{background:url(../images/bg.jpg) repeat-y center top #BAE4FF;font-family:ya
 
 .col_blk{background-color: #86ceff; padding: 3px 10px; border-radius:3px;font-weight:bold; color: white; font-size: 16px;}
 
+.page_holder {
+                margin: 15px 0;
+                text-align:center;
+            }
+            .page_holder a {
+                font-size: 14px;
+                cursor: pointer;
+                margin: 0 5px;
+                color: #333;
+            }
+            .page_holder a:hover {
+                background-color: #222;
+                color: #fff;
+            }
+            .page_holder a.jp-previous { margin-right: 15px; }
+            .page_holder a.jp-next { margin-left: 15px; }
+            .page_holder a.jp-current, a.jp-current:hover {
+                color: #FF4242;
+                font-weight: bold;
+            }
+            .page_holder a.jp-disabled, a.jp-disabled:hover {
+                color: #bbb;
+            }
+            .page_holder a.jp-current, a.jp-current:hover,
+            .page_holder a.jp-disabled, a.jp-disabled:hover {
+                cursor: default;
+                background: none;
+            }
+            .page_holder span { margin: 0 5px; }

@@ -10,35 +10,7 @@
         <link href="__CSSURL__/jpages/animate.css" rel="stylesheet" type="text/css" />
 
         <style type="text/css">
-            .holder {
-                margin: 15px 0;
-                text-align:center;
-            }
-            .holder a {
-                font-size: 14px;
-                cursor: pointer;
-                margin: 0 5px;
-                color: #333;
-            }
-            .holder a:hover {
-                background-color: #222;
-                color: #fff;
-            }
-            .holder a.jp-previous { margin-right: 15px; }
-            .holder a.jp-next { margin-left: 15px; }
-            .holder a.jp-current, a.jp-current:hover {
-                color: #FF4242;
-                font-weight: bold;
-            }
-            .holder a.jp-disabled, a.jp-disabled:hover {
-                color: #bbb;
-            }
-            .holder a.jp-current, a.jp-current:hover,
-            .holder a.jp-disabled, a.jp-disabled:hover {
-                cursor: default;
-                background: none;
-            }
-            .holder span { margin: 0 5px; }
+            #search_result {min-height: 50%;}
         </style>
 
     </head>
@@ -53,7 +25,7 @@
             <div class="bg_top"></div>
 
             <!-- 内容 { -->
-            <div class="wrap p30 ">
+            <div class="wrap p30 min_wrap">
 
                 <h2 class="f16 c6 lh200">搜索结果</h2>
 
@@ -64,7 +36,7 @@
                     <p class="fl My_w3">年龄</p>
                 </div>
 
-                <div class="holder"> </div>
+                <!--div class="page_holder"> </div-->
                 <div class='f16'>
                 <ul id="search_result">
                     <volist name="result.list" id="vo" empty="暂无搜索到您需要的数据，请重新搜索条件。">
@@ -77,7 +49,7 @@
                 </ul>
 
                 </div>
-                <div class="holder"> </div>
+                <div class="page_holder"> </div>
 
                 <!-- 分页 -->
                 <!--div class="cl list_page f14 mt30">
@@ -97,7 +69,7 @@
         <script src="__JSURL__/jpages/jPages.js"></script> 
         <script>
             $(function(){
-                $("div.holder").jPages({
+                $("div.page_holder").jPages({
                     containerID: "search_result",
                     previous: "上一页",
                     next: "下一页",
