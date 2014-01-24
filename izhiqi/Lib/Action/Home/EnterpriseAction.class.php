@@ -238,7 +238,7 @@ class EnterpriseAction extends Action {
             Enterprisehelp::updateEnterpriseext($where, $data);
             
             
-            $this->success('更企业信息成功');
+            $this->success('更新企业信息成功');
         }
         
         $this->assign('info', $info);

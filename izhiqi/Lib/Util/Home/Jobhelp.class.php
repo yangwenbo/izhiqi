@@ -132,18 +132,15 @@ class Jobhelp {
     /**
       通过用户uid 和type 分别获取被邀请和申请的信息
      */
-    static public function getJobrelationsByUid($uid, $type, $start = 0, $perpage = 20) {
+    static public function getJobrelationsByUid($uid, $type) {
         $where = "uid=" . $uid . " and type=" . $type;
         $order = "sendtime desc";
-        $limit = $start . "," . $perpage;
-        $result['count'] = Jobhelp::getJobrelationCount($where);
-        if (intval($result['count'])) {
-            $result['list'] = Jobhelp::getJobrelationList($where, $order,$limit);
-            foreach($result['list'] as $key=>$val){
-                $val['companyname']=  Enterprisehelp::getCompanyname($val['eid']);
-                $val['jname']=  Jobhelp::getJobname($val['jobid']);
-                $result['list'][$key]=$val;
-            }
+        $result['list'] = Jobhelp::getJobrelationList($where, $order);
+
+        foreach($result['list'] as $key=>$val){
+            $val['companyname']=  Enterprisehelp::getCompanyname($val['eid']);
+            $val['jname']=  Jobhelp::getJobname($val['jobid']);
+            $result['list'][$key]=$val;
         }
         return $result;
     }
@@ -151,16 +148,30 @@ class Jobhelp {
     /**
       用户被邀请的列表
      */
-    static public function UserinvitedList($uid, $start = 0, $perpage = 20) {
-        $result = Jobhelp::getJobrelationsByUid($uid, 1, $start, $perpage);
+    static public function UserinvitedList($uid) {
+        $result = Jobhelp::getJobrelationsByUid($uid, 1);
+        return $result;
+    }
+    static public function UserinvitedListSize($uid) {
+        $where = "uid=" . $uid . " and type=1";
+        //dump($where);
+
+        $result = Jobhelp::getJobrelationCount($where);
+        //dump($result);
         return $result;
     }
 
     /**
       用户申请的列表
      */
-    static public function UserApplyList($uid, $start, $perpage) {
-        $result = Jobhelp::getJobrelationsByUid($uid, 0, $start, $perpage);
+    static public function UserApplyList($uid) {
+        $result = Jobhelp::getJobrelationsByUid($uid, 0);
+        return $result;
+    }
+    static public function UserApplyListSize($uid) {
+        $where = "uid=" . $uid . " and type=0";
+
+        $result = Jobhelp::getJobrelationCount($where);
         return $result;
     }
     /**

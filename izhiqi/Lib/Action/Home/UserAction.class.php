@@ -20,16 +20,8 @@ Class UserAction extends Action {
       当前用户收到的职位邀请
      */
     public function invitedList() {
-        $page=intval($this->_param('p'))?intval($this->_param('p')):1;
-        $perpage=10;
-        $start=($page-1)*$perpage;
-        $result = Jobhelp::UserinvitedList($this->uid,$start,$perpage);
-        if(intval($result['count'])>0)
-        {
-            import('ORG.Util.Page');
-            $objPage=new Page($result['count'],$perpage,$page);
-            $this->assign('page',$objPage->show());
-        }
+        $result = Jobhelp::UserinvitedList($this->uid);
+
         $this->assign('result', $result);
         $this->display();
     }
@@ -38,17 +30,8 @@ Class UserAction extends Action {
       当前用户已经申请的职位
      */
     public function appliedList() {
-        $page=intval($this->_param('p'))?intval($this->_param('p')):1;
-        $perpage=10;
-        $start=($page-1)*$perpage;
+        $result = Jobhelp::UserApplyList($this->uid);
 
-        $result = Jobhelp::UserApplyList($this->uid,$start,$perpage);
-        if(intval($result['count'])>0)
-        {
-            import('ORG.Util.Page');
-            $objPage=new Page($result['count'],$perpage,$page);
-            $this->assign('page',$objPage->show());
-        }
         $this->assign('result', $result);
         $this->display();
     }
@@ -152,6 +135,7 @@ Class UserAction extends Action {
     public function userinfo() {
         $uid = Loginhelp::getUserUid();
         $userinfo = Userhelp::getUserinfoByUid($uid);
+        //dump($uid);
         if (!$userinfo) {
             $this->error('用户不存在');
         }

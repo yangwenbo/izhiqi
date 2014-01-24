@@ -33,7 +33,7 @@
         <ul class="my_list f16" id="invited_list" >
             <volist name='result.list' id='vo' empty='暂时没有受邀职位的数据'>
         	<li class="clearfix">
-            	<p class="fl My_w1 pl10"><a href="{:U('Search/jobInfo')}" class="tit">{$vo.jname}</a></p>
+            <p class="fl My_w1 pl10"><a href="{:U('Search/jobInfo')}?jobid={$vo.jobid}" class="tit">{$vo.jname}</a>{$vo.jobid}</p>
                 <p class="fl My_w2">{$vo.sendtime}</p>
                 <if condition='$vo.result eq 0'>
                     <p class="fl My_w3 yes fb" jobid='{$vo.jobid}'><a href="javascript:;" result='1'> 接受</a>|<a href="javascript:;" result='2'> 拒绝</a></p>
