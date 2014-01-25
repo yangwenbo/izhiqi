@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>已发布职位</title>
+        <link href="__CSSURL__/base.css" rel="stylesheet" type="text/css" />
+        <link href="__CSSURL__/common.css" rel="stylesheet" type="text/css" />
+        <link href="__CSSURL__/company.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <div class="content">
+
+            <include file="Public:enterpriseheader"/>
+
+            <div class="main">
+                <!-- wrapper { -->
+                <div class="frame_b">
+                    <div class="bg_top"></div>
+                    <!-- 内容 { -->
+                    <div class="wrap p30">
+
+                        <!-- 招聘职位 { -->
+                        <volist name="info.joblist" id="vo">
+                        <div class="wrap_line cl mt20 clearfix pr">
+                            <!--p class="fl w80 f16 c6 fb lh200 ">职位:</p-->
+                            <div class="mt5 pr tc">
+                                <em class="c6 f20 col_blk">{$vo.jname}</em>
+                            </div>
+                        </div>
+                        <!-- 人数 { -->
+                        <div class="cl mt10 clearfix pb10">
+                            <p class="fl w80 f14 c6 fb lh200">招聘人数:</p>
+                            <div class="fl w700 c6 lh200 f14">
+                                <em class="m_colr1">{$vo.jobnum}</em>
+                            </div>
+                            <a href="javascript:" id="del{$vo.id}" val="{$vo.id}" class="a_btn2 f14 cf del_position">删除</a>
+                        </div>
+                        <!-- ｝ 人数 -->
+                        <!-- 赏金 { -->
+                        <div class="cl clearfix pb10 ">
+                            <p class="fl w80 f14 c6 fb lh200">赏金:</p>
+                            <div class="fl w700 c6 lh200 f14">
+                                <em class="m_colr1 mr10">{$vo.reward}</em>金币
+                            </div>
+                        </div>
+                        <div class="cl clearfix mb30">
+                            <p class="fl w80 f14 c6 fb lh200 ">岗位职责:</p>
+                            <div class="fl w700 mt5 mb10 c6 f14 pr autobr">
+                                <em class="m_colr1 f14">{$vo.jcontent}</em>
+                            </div>
+                        </div>
+                        <!-- ｝ 赏金 -->
+                        </volist>
+                    </div>
+
+                    <div class="bg_bottom"></div>
+                </div>
+            </div>
+        </div>
+
+        <include file="Public:footer"/>
+
+        <script>
+            var deljobUrl="{:U('Enterprise/delJob')}";
+            var getjobclassUrl="{:U('Job/getJobclassSon')}";
+            $(function(){
+                $("a[id^=del]").click(function(){
+                    var id=$(this).attr("val");
+                    if(confirm("您确定要删除吗？"))
+                    {
+                        window.location.href=deljobUrl+"?jobid="+id;
+                    }
+                });
+                $("#save_1,#save_2").click(function(){
+                    var btntype=$(this).attr("btntype");
+                    $("#btntype").val(btntype);
+                    $("#enterpriseform").submit();
+                });
+                $("#jobclassid_first,#jobclassid_sec").change(function(){
+                    var id=$(this).val();
+                    var thisid=$(this).attr("id");
+                    if(id<1)
+                    {
+                        return;
+                    }
+                    $.ajax({
+                        url: getjobclassUrl+"?id="+id,
+                        type:'get',
+                        dataType:'JSON',
+                        success:function(data){
+                            var str="<option value='0'>--请选择--</option>";
+                            var strs="<option value='0'>--请选择--</option>";
+                            if(data.status==100)
+                            {
+                                for(i in data.data)
+                                {
+                                    strs+="<option value='"+data.data[i].id+"'>"+data.data[i].classname+"</option>"
+                                }
+                                if(data.data[0].level==2)
+                                {
+                                    $("#jobclassid_sec").html(strs);
+                                    $("#jobclassid").html(str);
+                                }else
+                                {
+                                    $("#jobclassid").html(strs);
+                                }
+                                }else{
+                                if(thisid=='jobclassid_first')
+                                {
+                                    $("#jobclassid_sec").html(str);
+                                    $("#jobclassid").html(str);
+                                    }else{
+                                    $("#jobclassid").html(str);
+                                }
+                            }
+                        }
+                    })
+
+                });
+            });
+        </script>
+    </body>
+</html>

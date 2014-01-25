@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>发布新职位</title>
+        <link href="__CSSURL__/base.css" rel="stylesheet" type="text/css" />
+        <link href="__CSSURL__/common.css" rel="stylesheet" type="text/css" />
+        <link href="__CSSURL__/company.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <div class="content">
+
+            <include file="Public:enterpriseheader"/>
+
+            <div class="main">
+                <!-- wrapper { -->
+                <div class="frame_b">
+                    <div class="bg_top"></div>
+                    <!-- 内容 { -->
+                    <form id="enterpriseform" method="post">
+                        <div class="wrap p30">
+
+                            <h1 class="wrap_line f18 fb tc corange lh200">添加职位</h1>
+                            <!-- 添加职位 { -->
+                            <div class="cl mt30 clearfix pb30" id="addjob">
+                                <div class="fr mt30 c6 f14" style="width:825px;">
+                                    <div class="fl input_bg5 mt10 mb10">
+                                        <input type="text" class="text_bg5 c8" value="职位名称" name="jname" id="jname"   onblur="if (this.value==''){ this.value='职位名称';this.style.color='#999';}else{this.style.color='';}" onfocus="if (this.value=='职位名称') {this.value='';this.style.color='';}"/>
+                                    </div>
+                                    <div class="fl input_bg5 mt10 mb10">
+                                        <div class="text_bg5">
+                                            职位类别
+                                            <select name="jobclassid_first" id="jobclassid_first" >
+                                                <option value="">--请选择--</option>         
+                                                <volist name="jobclass_first" id="vo">
+                                                <option value="{$vo.id}">{$vo.classname}</option>
+                                                </volist>     
+                                            </select>
+                                            <select name="jobclassid_sec" id="jobclassid_sec">
+                                                <option value="">--请选择--</option>     
+                                            </select>
+                                            <select name="jobclassid" id="jobclassid">
+                                                <option value="">--请选择--</option>     
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="fl input_bg6 mt10 mb10">
+                                        <textarea class="text_bg6 c9" name="jcontent" id="jcontent" onblur="if (this.value==''){ this.value='职位职责';this.style.color='#999';}else{this.style.color='';}" onfocus="if (this.value=='职位职责') {this.value='';this.style.color='';}">职位职责</textarea>
+                                    </div>
+                                    <div class="fl input_bg5 mt10 mb10">
+                                        <input type="text" class="text_bg5 c8" value="招聘人数" name="jobnum" id="jobnum" onblur="if (this.value==''){ this.value='招聘人数';this.style.color='#999';}else{this.style.color='';}" onfocus="if (this.value=='招聘人数') {this.value='';this.style.color='';}"/>
+                                    </div>
+                                    <div class="fl input_bg5 mt10 mb10">
+                                        <input type="text" class="text_bg5 c8" value="赏金" name="reward" id="reward"    onblur="if (this.value==''){ this.value='赏金';this.style.color='#999';}else{this.style.color='';}" onfocus="if (this.value=='赏金') {this.value='';this.style.color='';}"/>
+                                    </div>
+
+                                </div>
+                                <div class="cl"><a href="javascript:" id="save_1" btntype="1" class="a_btn4 f14 cf ml350">保存</a></div>
+                            </div>
+                            <!-- ｝ 添加职位 -->
+
+                        </div>
+                    </form>
+
+                    <div class="bg_bottom"></div>
+                </div>
+            </div>
+        </div>
+
+        <include file="Public:footer"/>
+
+        <script>
+            var getjobclassUrl="{:U('Job/getJobclassSon')}";
+            $(function(){
+                $("#save_1,#save_2").click(function(){
+                    var btntype=$(this).attr("btntype");
+                    $("#btntype").val(btntype);
+                    $("#enterpriseform").submit();
+                });
+                $("#jobclassid_first,#jobclassid_sec").change(function(){
+                    var id=$(this).val();
+                    var thisid=$(this).attr("id");
+                    if(id<1)
+                    {
+                        return;
+                    }
+                    $.ajax({
+                        url: getjobclassUrl+"?id="+id,
+                        type:'get',
+                        dataType:'JSON',
+                        success:function(data){
+                            var str="<option value='0'>--请选择--</option>";
+                            var strs="<option value='0'>--请选择--</option>";
+                            if(data.status==100)
+                            {
+                                for(i in data.data)
+                                {
+                                    strs+="<option value='"+data.data[i].id+"'>"+data.data[i].classname+"</option>"
+                                }
+                                if(data.data[0].level==2)
+                                {
+                                    $("#jobclassid_sec").html(strs);
+                                    $("#jobclassid").html(str);
+                                }else
+                                {
+                                    $("#jobclassid").html(strs);
+                                }
+                                }else{
+                                if(thisid=='jobclassid_first')
+                                {
+                                    $("#jobclassid_sec").html(str);
+                                    $("#jobclassid").html(str);
+                                    }else{
+                                    $("#jobclassid").html(str);
+                                }
+                            }
+                        }
+                    })
+
+                });
+            });
+        </script>
+    </body>
+</html>
