@@ -142,58 +142,73 @@ class EnterpriseAction extends Action {
         $this->assign('uid',$uid);
         $this->display();
     }
-
-    //企业信息
-    public function enterpriseinfo() {
-        $info = Enterprisehelp::getEnterpriseinfo($this->eid);
-        if ($_POST) {
-            $btntype=$this->_param("btntype");//  1，只保存部分，2全保存
+    public function releaseNewJob(){
+        if($_POST)
+        {
             $jname=$this->_param('jname');
             $date=date('Y-m-d H:i:s');
             if(empty($jname)||$jname=='职位名称')
             {
                 $jname='';
             }
-            if($btntype==1||!empty($jname))
-            {
-                $jobclassid=intval($this->_param('jobclassid'))?intval($this->_param('jobclassid')):0;
-                $jcontent = trim($this->_param('jcontent'));
-                $reward = intval($this->_param('reward'))?intval($this->_param('reward')):0;
-                $jobnum = intval($this->_param('jobnum'))?$this->_param('jobnum'):0;
-                
-                if(empty($jname)||$jname=='职位名称')
-                {
-                    $this->error("请输入职位名称");
-                }
-                if(!$jobclassid)
-                {
-                    $this->error("职位类别没有选择全");
-                }
-                if(empty($jcontent)||$jcontent=='职位职责')
-                {
-                    $this->error("请输入职位职责");
-                }
-                if(!$jobnum)
-                {
-                    $this->error("请输入招聘人数");
-                }
-                $data = array(
-                    'eid'=>$this->eid,
-                    'jname' => $jname,
-                    'jcontent' => $jcontent,
-                    'jobclass_id'=>$jobclassid,
-                    'reward' => $reward,
-                    'jobnum' => $jobnum,
-                    'updatetime'=>$date
-                );
-                if (!Jobhelp::insertJob($data)) {
-                    $this->error('添加职位失败');
-                }
-                if($btntype==1){
-                    $this->error('添加职位成功');
-                }
-            }
+
+            $jobclassid=intval($this->_param('jobclassid'))?intval($this->_param('jobclassid')):0;
+            $jcontent = trim($this->_param('jcontent'));
+            $reward = intval($this->_param('reward'))?intval($this->_param('reward')):0;
+            $jobnum = intval($this->_param('jobnum'))?$this->_param('jobnum'):0;
             
+            if(empty($jname)||$jname=='职位名称')
+            {
+                $this->error("请输入职位名称");
+            }
+            if(!$jobclassid)
+            {
+                $this->error("职位类别没有选择全");
+            }
+            if(empty($jcontent)||$jcontent=='职位职责')
+            {
+                $this->error("请输入职位职责");
+            }
+            if(!$jobnum)
+            {
+                $this->error("请输入招聘人数");
+            }
+            $data = array(
+                'eid'=>$this->eid,
+                'jname' => $jname,
+                'jcontent' => $jcontent,
+                'jobclass_id'=>$jobclassid,
+                'reward' => $reward,
+                'jobnum' => $jobnum,
+                'updatetime'=>$date
+            );
+            if (!Jobhelp::insertJob($data)) {
+                $this->error('添加职位失败');
+            }
+            $this->success('添加职位成功', 'releasedJob');
+        }
+
+        $jobclass_first=Jobhelp::getLevel1();
+        $this->assign('jobclass_first',$jobclass_first);
+
+        $this->assign('tab','job');
+        $this->display();
+    }
+
+    public function releasedJob(){
+        $info = Enterprisehelp::getEnterpriseinfo($this->eid);
+
+        $this->assign('info', $info);
+        
+        $this->assign('tab','job');
+        $this->display();
+    }
+
+    //企业信息
+    public function enterpriseinfo() {
+        $info = Enterprisehelp::getEnterpriseinfo($this->eid);
+        if ($_POST) {
+                        
             // $province = $this->_param('province');
             // $city = $this->_param('city');
             $address = $this->_param('address')?$this->_param('address'):'';
@@ -228,8 +243,6 @@ class EnterpriseAction extends Action {
         $arrScale=C('COMPANY_SCALE');
         $this->assign('arrScale',$arrScale);
 
-        $jobclass_first=Jobhelp::getLevel1();
-        $this->assign('jobclass_first',$jobclass_first);
         $this->assign('tab','info');
         $this->display();
     }

@@ -3,7 +3,7 @@
     define('APP_NAME', 'izhiqi');
     define('APP_PATH', './izhiqi/');
     define('APP_ENVIRONMENT', 'Home/Dev');
-    define('WEBSITE', 'http://192.168.0.101/izhiqi/');
+    define('WEBSITE', 'http://localhost/izhiqi/');
 
     require './ThinkPHP/ThinkPHP.php';
 ?>

@@ -38,9 +38,9 @@ return array(
     'TMPL_PARSE_STRING' => array(
         //public
         //'__PUBLIC__' => __ROOT__ . '/Public',
-        '__JSURL__' => WEBSITE . 'Public/js',
-        '__CSSURL__' => WEBSITE . 'Public/css',
-        '__IMGURL__' => WEBSITE . 'Public/images',
+        '__JSURL__' => '/izhiqi/Public/js',
+        '__CSSURL__' => '/izhiqi/Public/css',
+        '__IMGURL__' => '/izhiqi/Public/images',
     ),
     // 常规配置
     'URL_MODEL' => 1, // 如果你的环境不支持PATHINFO 请设置为3

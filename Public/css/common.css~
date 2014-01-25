@@ -78,7 +78,7 @@ body{background:url(../images/bg.jpg) repeat-y center top #BAE4FF;font-family:ya
 
 /*input_bg6:个人设置输入区域*/
 .input_bg6{background-color:white;width:700px;height:60px;}
-.input_bg6 .text_bg6{border-radius:4px; background-color:#ddd; color:#555; padding-left:7px;border:none;width:690px;height:50px;line-height:25px;font-size:15px;}
+.input_bg6 .text_bg6{border-radius:4px; background-color:#ddd; color:#555; padding-left:7px;border:none;width:690px;height:60px;line-height:25px;font-size:15px;}
 
 .input_bg_bc{background:#EDEEF2;border:none;height:30px;line-height:30px;width:160px;}
 .pull_down{display:inline-block;width:20px;height:20px;background:url(../images/inside_sprite.gif) no-repeat -219px -6px;text-indent:-999em;overflow:hidden;vertical-align:middle}
@@ -106,7 +106,7 @@ body{background:url(../images/bg.jpg) repeat-y center top #BAE4FF;font-family:ya
 .a_btn1{background-color: #0bf;width:200px;}
 .a_btn1 em{background-color: transparent;}
 /*red*/
-.a_btn2{background-color:#ff0a47;width:60px;}
+.a_btn2{background-color:#ff0a47;padding: 5px 7px 4px 7px;}
 .a_btn2 em{background-color:transparent;}
 /*green*/
 .a_btn3{background-color:#0e7;width:200px;}

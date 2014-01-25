@@ -18,9 +18,19 @@
                     <li>
                         <a href="{:U('Enterprise/invitedlist')}" >邀请列表</a>
                     </li>
+                    <li>
+                        <a href="{}" >offer列表</a>
+                    </li>
                 </ul>
             </li>
             <li><a href="{:U('Enterprise/enterpriseinfo')}" <if condition="$tab eq 'info'">class="on"</if>>主页</a></li>
+            <li>
+            <a href="#" <if condition="$tab eq 'job'">class="on"</if> >职位</a>
+                <ul class="dropDown">
+                    <li><a href="{:U('Enterprise/releasedjob')}">已发布职位</a></li>
+                    <li><a href="{:U('Enterprise/releasenewjob')}">发布新职位</a></li>
+                </ul>
+            </li>
             <li><a href="###" <if condition="$tab eq 'usercenter'">class="on"</if>>帐号</a></li>
             <li>
                 <a href='#' <if condition="$tab eq 'setting'">class="on"</if>>我的职启</a>

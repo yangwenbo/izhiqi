@@ -59,85 +59,13 @@
 
                             <!-- 公司简介 { -->
                             <div class="cl mt20 clearfix pb30 wrap_line">
-                                <p class="fl w80 f14 c6 lh200">公司介绍</p>
+                                <p class="fl w80 f16 fb c6 lh200">公司介绍</p>
                                 <div class="fr w850 c6 lh200 f14">
-                                    <textarea class="c9 lh200 f14 p5" style="background:#eeeeee;width:98%;border:none;height:200px;border-radius:5px;" name="companydesc" id="companydesc">{$info.companydesc}</textarea>
+                                    <textarea class="c3 lh200 f14 p5" style="background:transparent;width:90%;border:none;height:200px;border-radius:5px;" name="companydesc" id="companydesc">{$info.companydesc}</textarea>
                                 </div>
                             </div>
                             <!-- ｝ 公司简介 -->
 
-                            <!-- 招聘职位 { -->
-                            <volist name="info.joblist" id="vo">
-                            <div class="cl mt20 clearfix pr">
-                                <p class="fl w80 f16 c6 fb lh200 ">招聘职位:</p>
-                                <div class="fr w850 mt5 c6 f14 pr autobr">
-                                    <em class="f14 col_blk">{$vo.jname}</em>
-                                </div>
-                                <a href="javascript:" id="del{$vo.id}" val="{$vo.id}" class="pa a_btn2 f14 cf del_position">删除</a>
-                            </div>
-                            <!-- 人数 { -->
-                            <div class="cl mt10 clearfix pb10">
-                                <p class="fl w80 f14 c6 fb lh200">招聘人数</p>
-                                <div class="fr w850 c6 lh200 f14">
-                                    <em class="m_colr1">{$vo.jobnum}</em>
-                                </div>
-                            </div>
-                            <!-- ｝ 人数 -->
-                            <!-- 赏金 { -->
-                            <div class="cl clearfix pb10 ">
-                                <p class="fl w80 f14 c6 fb lh200">赏金</p>
-                                <div class="fr w850 c6 lh200 f14">
-                                    <em class="m_colr1 mr10">{$vo.reward}</em>金币
-                                </div>
-                            </div>
-                            <div class="cl clearfix pr wrap_line">
-                                <p class="fl w80 f14 c6 fb lh200 ">岗位职责:</p>
-                                <div class="fr w850 c6 f14 pr autobr">
-                                    <em class="m_colr1 f14">{$vo.jcontent}</em>
-                                </div>
-                            </div>
-                            <!-- ｝ 赏金 -->
-                            </volist>
-
-                            <!-- ｝ 招聘职位 -->
-                            <!-- 添加职位 { -->
-                            <div class="cl mt30 clearfix pb30 wrap_line" id="addjob">
-                                <p class="fl w80 f16 fb c6 lh200">添加职位</p>
-                                <div class="fr mt30 w850 c6 f14">
-                                    <div class="fl input_bg5 mt10 mb10">
-                                        <input type="text" class="text_bg5 c8" value="职位名称" name="jname" id="jname"   onblur="if (this.value==''){ this.value='职位名称';this.style.color='#999';}else{this.style.color='';}" onfocus="if (this.value=='职位名称') {this.value='';this.style.color='';}"/>
-                                    </div>
-                                    <div class="fl input_bg5 mt10 mb10">
-                                        <div class="text_bg5">
-                                            职位类别
-                                            <select name="jobclassid_first" id="jobclassid_first" >
-                                                <option value="">--请选择--</option>         
-                                                <volist name="jobclass_first" id="vo">
-                                                <option value="{$vo.id}">{$vo.classname}</option>
-                                                </volist>     
-                                            </select>
-                                            <select name="jobclassid_sec" id="jobclassid_sec">
-                                                <option value="">--请选择--</option>     
-                                            </select>
-                                            <select name="jobclassid" id="jobclassid">
-                                                <option value="">--请选择--</option>     
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="fl input_bg6 mb10">
-                                        <textarea class="text_bg6 c9" name="jcontent" id="jcontent" onblur="if (this.value==''){ this.value='职位职责';this.style.color='#999';}else{this.style.color='';}" onfocus="if (this.value=='职位职责') {this.value='';this.style.color='';}">职位职责</textarea>
-                                    </div>
-                                    <div class="fl input_bg5 mt10 mb10">
-                                        <input type="text" class="text_bg5 c8" value="招聘人数" name="jobnum" id="jobnum" onblur="if (this.value==''){ this.value='招聘人数';this.style.color='#999';}else{this.style.color='';}" onfocus="if (this.value=='招聘人数') {this.value='';this.style.color='';}"/>
-                                    </div>
-                                    <div class="fl input_bg5 mt10 mb10">
-                                        <input type="text" class="text_bg5 c8" value="赏金" name="reward" id="reward"    onblur="if (this.value==''){ this.value='赏金';this.style.color='#999';}else{this.style.color='';}" onfocus="if (this.value=='赏金') {this.value='';this.style.color='';}"/>
-                                    </div>
-
-                                </div>
-                                <div class="cl"><a href="javascript:" id="save_1" btntype="1" class="a_btn4 f14 cf ml350">保存</a></div>
-                            </div>
-                            <!-- ｝ 添加职位 -->
                             <div class="cl clearfix mt50">
                                 <input type="hidden" name="btntype" id="btntype" value="2"/>
                                 <a href="javascript:" id="save_2" btntype="2" class="a_btn3 f14 cf ml350">保存</a>
@@ -154,61 +82,12 @@
 
         <include file="Public:footer"/>
         <script>
-            var deljobUrl="{:U('Enterprise/delJob')}";
             var getjobclassUrl="{:U('Job/getJobclassSon')}";
             $(function(){
-                $("a[id^=del]").click(function(){
-                    var id=$(this).attr("val");
-                    if(confirm("您确定要删除吗？"))
-                    {
-                        window.location.href=deljobUrl+"?jobid="+id;
-                    }
-                });
                 $("#save_1,#save_2").click(function(){
                     var btntype=$(this).attr("btntype");
                     $("#btntype").val(btntype);
                     $("#enterpriseform").submit();
-                });
-                $("#jobclassid_first,#jobclassid_sec").change(function(){
-                    var id=$(this).val();
-                    var thisid=$(this).attr("id");
-                    if(id<1)
-                    {
-                        return;
-                    }
-                    $.ajax({
-                        url: getjobclassUrl+"?id="+id,
-                        type:'get',
-                        dataType:'JSON',
-                        success:function(data){
-                            var str="<option value='0'>--请选择--</option>";
-                            var strs="<option value='0'>--请选择--</option>";
-                            if(data.status==100)
-                            {
-                                for(i in data.data)
-                                {
-                                    strs+="<option value='"+data.data[i].id+"'>"+data.data[i].classname+"</option>"
-                                }
-                                if(data.data[0].level==2)
-                                {
-                                    $("#jobclassid_sec").html(strs);
-                                    $("#jobclassid").html(str);
-                                }else
-                                {
-                                    $("#jobclassid").html(strs);
-                                }
-                                }else{
-                                if(thisid=='jobclassid_first')
-                                {
-                                    $("#jobclassid_sec").html(str);
-                                    $("#jobclassid").html(str);
-                                    }else{
-                                    $("#jobclassid").html(str);
-                                }
-                            }
-                        }
-                    })
-
                 });
             });
         </script>
