@@ -1,143 +1,146 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>注册</title>
-<link href="__CSSURL__/base.css" rel="stylesheet" type="text/css" />
-<link href="__CSSURL__/common.css" rel="stylesheet" type="text/css" />
-<link href="__CSSURL__/personal.css" rel="stylesheet" type="text/css" />
-</head>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>注册</title>
+        <link href="__CSSURL__/base.css" rel="stylesheet" type="text/css" />
+        <link href="__CSSURL__/common.css" rel="stylesheet" type="text/css" />
+        <link href="__CSSURL__/personal.css" rel="stylesheet" type="text/css" />
+    </head>
 
-<body onload="function imgPre('upload_avatar_btn', '#pre1')">
+    <body onload="function imgPre('upload_avatar_btn', '#pre1')">
 
-<!-- 公用 personal header { -->
-<include file="Public:userheader" />
-<!-- } 公用 personal header -->
+        <div class="content">
+            <!-- 公用 personal header { -->
+            <include file="Public:userheader" />
+            <!-- } 公用 personal header -->
 
-
-<!-- wrapper { -->
-<div class="frame_s">
-	<div class="bg_top"></div>
-    <!-- title { -->
-    <div class="title">
-    	<em class="c8 f14 ml30">注册职启</em>
-        <em class="mc f14 ml20">个人信息</em>
-    </div>
-    <!-- } title -->
-    <form id="register" action="{:U(Login/addUserinfo)}" method="POST" enctype="multipart/form-data">
-    <!-- 内容 { -->
-    <div class="wrap p30">
-    	
-        <ul class="reg_list">
-        
-            <li class="clearfix">
-            	<div class="fl photo p5">
-                	<img src="__IMGURL__/empty_avatar.png" width="120" height="120" border="0" id="pre1"/>
-                </div>
-                <div class="fl ml30">
-                	<p class="f14 c8 pt40 pb20">照片</p>
-                    <div class="btn1 pr">
-                        <a href="javascript:;" class="text_bg tc cf">上传照片</a>
-                        <input id='upload_avatar_btn' type="file" name="avartar" alt="上传照片" class="pa" style="top:0;left:0;width:130px;height:45px;filter:alpha(opacity:0);opacity:0;cursor:pointer" onchange="imgPre('upload_avatar_btn', '#pre1');" />
+            <div class="main">
+                <!-- wrapper { -->
+                <div class="frame_s">
+                    <div class="bg_top"></div>
+                    <!-- title { -->
+                    <div class="title">
+                        <em class="c8 f14 ml30">注册职启</em>
+                        <em class="mc f14 ml20">个人信息</em>
                     </div>
+                    <!-- } title -->
+                    <form id="register" action="{:U(Login/addUserinfo)}" method="POST" enctype="multipart/form-data">
+                        <!-- 内容 { -->
+                        <div class="wrap p30">
+
+                            <ul class="reg_list">
+
+                                <li class="clearfix">
+                                <div class="fl photo p5">
+                                    <img src="__IMGURL__/empty_avatar.png" width="120" height="120" border="0" id="pre1"/>
+                                </div>
+                                <div class="fl ml30">
+                                    <p class="f14 c8 pt40 pb20">照片</p>
+                                    <div class="btn1 pr">
+                                        <a href="javascript:;" class="text_bg tc cf">上传照片</a>
+                                        <input id='upload_avatar_btn' type="file" name="avartar" alt="上传照片" class="pa" style="top:0;left:0;width:130px;height:45px;filter:alpha(opacity:0);opacity:0;cursor:pointer" onchange="imgPre('upload_avatar_btn', '#pre1');" />
+                                    </div>
+                                </div>
+                                <!--p class="fr more_info pt90">提示：上传文件</p-->
+                                </li>
+
+                                <li class="clearfix">
+                                <div class="fl input_bg1">
+                                    <input type="text" class="text_bg1 c8" tip='毕业院校'  value="毕业院校" name="schoolname" datatype="s4-50" nullmsg="请输入毕业学校"/>
+                                </div>
+                                <p class="fr more_info pt10">必填(毕业学校)</p>
+                                </li>
+
+                                <li class="clearfix">
+                                <div class="fl input_bg1">
+                                    <input type="text" class="text_bg1 c8" tip='专业' value="专业" name="major" datatype="s2-50" nullmsg="请输入专业">
+                                </div>
+                                <p class="fr more_info pt10">必填(专业)</p>
+                                </li>
+
+                                <li class="clearfix">
+                                <div class="fl input_bg1">
+                                    <input type="text" class="text_bg1 c8" tip='入学日期' value="入学日期" name="schoolstartdate" onClick="WdatePicker()" />
+                                </div>
+                                <p class="fr more_info">选填(入学日期)</p>
+                                </li>
+
+                                <li class="clearfix">
+                                <div class="fl input_bg1">
+                                    <input type="text" class="text_bg1 c8" tip='地址（学校）' value="地址（学校）" name="schooladdress"   />
+                                </div>
+                                <p class="fr more_info">选填(学校地址)</p>
+                                </li>
+
+                                <li class="clearfix">
+                                <div class="fl input_bg2">
+                                    <span class="text_bg2 c8" >性别</span>
+                                </div>
+                                <div class="fl ml20 input_bg2">
+                                    <div class="text_bg2 tc">
+                                        <span class='ml5 cc fb' style='color: #0bf;'>男</span> <input type="radio" name="sex" value='1' datatype="*" sucmsg=""/>
+                                        <span class='ml5 cc fb' style='color: #f88;'>女</span> <input type="radio" name="sex" value='2' datatype="*" sucmsg=""/>
+                                    </div>
+                                </div>
+                                <p class="fr more_info pt10">必填(性别)</p>
+                                </li>
+
+                                <li class="clearfix">
+                                <div class="fl input_bg1">
+                                    <input type="text" class="text_bg1 c8" tip='年龄'  value="年龄" name="age" datatype="n1-2" nullmsg="请输入年龄"/>
+                                </div>
+                                <p class="fr more_info">必填(年龄)</p>
+                                </li>
+
+                            </ul>
+
+                        </div>
+                        <!-- } 内容 -->
+
+                        <div class="bg_f pt20 pb10">
+                            <div class="bc btn2">
+                                <a href="javascript:" id="btnRegister"class="text_bg tc cf">完成注册</a>
+                            </div>
+                        </div>   
+                    </form> 
+                    <div class="bg_bottom"></div>
                 </div>
-                <!--p class="fr more_info pt90">提示：上传文件</p-->
-            </li>
-            
-            <li class="clearfix">
-                <div class="fl input_bg1">
-                    <input type="text" class="text_bg1 c8" tip='毕业院校'  value="毕业院校" name="schoolname" datatype="s4-50" nullmsg="请输入毕业学校"/>
-                </div>
-                <p class="fr more_info pt10">必填(毕业学校)</p>
-            </li>
-            
-            <li class="clearfix">
-                <div class="fl input_bg1">
-                    <input type="text" class="text_bg1 c8" tip='专业' value="专业" name="major" datatype="s2-50" nullmsg="请输入专业">
-                </div>
-                <p class="fr more_info pt10">必填(专业)</p>
-            </li>
-            
-            <li class="clearfix">
-                <div class="fl input_bg1">
-                    <input type="text" class="text_bg1 c8" tip='入学日期' value="入学日期" name="schoolstartdate" onClick="WdatePicker()" />
-                </div>
-                <p class="fr more_info">选填(入学日期)</p>
-            </li>
-            
-            <li class="clearfix">
-                <div class="fl input_bg1">
-                    <input type="text" class="text_bg1 c8" tip='地址（学校）' value="地址（学校）" name="schooladdress"   />
-                </div>
-                <p class="fr more_info">选填(学校地址)</p>
-            </li>
-            
-            <li class="clearfix">
-                <div class="fl input_bg2">
-                    <span class="text_bg2 c8" >性别</span>
-                </div>
-                <div class="fl ml20 input_bg2">
-                    <div class="text_bg2 tc">
-                    	<span class='ml5 cc fb' style='color: #0bf;'>男</span> <input type="radio" name="sex" value='1' datatype="*" sucmsg=""/>
-                         <span class='ml5 cc fb' style='color: #f88;'>女</span> <input type="radio" name="sex" value='2' datatype="*" sucmsg=""/>
-                    </div>
-                </div>
-                <p class="fr more_info pt10">必填(性别)</p>
-            </li>
-            
-            <li class="clearfix">
-                <div class="fl input_bg1">
-                    <input type="text" class="text_bg1 c8" tip='年龄'  value="年龄" name="age" datatype="n1-2" nullmsg="请输入年龄"/>
-                </div>
-                <p class="fr more_info">必填(年龄)</p>
-            </li>
-            
-        </ul>
-        
-    </div>
-    <!-- } 内容 -->
-    
-    <div class="bg_f pt20 pb10">
-    	<div class="bc btn2">
-        	<a href="javascript:" id="btnRegister"class="text_bg tc cf">完成注册</a>
+                <!-- } wrapper -->
+            </div>
         </div>
-    </div>   
-    </form> 
-    <div class="bg_bottom"></div>
-</div>
-<!-- } wrapper -->
 
-<!-- 公用 footer { -->
-<include file="Public:footer"/>
-<!-- } 公用 footer -->
+        <!-- 公用 footer { -->
+        <include file="Public:footer"/>
+        <!-- } 公用 footer -->
 
 
-<script src="__JSURL__/My97DatePicker/WdatePicker.js"></script>
-<script src="__JSURL__/Validform_v5.3.2.js" type="text/javascript" charset="UTF-8"></script>
-<script>
-$(function(){
-    var vf=$("#register").Validform({
-        btnSubmit:"#btnRegister", 
-        tiptype:3, 
-        label:".label",
-        showAllError:true,
-        datatype:{
-            "zh1-6":/^[\u4E00-\u9FA5\uf900-\ufa2d]{1,6}$/
-        }
-    });
-});
+        <script src="__JSURL__/My97DatePicker/WdatePicker.js"></script>
+        <script src="__JSURL__/Validform_v5.3.2.js" type="text/javascript" charset="UTF-8"></script>
+        <script>
+            $(function(){
+                var vf=$("#register").Validform({
+                    btnSubmit:"#btnRegister", 
+                    tiptype:3, 
+                    label:".label",
+                    showAllError:true,
+                    datatype:{
+                        "zh1-6":/^[\u4E00-\u9FA5\uf900-\ufa2d]{1,6}$/
+                    }
+                });
+            });
 
-function imgPre(inputId, targetId) {
-    var input = document.getElementById(inputId);
+            function imgPre(inputId, targetId) {
+                var input = document.getElementById(inputId);
 
-    if (input.files && input.files[0]) {
-        var reader = new FileReader();
-        reader.onload = function (e) {
-            $(targetId).attr('src', e.target.result);
-        };
-        reader.readAsDataURL(input.files[0]);
-    }
-}
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+                        $(targetId).attr('src', e.target.result);
+                    };
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
 
-</script>
-</html>
+        </script>
+    </html>

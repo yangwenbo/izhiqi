@@ -1,179 +1,184 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>注册</title>
-<link href="__CSSURL__/base.css" rel="stylesheet" type="text/css" />
-<link href="__CSSURL__/common.css" rel="stylesheet" type="text/css" />
-<link href="__CSSURL__/personal.css" rel="stylesheet" type="text/css" />
-</head>
-<body>
-    
-<include file="Public:enterpriseheader"/>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>注册</title>
+        <link href="__CSSURL__/base.css" rel="stylesheet" type="text/css" />
+        <link href="__CSSURL__/common.css" rel="stylesheet" type="text/css" />
+        <link href="__CSSURL__/personal.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
 
-<form id="register" method="POST" enctype="multipart/form-data">
-<!-- wrapper { -->
-<div class="frame_s">
-	<div class="bg_top"></div>
-    <!-- title { -->
-    <div class="title">
-    	<em class="c8 f14 ml30">注册职启</em>
-        <em class="mc_c f14 ml20">公司信息</em>
-    </div>
-    <!-- } title -->
-    
-    <!-- 内容 { -->
-    <div class="wrap p30">
-    	
-        <ul class="reg_list">
-        
-            <li class="clearfix">
-            	<div class="ml50 fl photo p5">
-                	<img src="__IMGURL__/empty_avatar.png" width="120" height="120" border="0" id="pre1"/>
-                </div>
-                <div class="fl ml30">
-                	<p class="f14 c8 pt40 pb20">企业Logo</p>
-                    <div class="btn3 pr">
-                	    <a class="text_bg tc cf" href="javascript:;">logo</a>
-                        <input type="file" name="logo" alt="上传logo" class="pa" style="top:0;left:0;width:130px;height:45px;filter:alpha(opacity:0);opacity:0;cursor:pointer" onchange="imgPre(this, '#pre1');" />
-                	</div>
-                </div>
-            </li>
-            
-            <li class="clearfix">
-            	<div class="ml50 fl photo p5">
-                	<img src="__IMGURL__/empty_avatar.png" width="120" height="120" border="0" id="pre2"/>
-                </div>
-                <div class="fl ml30">
-                	<p class="f14 c8 pt40 pb20">工商执照</p>
-                    <div class="btn3 pr">
-                	    <a class="text_bg tc cf" href="javascript:;">上传执照</a>
-                        <input type="file" name="img_business_license" alt="执照" class="pa" style="top:0;left:0;width:130px;height:45px;filter:alpha(opacity:0);opacity:0;cursor:pointer" onchange="imgPre(this, '#pre2');" />
-                	</div>
-                </div>
-            </li>
-            <li class="clearfix">
-            	<div class="ml50 fl photo p5">
-                	<img src="__IMGURL__/empty_avatar.png" width="120" height="120" border="0" id="pre3"/>
-                </div>
-                <div class="fl ml30">
-                	<p class="f14 c8 pt40 pb20">机构代码</p>
-                    <div class="btn3 pr">
-                	    <a class="text_bg tc cf" href="javascript:;">机构代码</a>
-                        <input type="file" name="img_organization_code" alt="机构代码" class="pa" style="top:0;left:0;width:130px;height:45px;filter:alpha(opacity:0);opacity:0;cursor:pointer" onchange="imgPre(this, '#pre3');" />
-                	</div>
-                </div>
-            </li>
-            <li class="clearfix">
-            	<div class="ml50 fl photo p5">
-                	<img src="__IMGURL__/empty_avatar.png" width="120" height="120" border="0" id="pre4"/>
-                </div>
-                <div class="fl ml30">
-                	<p class="f14 c8 pt40 pb20">税务登记</p>
-                    <div class="btn3 pr">
-                	    <a class="text_bg tc cf" href="javascript:;">税务登记</a>
-                        <input type="file" name="img_tax_registration_certificate" alt="税务等级" class="pa" style="top:0;left:0;width:130px;height:45px;filter:alpha(opacity:0);opacity:0;cursor:pointer" onchange="imgPre(this, '#pre4');" />
-                	</div>
-                </div>
-            </li>
-            <!--li class="clearfix">
-                <div class="fl input_bg1">
-                    <p class="pt7 f14 pr">
-                        <em class="pl10 lh200 c9">工商执照</em>
-                        <input type="text" class="ml5 input_bg_bc" readonly/>
-                        <a href="javascript:;" class="ml5 preview cf">浏览</a>
-                        <input type="file" name="img_business_license" alt="工商执照" class="pa" style="top:8px;right:11px;width:45px;height:30px;filter:alpha(opacity:0);opacity:0;cursor:pointer" onchange="$(this).parent().parent().find('.input_bg_bc').val($(this).val()).attr('disabled',true);" />
-                    </p>
-                </div>
-                <p class="fr more_info pt10">必填</p>
-            </li>
-            
-            <li class="clearfix">
-                <div class="fl input_bg1">
-                    <p class="pt7 f14 pr">
-                        <em class="pl10 lh200 c9">机构代码</em>
-                        <input type="text" class="ml5 input_bg_bc" readonly/>
-                        <a href="javascript:;" class="ml5 preview cf">浏览</a>
-                        <input type="file" name="img_organization_code" alt="机构代码" class="pa" style="top:8px;right:11px;width:45px;height:30px;filter:alpha(opacity:0);opacity:0;cursor:pointer" onchange="$(this).parent().parent().find('.input_bg_bc').val($(this).val()).attr('disabled',true);" />
-                    </p>
-                </div>
-                <p class="fr more_info pt10">必填</p>
-            </li>
-            
-            <li class="clearfix">
-                <div class="fl input_bg1">
-                    <p class="pt7 f14 pr">
-                        <em class="pl10 lh200 c9">税务登记</em>
-                        <input type="text" class="ml5 input_bg_bc" readonly/>
-                        <a href="javascript:;" class="ml5 preview cf">浏览</a>
-                        <input type="file" name="img_tax_registration_certificate" alt="税务登记" class="pa" style="top:8px;right:11px;width:45px;height:30px;filter:alpha(opacity:0);opacity:0;cursor:pointer" onchange="$(this).parent().parent().find('.input_bg_bc').val($(this).val()).attr('disabled',true);" />
-                    </p>
-                </div>
-                <p class="fr more_info pt10">必填</p>
-            </li-->
-            
-            <li class="clearfix">
-                <div class="fl input_bg1">
-                    <p class="pt7 f14">
-                        <em class="pl10 lh200 c9">公司规模</em>
-                        <!--<input type="text" class="ml5 input_bg_bc" />-->
-                        <select name="scale" id="scale" class="p5 w100">
-                            <foreach name="arrScale" item="v" key="k">
-                                <option value="{$k}">{$v}</option>
-                            </foreach>
-                        </select>
-                        <!--a href="javascript:;" class="ml20 pull_down">下拉</a-->
-                    </p>
-                </div>
-                <p class="fr more_info pt10">必填</p>
-            </li>
+        <div class="content">
+            <include file="Public:enterpriseheader"/>
 
-            <li class="clearfix">
-                <div class="fl input_bg4">
-                    <textarea  onfocus="if (this.value=='公司简介') {this.value='';this.style.color='';}" title="公司简介" class="text_bg4 c9" name="companydesc" datatype="s1-10000" nullmsg="请输入公司简历">公司简介</textarea>
-                </div>
-                <p class="fr more_info pt10">必填</p>
-            </li>
-        </ul>
-        
-    </div>
-    <!-- } 内容 -->
-    
-    <div class="bg_f pt20 pb10">
-    	<div class="bc btn4">
-        	<a href="javascript:" id="btnRegister" class="text_bg tc cf">完成注册</a>
+            <div class="main">
+                <form id="register" method="POST" enctype="multipart/form-data">
+                    <!-- wrapper { -->
+                    <div class="frame_s">
+                        <div class="bg_top"></div>
+                        <!-- title { -->
+                        <div class="title">
+                            <em class="c8 f14 ml30">注册职启</em>
+                            <em class="mc_c f14 ml20">公司信息</em>
+                        </div>
+                        <!-- } title -->
+
+                        <!-- 内容 { -->
+                        <div class="wrap p30">
+
+                            <ul class="reg_list">
+
+                                <li class="clearfix">
+                                <div class="ml50 fl photo p5">
+                                    <img src="__IMGURL__/empty_avatar.png" width="120" height="120" border="0" id="pre1"/>
+                                </div>
+                                <div class="fl ml30">
+                                    <p class="f14 c8 pt40 pb20">企业Logo</p>
+                                    <div class="btn3 pr">
+                                        <a class="text_bg tc cf" href="javascript:;">logo</a>
+                                        <input type="file" name="logo" alt="上传logo" class="pa" style="top:0;left:0;width:130px;height:45px;filter:alpha(opacity:0);opacity:0;cursor:pointer" onchange="imgPre(this, '#pre1');" />
+                                    </div>
+                                </div>
+                                </li>
+
+                                <li class="clearfix">
+                                <div class="ml50 fl photo p5">
+                                    <img src="__IMGURL__/empty_avatar.png" width="120" height="120" border="0" id="pre2"/>
+                                </div>
+                                <div class="fl ml30">
+                                    <p class="f14 c8 pt40 pb20">工商执照</p>
+                                    <div class="btn3 pr">
+                                        <a class="text_bg tc cf" href="javascript:;">上传执照</a>
+                                        <input type="file" name="img_business_license" alt="执照" class="pa" style="top:0;left:0;width:130px;height:45px;filter:alpha(opacity:0);opacity:0;cursor:pointer" onchange="imgPre(this, '#pre2');" />
+                                    </div>
+                                </div>
+                                </li>
+                                <li class="clearfix">
+                                <div class="ml50 fl photo p5">
+                                    <img src="__IMGURL__/empty_avatar.png" width="120" height="120" border="0" id="pre3"/>
+                                </div>
+                                <div class="fl ml30">
+                                    <p class="f14 c8 pt40 pb20">机构代码</p>
+                                    <div class="btn3 pr">
+                                        <a class="text_bg tc cf" href="javascript:;">机构代码</a>
+                                        <input type="file" name="img_organization_code" alt="机构代码" class="pa" style="top:0;left:0;width:130px;height:45px;filter:alpha(opacity:0);opacity:0;cursor:pointer" onchange="imgPre(this, '#pre3');" />
+                                    </div>
+                                </div>
+                                </li>
+                                <li class="clearfix">
+                                <div class="ml50 fl photo p5">
+                                    <img src="__IMGURL__/empty_avatar.png" width="120" height="120" border="0" id="pre4"/>
+                                </div>
+                                <div class="fl ml30">
+                                    <p class="f14 c8 pt40 pb20">税务登记</p>
+                                    <div class="btn3 pr">
+                                        <a class="text_bg tc cf" href="javascript:;">税务登记</a>
+                                        <input type="file" name="img_tax_registration_certificate" alt="税务等级" class="pa" style="top:0;left:0;width:130px;height:45px;filter:alpha(opacity:0);opacity:0;cursor:pointer" onchange="imgPre(this, '#pre4');" />
+                                    </div>
+                                </div>
+                                </li>
+                                <!--li class="clearfix">
+                                <div class="fl input_bg1">
+                                    <p class="pt7 f14 pr">
+                                    <em class="pl10 lh200 c9">工商执照</em>
+                                    <input type="text" class="ml5 input_bg_bc" readonly/>
+                                    <a href="javascript:;" class="ml5 preview cf">浏览</a>
+                                    <input type="file" name="img_business_license" alt="工商执照" class="pa" style="top:8px;right:11px;width:45px;height:30px;filter:alpha(opacity:0);opacity:0;cursor:pointer" onchange="$(this).parent().parent().find('.input_bg_bc').val($(this).val()).attr('disabled',true);" />
+                                    </p>
+                                </div>
+                                <p class="fr more_info pt10">必填</p>
+                                </li>
+
+                                <li class="clearfix">
+                                <div class="fl input_bg1">
+                                    <p class="pt7 f14 pr">
+                                    <em class="pl10 lh200 c9">机构代码</em>
+                                    <input type="text" class="ml5 input_bg_bc" readonly/>
+                                    <a href="javascript:;" class="ml5 preview cf">浏览</a>
+                                    <input type="file" name="img_organization_code" alt="机构代码" class="pa" style="top:8px;right:11px;width:45px;height:30px;filter:alpha(opacity:0);opacity:0;cursor:pointer" onchange="$(this).parent().parent().find('.input_bg_bc').val($(this).val()).attr('disabled',true);" />
+                                    </p>
+                                </div>
+                                <p class="fr more_info pt10">必填</p>
+                                </li>
+
+                                <li class="clearfix">
+                                <div class="fl input_bg1">
+                                    <p class="pt7 f14 pr">
+                                    <em class="pl10 lh200 c9">税务登记</em>
+                                    <input type="text" class="ml5 input_bg_bc" readonly/>
+                                    <a href="javascript:;" class="ml5 preview cf">浏览</a>
+                                    <input type="file" name="img_tax_registration_certificate" alt="税务登记" class="pa" style="top:8px;right:11px;width:45px;height:30px;filter:alpha(opacity:0);opacity:0;cursor:pointer" onchange="$(this).parent().parent().find('.input_bg_bc').val($(this).val()).attr('disabled',true);" />
+                                    </p>
+                                </div>
+                                <p class="fr more_info pt10">必填</p>
+                                </li-->
+
+                                <li class="clearfix">
+                                <div class="fl input_bg1">
+                                    <p class="pt7 f14">
+                                    <em class="pl10 lh200 c9">公司规模</em>
+                                    <!--<input type="text" class="ml5 input_bg_bc" />-->
+                                    <select name="scale" id="scale" class="p5 w100">
+                                        <foreach name="arrScale" item="v" key="k">
+                                        <option value="{$k}">{$v}</option>
+                                        </foreach>
+                                    </select>
+                                    <!--a href="javascript:;" class="ml20 pull_down">下拉</a-->
+                                    </p>
+                                </div>
+                                <p class="fr more_info pt10">必填</p>
+                                </li>
+
+                                <li class="clearfix">
+                                <div class="fl input_bg4">
+                                    <textarea  onfocus="if (this.value=='公司简介') {this.value='';this.style.color='';}" title="公司简介" class="text_bg4 c9" name="companydesc" datatype="s1-10000" nullmsg="请输入公司简历">公司简介</textarea>
+                                </div>
+                                <p class="fr more_info pt10">必填</p>
+                                </li>
+                            </ul>
+
+                        </div>
+                        <!-- } 内容 -->
+
+                        <div class="bg_f pt20 pb10">
+                            <div class="bc btn4">
+                                <a href="javascript:" id="btnRegister" class="text_bg tc cf">完成注册</a>
+                            </div>
+                        </div>    
+                        <div class="bg_bottom"></div>
+                    </div>
+                    <!-- } wrapper -->
+                </form>
+
+            </div>
         </div>
-    </div>    
-    <div class="bg_bottom"></div>
-</div>
-<!-- } wrapper -->
-</form>
 
-<include file="Public:footer"/>
+        <include file="Public:footer"/>
 
-<script src="__JSURL__/Validform_v5.3.2.js" type="text/javascript" charset="UTF-8"></script>
-<script>
-$(function(){
-   var vf=$("#register").Validform({
-        btnSubmit:"#btnRegister", 
-        tiptype:3, 
-        label:".label",
-        showAllError:true,
-        datatype:{
-            "zh1-6":/^[\u4E00-\u9FA5\uf900-\ufa2d]{1,6}$/
-        }
-    }); 
-});
+        <script src="__JSURL__/Validform_v5.3.2.js" type="text/javascript" charset="UTF-8"></script>
+        <script>
+            $(function(){
+                var vf=$("#register").Validform({
+                    btnSubmit:"#btnRegister", 
+                    tiptype:3, 
+                    label:".label",
+                    showAllError:true,
+                    datatype:{
+                        "zh1-6":/^[\u4E00-\u9FA5\uf900-\ufa2d]{1,6}$/
+                    }
+                }); 
+            });
 
-function imgPre(input, id) {
-    if (input.files && input.files[0]) {
-        var reader = new FileReader();
-        reader.onload = function (e) {
-            $(id).attr('src', e.target.result);
-        };
-        reader.readAsDataURL(input.files[0]);
-    }
-}
-</script>
-</body>
+            function imgPre(input, id) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+                        $(id).attr('src', e.target.result);
+                    };
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+        </script>
+    </body>
 </html>
