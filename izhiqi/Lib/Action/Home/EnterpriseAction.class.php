@@ -14,17 +14,8 @@ class EnterpriseAction extends Action {
     */
     public function invitedList()
     {
-        $page=intval($this->_param('p'))?intval($this->_param('p')):1;
-        $perpage=10;
-        $start=($page-1)*$perpage;
-        $result=Jobhelp::EnterpriseinvitedList($this->eid,$start,$perpage);
+        $result=Jobhelp::EnterpriseinvitedList($this->eid);
         
-        if(intval($result['count'])>0)
-        {
-            import('ORG.Util.Page');
-            $objPage=new Page($result['count'],$perpage,$page);
-            $this->assign('page',$objPage->show());
-        }
         $this->assign('result',$result);
         $this->display();
     }
@@ -33,17 +24,8 @@ class EnterpriseAction extends Action {
     */
     public function appliedList()
     { 
-        $page=intval($this->_param('p'))?intval($this->_param('p')):1;
-        $perpage=20;
-        $start=($page-1)*$perpage;
+        $result=Jobhelp::EnterpriseApplyList($this->eid);
 
-        $result=Jobhelp::EnterpriseApplyList($this->eid,$start,$perpage);
-        if(intval($result['count'])>0)
-        {
-            import('ORG.Util.Page');
-            $objPage=new Page($result['count'],$perpage,$page);
-            $this->assign('page',$objPage->show());
-        }
         $this->assign('result',$result);
         $this->display();
     }
@@ -92,7 +74,7 @@ class EnterpriseAction extends Action {
             {
                $this->success("发送面试通知成功",'appliedList');
             }
-            $this->error("发送面试通知失败");   
+            $this->error("发送面试通知失败");
         }else
         {
             $jobrelation['jname']=Jobhelp::getJobname($jobrelation['jobid']);
@@ -147,7 +129,7 @@ class EnterpriseAction extends Action {
                 'sendtime' => $sendtime
             );
             if (Jobhelp::insertJobrelation($data)) {
-                $this->success('邀请成功！');
+                $this->success('邀请成功！', 'invitedlist');
             }
             $this->error('邀请失败!');
         }
@@ -305,15 +287,25 @@ class EnterpriseAction extends Action {
         $sex = intval($this->_param('sex'))?intval($this->_param('sex')):0;
         $age = intval($this->_param('age'))?intval($this->_param('age')):0;
         $height = intval($this->_param('height'))?intval($this->_param('height')):0;
+        $graduate_school = $this->_param('graduate_school');
 
         //验证输入的条件
-        if($keyword=='关键字')
+        if($keyword=='工作意向关键字')
         {
             $keyword=null;
         }
+        if($graduate_school == '毕业学校')
+        {
+            $graduate_school = null;
+        }
+
         $map = array();
         if ($keyword) {
             $map['jobintension'] = array('like', '%' . $keyword . '%');
+        }
+        if ($graduate_school)
+        {
+            $map['schoolname'] = array('eq', $graduate_school);
         }
 
         if ($education) {
@@ -329,12 +321,11 @@ class EnterpriseAction extends Action {
             $map['height'] = array('eq', $height);
         }
 
-        //$result['count'] = Userhelp::getUserinfoCount($map);
-        //if (intval($result['count']) > 0) {
-            $order = 'updatetime desc';
-         //   $limit = $start . ',' . $perpage;
-            $result['list'] = Userhelp::getUserinfoList($map, $order);
-        //}
+        //dump($map);
+
+        $order = 'updatetime desc';
+        $result['list'] = Userhelp::getUserinfoList($map, $order);
+
         $this->assign('result', $result);
         $this->assign('tab','search');
         $this->display();

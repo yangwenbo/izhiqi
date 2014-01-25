@@ -1,90 +1,98 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>我收到的简历</title>
-<link href="__CSSURL__/base.css" rel="stylesheet" type="text/css" />
-<link href="__CSSURL__/common.css" rel="stylesheet" type="text/css" />
-<link href="__CSSURL__/company.css" rel="stylesheet" type="text/css" />
-</head>
-<body>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>我收到的简历</title>
+        <link href="__CSSURL__/base.css" rel="stylesheet" type="text/css" />
+        <link href="__CSSURL__/common.css" rel="stylesheet" type="text/css" />
+        <link href="__CSSURL__/company.css" rel="stylesheet" type="text/css" />
+        <link href="__CSSURL__/jpages/jPages.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
 
-<include file="Public:enterpriseheader"/>
+        <div class="content">
 
-<!-- wrapper { -->
-<div class="frame_b">
-	<div class="bg_top"></div>
-    
-    <!-- 内容 { -->
-    <div class="wrap p30">
+            <include file="Public:enterpriseheader"/>
+
+            <!-- wrapper { -->
+            <div class="main">
+                <div class="frame_b">
+                    <div class="bg_top"></div>
+
+                    <!-- 内容 { -->
+                    <div class="wrap p30">
+
+                        <h2 class="f18 tc mb20 cblue c6 lh200">我收到的简历</h2>
 
 
-		
-        <h2 class="f16 c6 lh200">我收到的简历</h2>
-        
-		
-        <div class="my_list_tab clearfix cf f14">
-        	<p class="fl My_w1 pl10">简历名称</p>
-            <p class="fl My_w2">时间</p>
-            <p class="fl My_w3">状态</p>
+                        <div class="my_list_tab clearfix cf f16">
+                            <p class="fl My_w1 pl10">简历名称</p>
+                            <p class="fl My_w2">时间</p>
+                            <p class="fl My_w3">状态</p>
+                        </div>
+
+                        <ul id="applied_list ">
+                            <volist name="result.list" id="vo" empty="暂时未收到如何简历">
+                            <li class="clearfix f16">
+                            <p class="fl My_w1 pl10"><a href="{:U('Enterprise/userInfo')}?uid={$vo.uid}" target="_blank" class="tit">{$vo.realname}</a></p>
+                            <p class="fl My_w2">{$vo.sendtime}</p>
+                            <p class="fl My_w3" jrid="{$vo.id}" id="doapply{$vo.id}">
+                            <if condition="$vo.result  eq 0">
+                            <a href="javascript:" result="1" class="yes fb cblue">接受</a> 
+                            <a href="javascript:" result="2" class="ml10 no fb c8">拒绝</a>
+                            <elseif condition="$vo.result eq 1"/>
+                            <span class="yes fb corange">已接受</span> 
+                            <else/>
+                            <span class="no fb cred">已拒绝</span> 
+                            </if>
+
+
+                            </p>
+                            </li>
+                            </volist>
+                        </ul> 
+
+
+                        <!-- 分页 { -->
+                        <div class="page_holder"> </div>
+                        <!-- } 分页 --> 
+
+
+                    </div>
+                    <!-- } 内容 -->
+
+                    <div class="bg_bottom"></div>
+                </div>
+                <!-- } wrapper -->
+
+            </div>
         </div>
-        
-        <ul class="my_list">
-            <volist name="result.list" id="vo" empty="暂时未收到如何简历">
-        	<li class="clearfix">
-            	<p class="fl My_w1 pl10"><a href="{:U('Enterprise/userInfo')}?uid={$vo.uid}" target="_blank" class="tit">{$vo.realname}</a></p>
-                <p class="fl My_w2">{$vo.sendtime}</p>
-                <p class="fl My_w3" jrid="{$vo.id}" id="doapply{$vo.id}">
-                    <if condition="$vo.result  eq 0">
-                       <a href="javascript:" result="1" class="yes fb">接受</a> 
-                       <a href="javascript:" result="2" class="ml10 no fb">拒绝</a>
-                    <elseif condition="$vo.result eq 1"/>
-                        <span class="yes fb">已接受</span> 
-                    <else/>
-                         <span class="no fb">已拒绝</span> 
-                     </if>
-                    
 
-                </p>
-            </li>
-        	</volist>
-        </ul> 
-
-		
-        <!-- 分页 { -->
-        <div class="cl list_page f14 mt30">
-            {$page}
-        </div>
-        <!-- } 分页 --> 
-
-
-
-
-
-    </div>
-    <!-- } 内容 -->
-    
-    <div class="bg_bottom"></div>
-</div>
-<!-- } wrapper -->
-
-
-<include file="Public:footer"/>
-<script>
-$("p[id^=doapply] a").click(function(){
-     var id= $(this).parent().attr('jrid');
-     var result=$(this).attr("result");
-     var strconfirm="";
-     if(result==1){
-         strconfirm="接受";
-     }else{
-         strconfirm="拒绝";
-     }
-     if(confirm("您确定"+strconfirm+"此申请吗？"))
-     {
-        window.location.href="{:U('Enterprise/doApply')}?id="+id+"&result="+result;
-     }
-});
-</script>
-</body>
+        <include file="Public:footer"/>
+        <script src="__JSURL__/jpages/jPages.js"></script> 
+        <script>
+            $(function(){
+                $("div.page_holder").jPages({
+                    containerID: "applied_list",
+                    previous: "上一页",
+                    next: "下一页",
+                    perPage: 2
+                });
+            });
+            $("p[id^=doapply] a").click(function(){
+                var id= $(this).parent().attr('jrid');
+                var result=$(this).attr("result");
+                var strconfirm="";
+                if(result==1){
+                    strconfirm="接受";
+                    }else{
+                    strconfirm="拒绝";
+                }
+                if(confirm("您确定"+strconfirm+"此申请吗？"))
+                {
+                    window.location.href="{:U('Enterprise/doApply')}?id="+id+"&result="+result;
+                }
+            });
+        </script>
+    </body>
 </html>

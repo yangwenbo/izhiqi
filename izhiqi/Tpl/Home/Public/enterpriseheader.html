@@ -6,7 +6,20 @@
         </h1>
         
         <ul class="fr nav mt30 f14 fb tc">
-            <li><a href="{:U('Enterprise/userSearch')}" <if condition="$tab eq 'search'">class="on"</if> >简历</a></li>
+            <li>
+                <a href="#" <if condition="$tab eq 'search'">class="on"</if> >简历</a>
+                <ul class="dropDown">
+                    <li>
+                        <a href="{:U('Enterprise/userSearch')}" >搜索简历</a>
+                    </li>
+                    <li>
+                        <a href="{:U('Enterprise/appliedlist')}" >申请列表</a>
+                    </li>
+                    <li>
+                        <a href="{:U('Enterprise/invitedlist')}" >邀请列表</a>
+                    </li>
+                </ul>
+            </li>
             <li><a href="{:U('Enterprise/enterpriseinfo')}" <if condition="$tab eq 'info'">class="on"</if>>主页</a></li>
             <li><a href="###" <if condition="$tab eq 'usercenter'">class="on"</if>>帐号</a></li>
             <li>

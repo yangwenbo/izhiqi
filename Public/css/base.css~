@@ -42,6 +42,7 @@ body,button,input,select,textarea{font:12px/1.5 arial,\5b8b\4f53}
 .cf{color:#fff}
 .cred{color:#f00}
 .cblue{color:#0bf;}
+.corange{color:#fc8a4c;}
 
 /*文字字体*/
 .ftweiruan{font-family:微软雅黑}
@@ -217,54 +218,4 @@ body,button,input,select,textarea{font:12px/1.5 arial,\5b8b\4f53}
 
 /*+++++*/
 /*a{color:#000;text-decoration:none;}*/
-a, .adashed{color:#36a9e5;cursor:pointer;text-decoration:none;-webkit-transition:opacity .2s ease,color .2s ease,background .2s ease,box-shadow .2s ease;-moz-transition:opacity .2s ease,color .2s ease,background .2s ease,box-shadow .2s ease;-o-transition:opacity .2s ease,color .2s ease,background .2s ease,box-shadow .2s ease;transition:opacity .2s ease,color .2s ease,background .2s ease,box-shadow .2s ease}
-a:hover{text-decoration:none;}
-.adashed:hover{text-decoration:none; border-bottom:1px dashed #ccc;}
 
-input[type=radio] {
-  -webkit-appearance: none;
-  appearance: none;
-  vertical-align:middle;
-  cursor: pointer;
-  background: #fff;
-  border: 1px solid #dcdcdc;
-  -webkit-border-radius: 1px;
-  -moz-border-radius: 1px;
-  border-radius: 1px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box; 
-}
-input[type=radio]:active {
-  border-color: #c6c6c6;
-  background: #ebebeb;
-}
-input[type=radio] {
-  -webkit-border-radius: 1em;
-  -moz-border-radius: 1em;
-  border-radius: 1em;
-  width: 15px;
-  height: 15px;
-}
-input[type=radio]:checked {
-  background: #fff;
-}
-input[type=radio]:checked::after {
-  content: '';
-  display: block;
-  position: relative;
-  top: 3px;
-  left: 3px;
-  width: 7px;
-  height: 7px;
-  background: #666;
-  -webkit-border-radius: 1em;
-  -moz-border-radius: 1em;
-  border-radius: 1em;
-}
-
-select{
-font-size:14px;background-color:transparent; 
-border-radius:5px;
-border-color:#aaa;	
-}

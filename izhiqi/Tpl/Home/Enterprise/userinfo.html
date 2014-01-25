@@ -1,87 +1,90 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>简历</title>
-<link href="__CSSURL__/base.css" rel="stylesheet" type="text/css" />
-<link href="__CSSURL__/common.css" rel="stylesheet" type="text/css" />
-<link href="__CSSURL__/company.css" rel="stylesheet" type="text/css" />
-</head>
-<body>
-<include file="Public:enterpriseheader"/>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>简历</title>
+        <link href="__CSSURL__/base.css" rel="stylesheet" type="text/css" />
+        <link href="__CSSURL__/common.css" rel="stylesheet" type="text/css" />
+        <link href="__CSSURL__/company.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <div class="content">
+            <include file="Public:enterpriseheader"/>
+
+            <div class="main">
+                <!-- wrapper {  -->
+                <div class="frame_b">
+                    <div class="bg_top"></div>
+
+                    <!-- 内容 {  -->
+                    <div class="wrap p30 f16">
+                        <!-- 基本信息 {  -->
+                        <div class="pl30 clearfix pb30 ">
+                            <p class="f20 c6 fb mb15 f18 ml400">{$userinfo.realname}</p>
+                        </div>
+
+                        <div class="pl30 clearfix pb30 wrap_line">
+                            <div class="fl"><img src="{$userinfo.avartar|getImgUrl=false}" width="120" height="120" border="0" /></div>
+                            <div class="fl mt10 ml30 w300 clearfix">
+
+                                <p class="fl pt5 more_info w50 c8 fb">学校:</p>
+                                <div class="fl pt5 f14 c8">
+                                    {$userinfo['educationinfo'][0]['schoolname']}
+                                </div>
+
+                                <p class="cl mt10 fl pt5 more_info w50 fb c8">年龄:</p>
+                                <div class="fl mt10 pt5 f14 c8">
+                                    {$userinfo.age}岁
+                                </div>
+
+                            </div>
+                            <div class="fl mt10 ml50 w300">
 
 
-<!-- wrapper {  -->
-<div class="frame_b">
-	<div class="bg_top"></div>
-    
-    <!-- 内容 {  -->
-    <div class="wrap p30 f16">
-		<!-- 基本信息 {  -->
-        <div class="pl30 clearfix pb30 ">
-            <p class="f20 c6 fb mb15 f18 ml400">{$userinfo.realname}</p>
-        </div>
+                                <p class="fl pt5 fb more_info w50 c8">专业:</p>
+                                <div class="fl pt5 f14 c8">
+                                    {$userinfo['educationinfo'][0]['major']}
+                                </div>
 
-        <div class="pl30 clearfix pb30 wrap_line">
-        	<div class="fl"><img src="{$userinfo.avartar|getImgUrl=false}" width="120" height="120" border="0" /></div>
-            <div class="fl mt10 ml30 w300 clearfix">
-            	
-                <p class="fl pt5 more_info w50 c8 fb">学校:</p>
-                <div class="fl pt5 f14 c8">
-                    {$userinfo['educationinfo'][0]['schoolname']}
+                                <p class="cl mt10 fl pt5 more_info w50 fb c8">身高:</p>
+                                <div class="fl mt10 pt5 f14 c8">
+                                    {$userinfo.height}cm
+                                </div>
+
+                            </div>
+                        </div>
+                        <!-- } 基本信息  -->
+
+
+                        <!-- 工作经历 {  -->
+                        <div class="mt20 clearfix pb30">
+                            <p class="fl w80 c6 lh200">工作经历</p>
+                            <div class="fr w850 c6 ">
+                                <div class="clearfix">
+                                    <volist name="userinfo['workinfo']" id="vo" empty="暂时没有填写工作经验！">
+                                    <p class="fl w500 lh200">{$vo.companyname} - {$vo.jobname}</p>
+                                    <p class="fl w200 lh200">{$vo.workstartdate} ~ <if condition="strtotime($vo.workenddate) gt strtotime($vo.workstartdate)"> 至今 <else /> {$vo.workenddate}</if></p>
+                                    </volist>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!-- ｝ 工作经历  -->
+
+
+                        <div class="cl clearfix mt50">
+                            <a href="{:U('Enterprise/invite')}?uid={$userinfo.uid}" class="a_btn4 f14 cf ml350"><em class="w200 tc">发出邀请</em></a>
+                        </div>
+
+                    </div>
+                    <!-- } 内容  -->
+
+                    <div class="bg_bottom"></div>
                 </div>
-                
-                <p class="cl mt10 fl pt5 more_info w50 fb c8">年龄:</p>
-                <div class="fl mt10 pt5 f14 c8">
-                	{$userinfo.age}岁
-                </div>
-                
+                <!-- } wrapper  -->
+
             </div>
-            <div class="fl mt10 ml50 w300">
-            	
-                
-                <p class="fl pt5 fb more_info w50 c8">专业:</p>
-                <div class="fl pt5 f14 c8">
-                	{$userinfo['educationinfo'][0]['major']}
-                </div>
-                
-                <p class="cl mt10 fl pt5 more_info w50 fb c8">身高:</p>
-                <div class="fl mt10 pt5 f14 c8">
-                	{$userinfo.height}cm
-                </div>
-                
-            </div>
         </div>
-        <!-- } 基本信息  -->
-        
-       
-        <!-- 工作经历 {  -->
-        <div class="mt20 clearfix pb30">
-        	<p class="fl w80 c6 lh200">工作经历</p>
-            <div class="fr w850 c6 ">
-            	<div class="clearfix">
-                    <volist name="userinfo['workinfo']" id="vo" empty="暂时没有填写工作经验！">
-                     <p class="fl w500 lh200">{$vo.companyname} - {$vo.jobname}</p>
-                     <p class="fl w200 lh200">{$vo.workstartdate} ~ <if condition="strtotime($vo.workenddate) gt strtotime($vo.workstartdate)"> 至今 <else /> {$vo.workenddate}</if></p>
-                     </volist>
-                </div>
-                
-            </div>
-        </div>
-        <!-- ｝ 工作经历  -->
-        
-        
-        <div class="cl clearfix mt50">
-            <a href="{:U('Enterprise/invite')}?uid={$userinfo.uid}" class="a_btn4 f14 cf ml350"><em class="w200 tc">发出邀请</em></a>
-        </div>
-            
-    </div>
-    <!-- } 内容  -->
-    
-    <div class="bg_bottom"></div>
-</div>
-<!-- } wrapper  -->
-
-<include file="Public:footer"/>
-</body>
+        <include file="Public:footer"/>
+    </body>
 </html>

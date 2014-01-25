@@ -141,7 +141,8 @@ class Userhelp{
          }
          if($usereducation)
          {
-             $result['educationinfo']=$usereducation;
+             //$result['educationinfo']=$usereducation;
+             $result = array_merge($result, $usereducation);
          }
          if($userwork)
          {   

@@ -1,56 +1,75 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>我发出的邀请</title>
-<link href="__CSSURL__/base.css" rel="stylesheet" type="text/css" />
-<link href="__CSSURL__/common.css" rel="stylesheet" type="text/css" />
-<link href="__CSSURL__/company.css" rel="stylesheet" type="text/css" />
-</head>
-<body>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>我发出的邀请</title>
+        <link href="__CSSURL__/base.css" rel="stylesheet" type="text/css" />
+        <link href="__CSSURL__/common.css" rel="stylesheet" type="text/css" />
+        <link href="__CSSURL__/company.css" rel="stylesheet" type="text/css" />
+        <link href="__CSSURL__/jpages/jPages.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
 
-<include file="Public:enterpriseheader"/>
+        <div class="content">
+            <include file="Public:enterpriseheader"/>
 
 
-<!-- wrapper { -->
-<div class="frame_b">
-	<div class="bg_top"></div>
-    
-    <!-- 内容 { -->
-    <div class="wrap p30">
-        <h2 class="f16 c6 lh200">我发出的邀请</h2>
-        <empty name="result.list">
-             <p class="cl mt20 f16 fb c9 lh200 wrap_line">您暂未发出邀请</p>
-        </empty>
-        <volist name="result.list" id="vo" empty="您暂未发出邀请">
-            <p class="cl mt20 f16 fb c9 lh200 wrap_line">{$vo[0].jname}</p>
-            <div class="clearfix apply_to">
-              <volist name="vo" id="v">
-                <if condition="$v.result neq 1">
-                    <a href="{:U('Enterprise/userInfo')}?uid={$v.uid}" class="a_btn5 f14 cf"><em>{$v.realname}| 未接受</em></a>
-                <else/>
-                    <a href="{:U('Enterprise/userInfo')}?uid={$v.uid}" class="a_btn4 f14 cf"><em>{$v.realname}</em></a>
-                </if>
-              </volist>
+            <div class="main">
+                <!-- wrapper { -->
+                <div class="frame_b">
+                    <div class="bg_top"></div>
+
+                    <!-- 内容 { -->
+                    <div class="wrap p30">
+                        <h2 class="fb corange f18 tc lh200">我发出的邀请</h2>
+
+                        <ul id="invited_list">
+                            <empty name="result.list">
+                            <p class="cl mt20 f16 fb c9 lh200 wrap_line">您暂未发出邀请</p>
+                            </empty>
+
+                            <volist name="result.list" id="vo" empty="您暂未发出邀请">
+                            <li>
+                            <p class="cl mt20 f16 fb c9 lh200 wrap_line">{$vo[0].jname}</p>
+                            <div class="clearfix apply_to">
+                                <volist name="vo" id="v">
+                                <if condition="$v.result neq 1">
+                                <a href="{:U('Enterprise/userInfo')}?uid={$v.uid}" class="a_btn5 f14 flb0 cf">{$v.realname} | <b class="cred">未接受</b></a>
+                                <else/>
+                                <a href="{:U('Enterprise/userInfo')}?uid={$v.uid}" class="a_btn4 f14 cf">{$v.realname}</a>
+                                </if>
+                                </volist>
+                            </div>
+                            </li>
+                            </volist>        
+                        </ul>
+
+                        <!-- 分页 { -->
+                        <div class="page_holder"> </div>
+                        <!-- } 分页 -->
+
+                    </div>
+                    <!-- } 内容 -->
+
+                    <div class="bg_bottom"></div>
+                </div>
             </div>
-        </volist>        
-        <!-- 分页 { -->
-        <div class="cl list_page f14 mt30">
-            {$page}
+            <!-- } wrapper -->
         </div>
-        <!-- } 分页 -->
 
 
+        <include file="Public:footer"/>
 
-    </div>
-    <!-- } 内容 -->
-    
-    <div class="bg_bottom"></div>
-</div>
-<!-- } wrapper -->
-
-
-<include file="Public:footer"/>
-
-</body>
+        <script src="__JSURL__/jpages/jPages.js"></script> 
+        <script>
+            $(function(){
+                $("div.page_holder").jPages({
+                    containerID: "invited_list",
+                    previous: "上一页",
+                    next: "下一页",
+                    perPage: 2
+                });
+            });
+        </script>
+    </body>
 </html>

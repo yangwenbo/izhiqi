@@ -177,9 +177,9 @@ class Jobhelp {
     /**
       企业已邀请列表
     */
-    static public function EnterpriseinvitedList($eid,$start=0,$perpage=20)
+    static public function EnterpriseinvitedList($eid)
     {
-         $result=Jobhelp::getJobrelationsByEid($eid,1,$start,$perpage);
+         $result=Jobhelp::getJobrelationsByEid($eid,1);
          if(intval($result['count'])>0)
          {
              
@@ -197,9 +197,9 @@ class Jobhelp {
     /**
       企业收到申请的列表
     */
-    static public function EnterpriseApplyList($eid,$start=0,$perpage=20)
+    static public function EnterpriseApplyList($eid)
     {
-         $result=Jobhelp::getJobrelationsByEid($eid,0,$start,$perpage);
+         $result=Jobhelp::getJobrelationsByEid($eid,0);
          if(intval($result['count'])>0)
          {
              
@@ -216,13 +216,12 @@ class Jobhelp {
     /**
       通过用户eid 和type 分别获取被邀请和申请的信息
      */
-    static public function getJobrelationsByEid($eid, $type, $start = 0, $perpage = 20) {
+    static public function getJobrelationsByEid($eid, $type) {
         $where = "eid=" . $eid . " and type=" . $type;
         $order = "sendtime desc";
-        $limit = $start . "," . $perpage;
         $result['count'] = Jobhelp::getJobrelationCount($where);
         if (intval($result['count'])) {
-            $result['list'] = Jobhelp::getJobrelationList($where, $order,$limit);
+            $result['list'] = Jobhelp::getJobrelationList($where, $order);
         }
         return $result;
     }
