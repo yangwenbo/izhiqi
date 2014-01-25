@@ -1,88 +1,92 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>个人设置</title>
-<link href="__CSSURL__/base.css" rel="stylesheet" type="text/css" />
-<link href="__CSSURL__/common.css" rel="stylesheet" type="text/css" />
-<link href="__CSSURL__/personal.css" rel="stylesheet" type="text/css" />
-</head>
-<body>
-<!-- 公用 personal header { -->
-<include file="Public:userheader" />
-<!-- } 公用 personal header -->
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>个人设置</title>
+        <link href="__CSSURL__/base.css" rel="stylesheet" type="text/css" />
+        <link href="__CSSURL__/common.css" rel="stylesheet" type="text/css" />
+        <link href="__CSSURL__/personal.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <div class="content">
+            <!-- 公用 personal header { -->
+            <include file="Public:userheader" />
+            <!-- } 公用 personal header -->
 
-<form id='settingform' method="POST">
-<!-- wrapper { -->
-<div class="frame_s">
-	<div class="bg_top"></div>
-    <!-- title { -->
-    <div class="title">
-    	<em class="c8 f14 ml30">个人设置</em>
-    </div>
-    <!-- } title -->
-    
-    <!-- 内容 { -->
-    <div class="wrap p30">
-    	
-        <ul class="reg_list">
-        
-<!--            <li class="clearfix">
-                <div class="fl input_bg1">
-                    <input type="text" class="text_bg1 cc" value="绑定Email" name='email' id='email' title='绑定Email' onblur="if (this.value==''){ this.value='绑定Email';this.style.color='#999';}else{this.style.color='';}" onfocus="if (this.value=='绑定Email') {this.value='';this.style.color='';}"/>
-                </div>
-                <p class="fr more_info">必填</p>
-            </li>-->
-            
-            <li class="clearfix">
-                <div class="fl input_bg1">
-                    <input type="password" class="text_bg1 cc" name='oldpassword' datatype="s6-20" nullmsg="请输入旧密码"/>
-                </div>
-                <p class="fr more_info">必填(旧密码)</p>
-            </li>
-            
-            <li class="clearfix">
-                <div class="fl input_bg1">
-                    <input type="password" class="text_bg1 cc" name='newpassword' datatype="s6-20" nullmsg="请输入新密码"/>
-                </div>
-                <p class="fr more_info">必填(新密码)</p>
-            </li>
-            <li class="clearfix">
-                <div class="fl input_bg1">
-                    <input type="password" class="text_bg1 cc"  name='renewpassword' datatype="s6-20"  recheck="newpassword" nullmsg="请输入确认密码"/>
-                </div>
-                <p class="fr more_info">必填(确定密码)</p>
-            </li>
-            
-        </ul>
-        
-    </div>
-    <!-- } 内容 -->
-    
-    <div class="bg_f pt20 pb10">
-    	<div class="bc btn2">
-        	<a href="javascript:" id="btnSetting" class="text_bg tc cf">保存设置</a>
+            <div class="main">
+                <form id='settingform' method="POST">
+                    <!-- wrapper { -->
+                    <div class="frame_s">
+                        <div class="bg_top"></div>
+                        <!-- title { -->
+                        <div class="title">
+                            <em class="c8 f14 ml30">个人设置</em>
+                        </div>
+                        <!-- } title -->
+
+                        <!-- 内容 { -->
+                        <div class="wrap p30">
+
+                            <ul class="reg_list">
+
+                                <!--            <li class="clearfix">
+                                <div class="fl input_bg1">
+                                    <input type="text" class="text_bg1 cc" value="绑定Email" name='email' id='email' title='绑定Email' onblur="if (this.value==''){ this.value='绑定Email';this.style.color='#999';}else{this.style.color='';}" onfocus="if (this.value=='绑定Email') {this.value='';this.style.color='';}"/>
+                                </div>
+                                <p class="fr more_info">必填</p>
+                                </li>-->
+
+                                <li class="clearfix">
+                                <div class="fl input_bg1">
+                                    <input type="password" class="text_bg1 cc" name='oldpassword' datatype="s6-20" nullmsg="请输入旧密码"/>
+                                </div>
+                                <p class="fr more_info">必填(旧密码)</p>
+                                </li>
+
+                                <li class="clearfix">
+                                <div class="fl input_bg1">
+                                    <input type="password" class="text_bg1 cc" name='newpassword' datatype="s6-20" nullmsg="请输入新密码"/>
+                                </div>
+                                <p class="fr more_info">必填(新密码)</p>
+                                </li>
+                                <li class="clearfix">
+                                <div class="fl input_bg1">
+                                    <input type="password" class="text_bg1 cc"  name='renewpassword' datatype="s6-20"  recheck="newpassword" nullmsg="请输入确认密码"/>
+                                </div>
+                                <p class="fr more_info">必填(确定密码)</p>
+                                </li>
+
+                            </ul>
+
+                        </div>
+                        <!-- } 内容 -->
+
+                        <div class="bg_f pt20 pb10">
+                            <div class="bc btn2">
+                                <a href="javascript:" id="btnSetting" class="text_bg tc cf">保存设置</a>
+                            </div>
+                        </div>    
+                        <div class="bg_bottom"></div>
+                    </div>
+                    <!-- } wrapper -->
+                </form>
+            </div>
         </div>
-    </div>    
-    <div class="bg_bottom"></div>
-</div>
-<!-- } wrapper -->
 
-</form>
-<include file="Public:footer"/>
-<script src="__JSURL__/Validform_v5.3.2.js" type="text/javascript" charset="UTF-8"></script>
-<script>
-$(function(){
-    var vf=$("#settingform").Validform({
-        btnSubmit:"#btnSetting", 
-        tiptype:3, 
-        label:".label",
-        showAllError:true,
-        datatype:{
-            "zh1-6":/^[\u4E00-\u9FA5\uf900-\ufa2d]{1,6}$/
-        }
-    });
-});
-</script>
-</body>
+        <include file="Public:footer"/>
+        <script src="__JSURL__/Validform_v5.3.2.js" type="text/javascript" charset="UTF-8"></script>
+        <script>
+            $(function(){
+                var vf=$("#settingform").Validform({
+                    btnSubmit:"#btnSetting", 
+                    tiptype:3, 
+                    label:".label",
+                    showAllError:true,
+                    datatype:{
+                        "zh1-6":/^[\u4E00-\u9FA5\uf900-\ufa2d]{1,6}$/
+                    }
+                });
+            });
+        </script>
+    </body>
 </html>

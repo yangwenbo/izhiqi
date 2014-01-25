@@ -1,87 +1,83 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>职位</title>
-<link href="__CSSURL__/base.css" rel="stylesheet" type="text/css" />
-<link href="__CSSURL__/common.css" rel="stylesheet" type="text/css" />
-<link href="__CSSURL__/personal.css" rel="stylesheet" type="text/css" />
-</head>
-<body>
-<!-- 公用 personal header { -->
-<include file="Public:userheader" />
-<!-- } 公用 personal header -->
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>职位</title>
+        <link href="__CSSURL__/base.css" rel="stylesheet" type="text/css" />
+        <link href="__CSSURL__/common.css" rel="stylesheet" type="text/css" />
+        <link href="__CSSURL__/personal.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <div class="content">
+            <!-- 公用 personal header { -->
+            <include file="Public:userheader" />
+            <!-- } 公用 personal header -->
+
+            <div class="main">
+                <!-- wrapper { -->
+                <div class="frame_b">
+                    <div class="bg_top"></div>
+
+                    <!-- 内容 { -->
+                    <div class="wrap p30">
+                        <if condition="$jobinfo neq null">
+                        <h2 class="detail_tit f16 fb lh200">{$jobinfo.jname}</h2>
+                        <p class="f14 lh200 c6">公司名称： <em class="fb">{$enterpriseinfo.companyname}</em></p>
+                        <p class="f14 lh200 c6">公司规模： <em class="fb">{$enterpriseinfo.scale}</em></p>
+                        <p class="f14 lh200 c6">公司行业： <em class="fb">{$enterpriseinfo.industry}</em></p>
+                        <p class="f14 lh200 c6">招聘人数： <em class="fb">{$jobinfo.jobnum}</em></p>
+
+                        <ul class="mt20 detail_tabs" id='detail_tabs' >
+                            <li><a href="javascript:;" class="on">招聘岗位</a></li>
+                            <li><a href="javascript:;">公司介绍</a></li>
+                        </ul>
+                        <div class="cl detail_wrap p20 c6" id='detail_wrap'>
+                            <div>
+                                <em class="fb">岗位职责：</em><br />
+                                {$jobinfo.jcontent}
+                            </div>
+                            <div>
+                                {$enterpriseinfo.companydesc}
+                            </div>
+                        </div>
+                        <else/>
+                        该职位不存在！
+                        </if>
 
 
-<!-- wrapper { -->
-<div class="frame_b">
-	<div class="bg_top"></div>
-    
-    <!-- 内容 { -->
-    <div class="wrap p30">
-        <if condition="$jobinfo neq null">
-    	<h2 class="detail_tit f16 fb lh200">{$jobinfo.jname}</h2>
-    	<p class="f14 lh200 c6">公司名称： <em class="fb">{$enterpriseinfo.companyname}</em></p>
-        <p class="f14 lh200 c6">公司规模： <em class="fb">{$enterpriseinfo.scale}</em></p>
-        <p class="f14 lh200 c6">公司行业： <em class="fb">{$enterpriseinfo.industry}</em></p>
-        <p class="f14 lh200 c6">招聘人数： <em class="fb">{$jobinfo.jobnum}</em></p>
-        
-        <ul class="mt20 detail_tabs" id='detail_tabs' >
-            <li><a href="javascript:;" class="on">招聘岗位</a></li>
-            <li><a href="javascript:;">公司介绍</a></li>
-        </ul>
-        <div class="cl detail_wrap p20 c6" id='detail_wrap'>
-            <div>
-                <em class="fb">岗位职责：</em><br />
-                {$jobinfo.jcontent}
+                        <div class="cl clearfix mt50">
+                            <a href="{:U('User/applyJob')}?jobid={$jobinfo.id}" class="a_btn1 f14 cf ml200"><em>　　　申请职位　　　</em></a>
+                            <a href="{:U('User/recFriend')}?jobid={$jobinfo.id}" class="a_btn3 f14 cf ml100"><em>　　　推荐朋友　　　</em></a>
+                        </div>
+
+
+
+                    </div>
+                    <!-- } 内容 -->
+
+                    <div class="bg_bottom"></div>
+                </div>
+                <!-- } wrapper -->
             </div>
-            <div>
-                {$enterpriseinfo.companydesc}
-            </div>
-        </div>
-        <else/>
-        该职位不存在！
-        </if>
-
-
-        <div class="cl clearfix mt50">
-            <a href="{:U('User/applyJob')}?jobid={$jobinfo.id}" class="a_btn1 f14 cf ml200"><em>　　　申请职位　　　</em></a>
-            <a href="{:U('User/recFriend')}?jobid={$jobinfo.id}" class="a_btn3 f14 cf ml100"><em>　　　推荐朋友　　　</em></a>
         </div>
 
 
+        <!-- 公用 footer { -->
+        <include file="Public:footer" />
+        <!-- } 公用 footer -->
+        <script src="__JSURL__/jquery-1.8.2.min.js"></script>
+        <script>
+            $(function(){
+                $('#detail_tabs li a').click(function(){
+                    $('#detail_tabs li a').attr('class','');
+                    $(this).addClass('on');
 
-    </div>
-    <!-- } 内容 -->
-    
-    <div class="bg_bottom"></div>
-</div>
-<!-- } wrapper -->
+                    $('#detail_wrap div').hide();
+                    var offset= $(this).parent().index('#detail_tabs li');
+                    $('#detail_wrap div:eq('+offset+')').show();
+                });
+            });    
 
-
-<!-- 公用 footer { -->
-<div class="cl footer">
-	<div class="f_cont clearfix">
-        <div class="fr f_nav tr pt40">
-            <a href="javascript:;" class="f14 c8 pl20 pr20">用户协议</a>
-            <a href="javascript:;" class="f14 c8 pl20 pr20">加入我们</a>
-        </div>
-    </div>
-</div>
-<!-- } 公用 footer -->
-<script src="__JSURL__/jquery-1.8.2.min.js"></script>
-<script>
-   $(function(){
-       $('#detail_tabs li a').click(function(){
-           $('#detail_tabs li a').attr('class','');
-           $(this).addClass('on');
-           
-           $('#detail_wrap div').hide();
-           var offset= $(this).parent().index('#detail_tabs li');
-           $('#detail_wrap div:eq('+offset+')').show();
-       });
-   });    
-    
-</script>
-</body>
+        </script>
+    </body>
 </html>

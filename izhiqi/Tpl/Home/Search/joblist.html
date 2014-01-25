@@ -1,66 +1,62 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>我申请的职位</title>
-<link href="__CSSURL__/base.css" rel="stylesheet" type="text/css" />
-<link href="__CSSURL__/common.css" rel="stylesheet" type="text/css" />
-<link href="__CSSURL__/personal.css" rel="stylesheet" type="text/css" />
-</head>
-<body>
-<!-- 公用 personal header { -->
-<include file="Public:userheader" />
-<!-- } 公用 personal header -->
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>我申请的职位</title>
+        <link href="__CSSURL__/base.css" rel="stylesheet" type="text/css" />
+        <link href="__CSSURL__/common.css" rel="stylesheet" type="text/css" />
+        <link href="__CSSURL__/personal.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <div class="content">
+            <!-- 公用 personal header { -->
+            <include file="Public:userheader" />
+            <!-- } 公用 personal header -->
+
+            <div class="main">
+                <!-- wrapper { -->
+                <div class="frame_b">
+                    <div class="bg_top"></div>
+
+                    <!-- 内容 { -->
+                    <div class="wrap p30">
+
+                        <h2 class="f16 c6 lh200">全部职业分类 &gt; {$arrParentJobclass['classname']} &gt; {$arrJobclass['classname']}</h2>
 
 
-<!-- wrapper { -->
-<div class="frame_b">
-	<div class="bg_top"></div>
-    
-    <!-- 内容 { -->
-    <div class="wrap p30">
+                        <div class="my_list_tab clearfix cf f14">
+                            <p class="fl My_w1 pl10">招聘职位</p>
+                            <p class="fl My_w2">公司名称</p>
+                            <p class="fl My_w3">发布时间</p>
+                        </div>
 
+                        <ul class="my_list">
+                            <volist name='arrJob.list' id='vo'  empty='暂时没有该职位的数据'>
+                            <li class="clearfix">
+                            <p class="fl My_w1 pl10"><a href="{:U('Search/jobInfo')}?jobid={$vo.id}" class="tit">{$vo.jname}</a></p>
+                            <p class="fl My_w2"><a href="{:U('Search/jobInfo')}?jobid={$vo.id}">{$vo.companyname}</a></p>
+                            <p class="fl My_w3">{$vo.updatetime}</p>
+                            </li>
+                            </volist>	 
+                        </ul>
 
+                        <!-- 分页 { -->
+                        <div class="cl list_page f14 mt30">
+                            {$page}
+                            <!-- } 分页 -->
 
-        <h2 class="f16 c6 lh200">全部职业分类 &gt; {$arrParentJobclass['classname']} &gt; {$arrJobclass['classname']}</h2>
-        
-		
-        <div class="my_list_tab clearfix cf f14">
-        	<p class="fl My_w1 pl10">招聘职位</p>
-            <p class="fl My_w2">公司名称</p>
-            <p class="fl My_w3">发布时间</p>
+                        </div>
+                        <!-- } 内容 -->
+
+                        <div class="bg_bottom"></div>
+                    </div>
+                    <!-- } wrapper -->
+                </div>
+            </div>
         </div>
-        
-        <ul class="my_list">
-            <volist name='arrJob.list' id='vo'  empty='暂时没有该职位的数据'>
-            <li class="clearfix">
-            	<p class="fl My_w1 pl10"><a href="{:U('Search/jobInfo')}?jobid={$vo.id}" class="tit">{$vo.jname}</a></p>
-                <p class="fl My_w2"><a href="{:U('Search/jobInfo')}?jobid={$vo.id}">{$vo.companyname}</a></p>
-                <p class="fl My_w3">{$vo.updatetime}</p>
-            </li>
-            </volist>	 
-        </ul>
 
-
-		
-        
-        <!-- 分页 { -->
-        <div class="cl list_page f14 mt30">
-            {$page}
-        <!-- } 分页 -->
-
-
-
-    </div>
-    <!-- } 内容 -->
-    
-    <div class="bg_bottom"></div>
-</div>
-<!-- } wrapper -->
-
-
-<!-- 公用 footer { -->
-<include file="Public:footer" />
-<!-- } 公用 footer -->
-</body>
+        <!-- 公用 footer { -->
+        <include file="Public:footer" />
+        <!-- } 公用 footer -->
+    </body>
 </html>

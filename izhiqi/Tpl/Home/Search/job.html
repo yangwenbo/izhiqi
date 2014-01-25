@@ -1,88 +1,90 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>职位</title>
-<link href="__CSSURL__/base.css" rel="stylesheet" type="text/css" />
-<link href="__CSSURL__/common.css" rel="stylesheet" type="text/css" />
-<link href="__CSSURL__/personal.css" rel="stylesheet" type="text/css" />
-</head>
-<body>
-<!-- 公用 personal header { -->
-<include file="Public:userheader" />
-<!-- } 公用 personal header -->
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>职位</title>
+        <link href="__CSSURL__/base.css" rel="stylesheet" type="text/css" />
+        <link href="__CSSURL__/common.css" rel="stylesheet" type="text/css" />
+        <link href="__CSSURL__/personal.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <div class="content">
+            <!-- 公用 personal header { -->
+            <include file="Public:userheader" />
+            <!-- } 公用 personal header -->
 
+            <div class="main">
+                <!-- wrapper { -->
+                <div class="frame_b">
+                    <div class="bg_top"></div>
 
-<!-- wrapper { -->
-<div class="frame_b">
-	<div class="bg_top"></div>
-    
-    <!-- 内容 { -->
-    <div class="wrap p30">
-    		
-           <div class="position_wrap clearfix">
-           		<div class="fl l">
-                	<div class="l_t_b"></div>
-                    <div class="l_m_b">
-                    	
-                        <!-- left nav { -->
-                        <ul class="l_nav">
-                        	
-                            <volist name="arrLevel1" id="vo">
-                               <li <if condition="$vo.id eq $jobclass_id"> class="on" </if>>
-                               <a href="{:U('search/job')}?id={$vo.id}"> {$vo.classname}</a></li>
-                            
-                            </volist>
-                        </ul>
-                        <!-- } left nav -->
-                        
-                    </div>
-                    <div class="l_b_b"></div>
-                </div>
-                
-                <div class="fl r">
-                	<div class="r_t_b"></div>
-                    <div class="r_m_b pl10 pr10">
-                        
-                        <!-- right detail list { -->
-                        <volist name="arrSon" id="vos">
-                        <div class="clearfix wrap_line">
-                            <div class="fl w80 tc detail_list_left">
-                            	<a href="###" class="f14">{$vos.classname}</a>
+                    <!-- 内容 { -->
+                    <div class="wrap p30">
+
+                        <div class="position_wrap clearfix">
+                            <div class="fl l">
+                                <div class="l_t_b"></div>
+                                <div class="l_m_b">
+
+                                    <!-- left nav { -->
+                                    <ul class="l_nav">
+
+                                        <volist name="arrLevel1" id="vo">
+                                        <li <if condition="$vo.id eq $jobclass_id"> class="on" </if>>
+                                        <a href="{:U('search/job')}?id={$vo.id}"> {$vo.classname}</a></li>
+
+                                        </volist>
+                                    </ul>
+                                    <!-- } left nav -->
+
+                                </div>
+                                <div class="l_b_b"></div>
                             </div>
-                            <div class="fl detail_list_right">
-                            	<ul>
-                                    <volist name="vos['sons']" id="vo">
-                                	<li><a href="{:U('search/jobList')}?id={$vo.id}">{$vo.classname}</a></li>
-                                	</volist>
-                                </ul>
+
+                            <div class="fl r">
+                                <div class="r_t_b"></div>
+                                <div class="r_m_b pl10 pr10">
+
+                                    <!-- right detail list { -->
+                                    <volist name="arrSon" id="vos">
+                                    <div class="clearfix wrap_line">
+                                        <div class="fl w80 tc detail_list_left">
+                                            <a href="###" class="f14">{$vos.classname}</a>
+                                        </div>
+                                        <div class="fl detail_list_right">
+                                            <ul>
+                                                <volist name="vos['sons']" id="vo">
+                                                <li><a href="{:U('search/jobList')}?id={$vo.id}">{$vo.classname}</a></li>
+                                                </volist>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    </volist>                        
+
+                                    <!-- } right detail list -->
+
+                                </div>
+                                <div class="r_b_b"></div>
                             </div>
                         </div>
-                         
-                        </volist>                        
-                    
-                        <!-- } right detail list -->
-                        
+
+                        <div class="cl clearfix mt50">
+                            <a href="{:U('User/invitedList')}" class="a_btn1 f14 cf ml200">我受邀请的职位 <b class="icon">{$invite_list_size}</b></a>
+                            <a href="{:U('User/appliedList')}" class="a_btn3 f14 cf ml100">我申请的职位 <b class="icon">{$apply_list_size}</b></a>
+                        </div>
+
                     </div>
-                    <div class="r_b_b"></div>
+                    <!-- } 内容 -->
+
+                    <div class="bg_bottom"></div>
                 </div>
-           </div>
-           
-           <div class="cl clearfix mt50">
-               <a href="{:U('User/invitedList')}" class="a_btn1 f14 cf ml200">我受邀请的职位 <b class="icon">{$invite_list_size}</b></a>
-               <a href="{:U('User/appliedList')}" class="a_btn3 f14 cf ml100">我申请的职位 <b class="icon">{$apply_list_size}</b></a>
-           </div>
-            
-    </div>
-    <!-- } 内容 -->
-    
-    <div class="bg_bottom"></div>
-</div>
-<!-- } wrapper -->
+                <!-- } wrapper -->
+            </div>
+        </div>
 
-
-<!-- 公用 footer { -->
-<include file='Public:footer' />
-<!-- } 公用 footer -->
-</body>
+        <!-- 公用 footer { -->
+        <include file='Public:footer' />
+        <!-- } 公用 footer -->
+    </body>
 </html>
