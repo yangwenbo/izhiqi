@@ -313,31 +313,48 @@ class EnterpriseAction extends Action {
         }
 
         $map = array();
+        $where = '';
         if ($keyword) {
-            $map['jobintension'] = array('like', '%' . $keyword . '%');
+            //$map['jobintension'] = array('like', '%' . $keyword . '%');
+            $where = $where . "jobintension like %" . $keyword . "%";
         }
         if ($graduate_school)
         {
             $map['schoolname'] = array('eq', $graduate_school);
+            if ($where != '')
+                $where = $where . ' and ';
+            $where = $where . "schoolname='" . $graduate_school . "'";
         }
 
         if ($education) {
             $map['education'] = array('eq', $education);
+            if ($where != '')
+                $where = $where . ' and ';
+            $where = $where . 'education=' . $education;
         }
         if ($sex && $sex != 3) {
             $map['sex'] = array('eq', $sex);
+            if ($where != '')
+                $where = $where . ' and ';
+            $where = $where . 'sex=' . $sex;
         }
         if ($age > 0) {
             $map['age'] = array('eq', $age);
+            if ($where != '')
+                $where = $where . ' and ';
+            $where = $where . 'age=' . $age;
         }
         if ($height > 0) {
             $map['height'] = array('eq', $height);
+            if ($where != '')
+                $where = $where . ' and ';
+            $where = $where . 'height=' . $height;
         }
 
         //dump($map);
 
         $order = 'updatetime desc';
-        $result['list'] = Userhelp::getUserinfoList($map, $order);
+        $result['list'] = Userhelp::getUsereducationInfoList($where, $order);
 
         $this->assign('result', $result);
         $this->assign('tab','search');

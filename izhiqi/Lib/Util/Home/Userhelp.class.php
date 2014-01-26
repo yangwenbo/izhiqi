@@ -28,6 +28,18 @@ class Userhelp{
 	public static function getUsereducation($where,$order){
         return D('Usereducation')->where($where)->order($order)->find();
 	}
+	public static function getUsereducationInfoList($where,$order,$limit, $field){
+        $model = D('Userinfo');
+        //$sub = "(select distinct uid from usereducation where schoolname='".$where['schoolname'][1]."')uids,"; 
+        //$str_sql = "select userinfo.realname, userinfo.education, userinfo.age from " . $sub . " userinfo where userinfo.uid in uids AND userinfo.age=".$where['age'][1];
+        $str_sql = "select userinfo.* from usereducation inner join userinfo on usereducation.uid=userinfo.uid where ".$where . ' order by ' . $order;//schoolname='" . $where['schoolname'][1] . "' and age=" . $where['age'][1];
+        //dump($str_sql);
+        $rst = $model->query($str_sql);
+        //dump($rst);
+        return $rst;
+        //dump($model);
+        //return D('Usereducation')->relation(true)->Select();//->where($where)->order($order)->field($field)->limit($limit)->Select();
+	}
 	public static function getUsereducationList($where,$order,$limit,$field){
         return D('Usereducation')->where($where)->order($order)->field($field)->limit($limit)->select();
 	}

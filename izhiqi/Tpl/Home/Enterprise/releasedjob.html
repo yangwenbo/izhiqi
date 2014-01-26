@@ -6,6 +6,7 @@
         <link href="__CSSURL__/base.css" rel="stylesheet" type="text/css" />
         <link href="__CSSURL__/common.css" rel="stylesheet" type="text/css" />
         <link href="__CSSURL__/company.css" rel="stylesheet" type="text/css" />
+        <link href="__CSSURL__/jpages/jPages.css" rel="stylesheet" type="text/css" />
     </head>
     <body>
         <div class="content">
@@ -20,8 +21,10 @@
                     <div class="wrap p30">
 
                         <!-- 招聘职位 { -->
+                        <ul id="released_job_list">
                         <volist name="info.joblist" id="vo">
-                        <div class="wrap_line cl mt20 clearfix pr">
+                        <li>
+                        <div class="cl mt20 clearfix pr">
                             <!--p class="fl w80 f16 c6 fb lh200 ">职位:</p-->
                             <div class="mt5 pr tc">
                                 <em class="c6 f20 col_blk">{$vo.jname}</em>
@@ -49,8 +52,13 @@
                                 <em class="m_colr1 f14">{$vo.jcontent}</em>
                             </div>
                         </div>
+
+                        <div class="wrap_line mt10 mb10"></div>
+                        </li>
                         <!-- ｝ 赏金 -->
                         </volist>
+                    </ul>
+                    <div class="page_holder"></div>
                     </div>
 
                     <div class="bg_bottom"></div>
@@ -59,10 +67,21 @@
         </div>
 
         <include file="Public:footer"/>
+        <script src="__JSURL__/jpages/jPages.js"></script> 
 
         <script>
+            $(function(){
+                $("div.page_holder").jPages({
+                    containerID: "released_job_list",
+                    previous: "上一页",
+                    next: "下一页",
+                    perPage: 2
+                });
+            });
+ 
             var deljobUrl="{:U('Enterprise/delJob')}";
             var getjobclassUrl="{:U('Job/getJobclassSon')}";
+
             $(function(){
                 $("a[id^=del]").click(function(){
                     var id=$(this).attr("val");
